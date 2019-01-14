@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.text-footer {
+  color: white;
+}
+
+.background-black{
+  background-color: black;
+}
+
+.background-bleuUrbilog{
+  background-color: rgba(33, 61, 72);
+}
