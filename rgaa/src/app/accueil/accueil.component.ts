@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ParameterService} from '../general/parameter-service.service';
 
 @Component({
   selector: 'app-accueil',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private paramService: ParameterService) {
+  }
 
   ngOnInit() {
   }
 
+  changeSize(event) {
+    this.paramService.setFontSize(event);
+  }
 }
