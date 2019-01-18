@@ -3,18 +3,18 @@
   <div class="row py-2">
     <div class="text-right mr-2 font-weight-bold container-fluid">
       <!--<span class="boutonFont no-select" [ngStyle]="{'font-size': fontSizeAdapted}" (click)="changeSizeFont(1)">A+</span>-->
-      <span class="boutonFont no-select" (click)="changeSizeFont(1)">A+</span>
-      <span> / </span>
+      <span class="no-select" [ngClass]="{'button-start': cursorType, 'button-stop': cursorType}"
+            (click)="changeSizeFont(1)">A+</span>
+      <span class="no-select"> / </span>
       <!--<span class="boutonFont no-select" [ngStyle]="{'font-size': fontSizeAdapted}" (click)="changeSizeFont(-1)">A-</span>-->
-      <span class="boutonFont no-select" (click)="changeSizeFont(-1)">A-</span>
+      <span class="no-select" [ngClass]="{'button-start': cursorType, 'button-stop': cursorType}"
+            (click)="changeSizeFont(-1)">A-</span>
     </div>
   </div>
 
   <div class="row background-bleuUrbilog">
-    <div class="container">
-      <div class="col-4">
-        <img src="assets/img/logoUrbilogBlanc.png" alt="logo de" class="img-fluid">
-      </div>
+    <div class="col-4 offset-2">
+      <img src="assets/img/logoUrbilogBlanc.png" alt="" class="img-fluid">
     </div>
   </div>
 

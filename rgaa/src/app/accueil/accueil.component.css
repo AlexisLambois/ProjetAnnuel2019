@@ -1,0 +1,13 @@
+#outer {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+#inner_fixed {
+  height: fit-content;
+}
+
+#inner_remaining {
+  flex-grow: 1;
+}

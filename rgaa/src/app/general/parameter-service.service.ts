@@ -10,13 +10,13 @@ export class ParameterService {
 
   get fontSize(): string {
     const actualSize = +localStorage.getItem('size');
-    return (actualSize > 15 && actualSize < 30 ? +localStorage.getItem('size') : 15) + 'px';
+    return (actualSize > 15 && actualSize < 24 ? +localStorage.getItem('size') : 15) + 'px';
   }
 
   setFontSize(change: number): void {
     const actualSize: number = +localStorage.getItem('size') !== 0 ? +localStorage.getItem('size') + change : 15 + change;
     console.log(actualSize);
-    if (actualSize > 15 && actualSize < 30) {
+    if (actualSize > 15 && actualSize < 24) {
       localStorage.setItem('size', String(actualSize));
     }
   }

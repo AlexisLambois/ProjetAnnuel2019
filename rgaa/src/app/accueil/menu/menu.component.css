@@ -1,0 +1,18 @@
+.icon-menu {
+  float: none;
+  margin: 0 auto;
+}
+
+.block {
+  border-right: 10px solid white;
+  border-left: 10px solid white;
+}
+
+.block:hover {
+  opacity: 0.9;
+}
+
+.icon-nav {
+  margin: 0 auto 3rem auto;
+  display: block;
+}

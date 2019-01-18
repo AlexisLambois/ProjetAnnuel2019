@@ -17,4 +17,8 @@ export class AccueilComponent implements OnInit {
   changeSize(event) {
     this.paramService.setFontSize(event);
   }
+
+  get fontSizeParam() {
+    return this.paramService.fontSize;
+  }
 }

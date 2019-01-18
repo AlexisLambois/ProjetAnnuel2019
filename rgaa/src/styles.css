@@ -1,21 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
-.text-footer {
-  color: white;
+.background-grisUrbilog {
+  background-color: #383838;
 }
 
-.background-black{
-  background-color: black;
+.background-bleucielUrbilog {
+  background-color: #1271B8;
 }
 
-.background-bleuUrbilog{
-  background-color: rgba(33, 61, 72);
+.background-bordUrbilog {
+  background-color: #A2195B;
 }
 
-.no-select{
+.background-vertUrbilog {
+  background-color: #09A198;
+}
+
+.background-orangeUrbilog {
+  background-color: #F29100;
+}
+
+.background-bleuUrbilog {
+  background-color: #336172;
+}
+
+.no-select {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently */
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
