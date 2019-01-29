@@ -1,13 +1,14 @@
-#outer {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-}
-
-#inner_fixed {
+.inner_fixed {
   height: fit-content;
+  display: table-row;
 }
 
-#inner_remaining {
-  flex-grow: 1;
+.inner_remaining {
+  display: table-row;
+}
+
+.outer{
+  display: table;
+  height: 100%;
+  width: 100%;
 }

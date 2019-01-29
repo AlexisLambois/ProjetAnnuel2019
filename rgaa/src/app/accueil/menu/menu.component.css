@@ -16,3 +16,13 @@
   margin: 0 auto 3rem auto;
   display: block;
 }
+
+.inner_fixed {
+  height: fit-content;
+  display: table-row;
+}
+
+.inner_remaining {
+  display: table-cell;
+  vertical-align: middle;
+}

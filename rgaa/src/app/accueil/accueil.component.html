@@ -1,10 +1,10 @@
-<div id="outer">
-  <div id="inner_fixed">
+<div class="outer">
+  <div class="inner_fixed">
     <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
   </div>
 
-  <div id="inner_remaining">
-    <app-menu [fontSize]='fontSizeParam'></app-menu>
+  <div class="inner_remaining">
+    <app-menu class="outer" [fontSize]='fontSizeParam'></app-menu>
   </div>
 </div>
 <app-footer [fontSize]='fontSizeParam'></app-footer>
