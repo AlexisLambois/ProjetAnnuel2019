@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
 
 @Component({
-  selector: 'app-accueil',
-  templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.css']
+  selector: 'app-reforme',
+  templateUrl: './reforme.component.html',
+  styleUrls: ['./reforme.component.css']
 })
-export class AccueilComponent implements OnInit {
+export class ReformeComponent implements OnInit {
 
   constructor(private paramService: ParameterService) {
   }
@@ -21,5 +21,4 @@ export class AccueilComponent implements OnInit {
   get fontSizeParam(): number {
     return this.paramService.fontSize;
   }
-
 }

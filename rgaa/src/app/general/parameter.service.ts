@@ -8,9 +8,9 @@ export class ParameterService {
   constructor() {
   }
 
-  get fontSize(): string {
+  get fontSize(): number {
     const actualSize = +localStorage.getItem('size');
-    return (actualSize > 15 && actualSize < 24 ? +localStorage.getItem('size') : 15) + 'px';
+    return (actualSize > 15 && actualSize < 24 ? +localStorage.getItem('size') : 15);
   }
 
   setFontSize(change: number): void {

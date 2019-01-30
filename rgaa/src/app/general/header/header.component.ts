@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {RoutingService} from '../routing.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit {
   @Input() fontSize: string;
   @Output() changeSize: EventEmitter<number> = new EventEmitter();
 
-  constructor() {
+  constructor(private routing: RoutingService) {
   }
 
   ngOnInit() {
@@ -24,5 +25,9 @@ export class HeaderComponent implements OnInit {
   //   console.log(this.fontSize);
   //   return this.fontSize === '23 || this.fontSize === 16;
   // }
+
+  redirectTo(path: string): void {
+    this.routing.redirectTo(path);
+  }
 
 }

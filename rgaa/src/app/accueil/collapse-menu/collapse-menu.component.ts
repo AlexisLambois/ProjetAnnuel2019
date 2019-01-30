@@ -2,11 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 import {RoutingService} from '../../general/routing.service';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'app-collapse-menu',
+  templateUrl: './collapse-menu.component.html',
+  styleUrls: ['./collapse-menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class CollapseMenuComponent implements OnInit {
 
   @Input() fontSize: number;
 

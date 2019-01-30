@@ -1,49 +1,56 @@
 <div class="inner_fixed">
-  <div class="container-fluid py-4 mt-3 mb-3">
-    <div class="row">
-      <div style="margin: auto">
-        <img src="assets/img/fauteuilRoulant3.png" class="icon-menu" alt="">
-        <img src="assets/img/oeil3.png" class="icon-menu" alt="">
-        <img src="assets/img/tete3.png" class="icon-menu" alt="">
+  <div class="container-fluid" style="display: table-cell;vertical-align: middle">
+    <div style="height: 9em">
+      <div class="row">
+        <div style="margin: auto">
+          <img src="assets/img/fauteuilRoulant3.png" class="icon-menu" alt="">
+          <img src="assets/img/oeil3.png" class="icon-menu" alt="">
+          <img src="assets/img/tete3.png" class="icon-menu" alt="">
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <p style="text-align: center;margin: auto">
-        Découvrez les enjeux de la réforme<br>
-        RGAA et devenez ACCESSIBLE
-      </p>
+      <div class="row">
+        <p style="text-align: center;margin: auto;font-family: myMyriadProBold;"
+           [ngStyle]="{'font-size':(fontSizeAdapted + 10)+'px' }">
+          Découvrez les enjeux de la réforme<br>
+          RGAA et devenez ACCESSIBLE
+        </p>
+      </div>
     </div>
   </div>
 </div>
 <div class="inner_remaining">
-    <div class="container py-3">
-      <div class="row">
-        <div class="col-3 p-5 block background-bleucielUrbilog">
-          <img src="assets/img/lois1.png" class="icon-nav" alt="">
-          <p style="color:white;text-align: center">
-            La réforme RGAA
-          </p>
-        </div>
-        <div class="col-3 p-5 block background-bordUrbilog">
-          <img src="assets/img/formater.png" class="icon-nav" alt="">
-          <p style="color:white;text-align: center">
-            La réforme RGAA
-          </p>
-        </div>
-        <div class="col-3 p-5 block background-vertUrbilog">
-          <img src="assets/img/audit.png" class="icon-nav" alt="">
-          <p style="color:white;text-align: center">
-            La réforme RGAA
-          </p>
-        </div>
-        <div class="col-3 p-5 block background-orangeUrbilog">
-          <img src="assets/img/group.png" class="icon-nav" alt="">
-          <p style="color:white;text-align: center">
-            La réforme RGAA
-          </p>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-3 p-5 block background-bleucielUrbilog" (click)="redirectTo('reforme')">
+        <img src="assets/img/lois1.png" class="icon-nav" alt="">
+        <p style="color:white;text-align: center;font-family: myMyriadPro;"
+           [ngStyle]="{'font-size':fontSizeAdapted+2+'px'}">
+          La réforme RGAA
+        </p>
+      </div>
+      <div class="col-3 p-5 block background-bordUrbilog" (click)="redirectTo('maintenance')">
+        <img src="assets/img/formater.png" class="icon-nav" alt="">
+        <p style="color:white;text-align: center;font-family: myMyriadPro;"
+           [ngStyle]="{'font-size':fontSizeAdapted+2+'px'}">
+          Formater vos fichiers
+        </p>
+      </div>
+      <div class="col-3 p-5 block background-vertUrbilog" (click)="redirectTo('maintenance')">
+        <img src="assets/img/audit.png" class="icon-nav" alt="">
+        <p style="color:white;text-align: center;font-family: myMyriadPro;"
+           [ngStyle]="{'font-size':fontSizeAdapted+2+'px'}">
+          Audit
+        </p>
+      </div>
+      <div class="col-3 p-5 block background-orangeUrbilog" (click)="redirectTo('maintenance')">
+        <img src="assets/img/group.png" class="icon-nav" alt="">
+        <p style="color:white;text-align: center;font-family: myMyriadPro;"
+           [ngStyle]="{'font-size':fontSizeAdapted+2+'px'}">
+          Qui sommes-nous ?
+        </p>
       </div>
     </div>
+  </div>
 </div>
 
 

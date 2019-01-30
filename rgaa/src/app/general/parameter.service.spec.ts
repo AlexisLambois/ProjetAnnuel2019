@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ParameterServiceService } from './parameter-service.service';
+import { ParameterServiceService } from './parameter.service';
 
 describe('ParameterServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

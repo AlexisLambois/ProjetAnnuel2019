@@ -1,0 +1,16 @@
+.block {
+  border-right: 10px solid white;
+  border-left: 10px solid white;
+  cursor: pointer;
+  color: white;
+  height: fit-content;
+}
+
+.text-menu {
+  font-family: myMyriadPro;
+  text-align: right;
+}
+
+.img {
+  transition: height 0.20s ease-in;
+}

@@ -9,13 +9,14 @@ export class FooterComponent implements OnInit {
 
   @Input() fontSize: number;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  get fontSizeAdapted() {
-    return this.fontSize;
+  get fontSizeAdapted(): string {
+    return this.fontSize + 'px';
   }
 
 }

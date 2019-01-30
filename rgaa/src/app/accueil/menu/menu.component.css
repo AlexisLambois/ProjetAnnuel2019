@@ -6,6 +6,7 @@
 .block {
   border-right: 10px solid white;
   border-left: 10px solid white;
+  cursor:pointer;
 }
 
 .block:hover {
@@ -18,11 +19,9 @@
 }
 
 .inner_fixed {
-  height: fit-content;
   display: table-row;
 }
 
 .inner_remaining {
   display: table-cell;
-  vertical-align: middle;
 }

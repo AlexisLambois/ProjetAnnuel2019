@@ -1,0 +1,13 @@
+.bar {
+  height: 0.15em;
+}
+
+.btn-action {
+  margin: auto;
+  color: white;
+  border-radius: 15px;
+}
+
+.btn-action:hover {
+  background-color: red;
+}
