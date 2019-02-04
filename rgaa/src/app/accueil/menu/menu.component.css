@@ -4,9 +4,13 @@
 }
 
 .block {
-  border-right: 10px solid white;
-  border-left: 10px solid white;
-  cursor:pointer;
+  width: 22%;
+  box-shadow: 5px 5px 20px grey;
+  cursor: pointer;
+}
+
+.m-r {
+  margin-right: 3%;
 }
 
 .block:hover {

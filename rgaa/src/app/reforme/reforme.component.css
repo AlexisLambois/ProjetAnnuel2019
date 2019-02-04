@@ -6,8 +6,9 @@
   margin: auto;
   color: white;
   border-radius: 15px;
+  box-shadow: 5px 5px 20px grey;
 }
 
 .btn-action:hover {
-  background-color: red;
+  background-color: #0e5a93;
 }

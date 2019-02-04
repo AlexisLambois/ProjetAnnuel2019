@@ -18,8 +18,16 @@ export class AccueilComponent implements OnInit {
     this.paramService.setFontSize(event);
   }
 
+  changeFamily(event) {
+    this.paramService.setFontFamily();
+  }
+
   get fontSizeParam(): number {
     return this.paramService.fontSize;
+  }
+
+  get fontFamilyParam(): boolean {
+    return this.paramService.fontFamily;
   }
 
 }

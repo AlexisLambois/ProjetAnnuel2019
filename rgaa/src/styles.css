@@ -56,6 +56,14 @@
   user-select: none; /* Non-prefixed version, currently */
 }
 
+.pointer{
+  cursor:pointer;
+}
+
+.not-allowed{
+  cursor:not-allowed;
+}
+
 html,
 body {
   height: 100%;
@@ -63,6 +71,7 @@ body {
   margin: 0;
 }
 
+/******* MyRiadPro ****/
 @font-face {
   font-family: myMyriadPro;
   src: url(assets/font/myriad/MYRIADPRO-REGULAR.woff);
@@ -88,4 +97,32 @@ body {
 
 .myMyriadProBoldCondFont {
   font-family: myMyriadProBoldCond;
+}
+
+/******* OpenDyslexic ****/
+@font-face {
+  font-family: openDyslexic;
+  src: url(assets/font/openDyslexic/OpenDyslexic-Regular.otf);
+}
+
+@font-face {
+  font-family: openDyslexicBold;
+  src: url(assets/font/openDyslexic/OpenDyslexic-Bold.otf);
+}
+
+@font-face {
+  font-family: openDyslexicBoldItalic;
+  src: url(assets/font/openDyslexic/OpenDyslexic-BoldItalic.otf);
+}
+
+.openDyslexicFont {
+  font-family: openDyslexic;
+}
+
+.openDyslexicBoldFont {
+  font-family: openDyslexicBold;
+}
+
+.openDyslexicBoldCondFont {
+  font-family: openDyslexicBoldItalic;
 }

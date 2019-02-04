@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -8,6 +8,8 @@ import {Component, Input, OnInit} from '@angular/core';
 export class FooterComponent implements OnInit {
 
   @Input() fontSize: number;
+  @Input() fontFamily: boolean;
+  @Output() changeFamily: EventEmitter<void> = new EventEmitter();
 
   constructor() {
   }
@@ -17,6 +19,10 @@ export class FooterComponent implements OnInit {
 
   get fontSizeAdapted(): string {
     return this.fontSize + 'px';
+  }
+
+  changeFamilyFont(): void {
+    this.changeFamily.emit();
   }
 
 }

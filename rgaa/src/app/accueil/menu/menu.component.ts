@@ -9,6 +9,7 @@ import {RoutingService} from '../../general/routing.service';
 export class MenuComponent implements OnInit {
 
   @Input() fontSize: number;
+  @Input() fontFamily: boolean;
 
   constructor(private routing: RoutingService) {
   }

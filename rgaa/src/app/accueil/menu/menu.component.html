@@ -9,8 +9,9 @@
         </div>
       </div>
       <div class="row">
-        <p style="text-align: center;margin: auto;font-family: myMyriadProBold;"
-           [ngStyle]="{'font-size':(fontSizeAdapted + 10)+'px' }">
+        <p style="text-align: center;margin: auto;"
+           [ngStyle]="{'font-size':(fontSizeAdapted + 10)+'px' }"
+           [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">
           Découvrez les enjeux de la réforme<br>
           RGAA et devenez ACCESSIBLE
         </p>
@@ -21,34 +22,40 @@
 <div class="inner_remaining">
   <div class="container">
     <div class="row">
-      <div class="col-3 p-5 block background-bleucielUrbilog" (click)="redirectTo('reforme')">
+      <div style="margin-right: 1.5%"></div>
+      <div class="p-5 block background-bleucielUrbilog m-r" (click)="redirectTo('reforme')">
         <img src="assets/img/lois1.png" class="icon-nav" alt="">
-        <p style="color:white;text-align: center;font-family: myMyriadPro;"
-           [ngStyle]="{'font-size':fontSizeAdapted+2+'px'}">
+        <p style="color:white;text-align: center;"
+           [ngStyle]="{'font-size':fontSizeAdapted+1+'px'}"
+           [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">
           La réforme RGAA
         </p>
       </div>
-      <div class="col-3 p-5 block background-bordUrbilog" (click)="redirectTo('maintenance')">
+      <div class="p-5 block background-bordUrbilog m-r" (click)="redirectTo('maintenance')">
         <img src="assets/img/formater.png" class="icon-nav" alt="">
-        <p style="color:white;text-align: center;font-family: myMyriadPro;"
-           [ngStyle]="{'font-size':fontSizeAdapted+2+'px'}">
+        <p style="color:white;text-align: center;"
+           [ngStyle]="{'font-size':fontSizeAdapted+1+'px'}"
+           [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">
           Formater vos fichiers
         </p>
       </div>
-      <div class="col-3 p-5 block background-vertUrbilog" (click)="redirectTo('maintenance')">
+      <div class="p-5 block background-vertUrbilog m-r" (click)="redirectTo('maintenance')">
         <img src="assets/img/audit.png" class="icon-nav" alt="">
-        <p style="color:white;text-align: center;font-family: myMyriadPro;"
-           [ngStyle]="{'font-size':fontSizeAdapted+2+'px'}">
+        <p style="color:white;text-align: center;"
+           [ngStyle]="{'font-size':fontSizeAdapted+1+'px'}"
+           [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">
           Audit
         </p>
       </div>
-      <div class="col-3 p-5 block background-orangeUrbilog" (click)="redirectTo('maintenance')">
+      <div class="p-5 block background-orangeUrbilog" (click)="redirectTo('maintenance')">
         <img src="assets/img/group.png" class="icon-nav" alt="">
-        <p style="color:white;text-align: center;font-family: myMyriadPro;"
-           [ngStyle]="{'font-size':fontSizeAdapted+2+'px'}">
+        <p style="color:white;text-align: center;"
+           [ngStyle]="{'font-size':fontSizeAdapted+1+'px'}"
+           [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">
           Qui sommes-nous ?
         </p>
       </div>
+      <div style="margin-right: 1.5%"></div>
     </div>
   </div>
 </div>

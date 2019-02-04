@@ -4,7 +4,7 @@
   </div>
 
   <div class="inner_remaining">
-    <app-collapse-menu class="m-1" [fontSize]='fontSizeParam'></app-collapse-menu>
+    <app-collapse-menu class="m-1" [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-collapse-menu>
     <div class="container">
       <h1 class="color-bleucielUrbilog myMyriadProFont">LA RÉFORME RGAA</h1>
       <hr class="bar background-bleucielUrbilog">
@@ -107,9 +107,9 @@
         </div>
       </div>
       <div class="row m-5">
-        <button class="btn background-bleucielUrbilog btn-action pt-2 pb-2 pl-4 pr-4">Suis-je éligible ?</button>
+        <button class="btn background-bleucielUrbilog btn-action pt-2 pb-2 pl-5 pr-5">Suis-je éligible ?</button>
       </div>
     </div>
   </div>
 </div>
-<app-footer [fontSize]='fontSizeParam'></app-footer>
+<app-footer [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)" [fontFamily]='fontFamilyParam'></app-footer>

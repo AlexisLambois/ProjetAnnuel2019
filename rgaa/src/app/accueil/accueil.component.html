@@ -4,7 +4,7 @@
   </div>
 
   <div class="inner_remaining">
-    <app-menu class="outer" [fontSize]='fontSizeParam'></app-menu>
+    <app-menu class="outer" [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-menu>
   </div>
 </div>
-<app-footer class="fixed-bottom" [fontSize]='fontSizeParam'></app-footer>
+<app-footer class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)" [fontFamily]='fontFamilyParam'></app-footer>

@@ -1,13 +1,16 @@
 .block {
-  border-right: 10px solid white;
-  border-left: 10px solid white;
+  width: 22%;
   cursor: pointer;
   color: white;
   height: fit-content;
+  box-shadow: 5px 5px 20px grey;
+}
+
+.m-r {
+  margin-right: 3%;
 }
 
 .text-menu {
-  font-family: myMyriadPro;
   text-align: right;
 }
 
