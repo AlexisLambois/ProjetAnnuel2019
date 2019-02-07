@@ -10,7 +10,7 @@ export class ParameterService {
 
   get fontSize(): number {
     const actualSize = +localStorage.getItem('size');
-    return (actualSize > 15 && actualSize < 24 ? +localStorage.getItem('size') : 15);
+    return (actualSize > 15 && actualSize < 21 ? +localStorage.getItem('size') : 15);
   }
 
   get fontFamily(): boolean {
@@ -19,7 +19,7 @@ export class ParameterService {
 
   setFontSize(change: number): void {
     const actualSize: number = +localStorage.getItem('size') !== 0 ? +localStorage.getItem('size') + change : 15 + change;
-    if (actualSize > 15 && actualSize < 24) {
+    if (actualSize > 15 && actualSize < 20) {
       localStorage.setItem('size', String(actualSize));
     }
   }

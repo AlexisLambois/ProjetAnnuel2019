@@ -11,6 +11,9 @@ import { MenuComponent } from './accueil/menu/menu.component';
 import { MaintenanceComponent } from './general/maintenance/maintenance.component';
 import { ReformeComponent } from './reforme/reforme.component';
 import { CollapseMenuComponent } from './accueil/collapse-menu/collapse-menu.component';
+import { FormatageComponent } from './formatage/formatage.component';
+import {FileUploadModule} from 'ng2-file-upload';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +23,15 @@ import { CollapseMenuComponent } from './accueil/collapse-menu/collapse-menu.com
     MenuComponent,
     MaintenanceComponent,
     ReformeComponent,
-    CollapseMenuComponent
+    CollapseMenuComponent,
+    FormatageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,14 +3,10 @@
   <div class="row py-2">
     <div class="text-right mr-2 font-weight-bold container-fluid">
       <!--<span class="boutonFont no-select" [ngStyle]="{'font-size': fontSizeAdapted}" (click)="changeSizeFont(1)">A+</span>-->
-      <span class="no-select" [ngClass]="{'button-start': cursorType, 'button-stop': cursorType}"
-            style="font-size: large"
-            (click)="changeSizeFont(1)">A+</span>
+      <span class="no-select button-start" style="font-size: large" (click)="changeSizeFont(1)">A+</span>
       <span class="no-select" style="font-size: large"> / </span>
       <!--<span class="boutonFont no-select" [ngStyle]="{'font-size': fontSizeAdapted}" (click)="changeSizeFont(-1)">A-</span>-->
-      <span class="no-select" [ngClass]="{'button-start': cursorType, 'button-stop': cursorType}"
-            style="font-size: large"
-            (click)="changeSizeFont(-1)">A-</span>
+      <span class="no-select button-start" style="font-size: large" (click)="changeSizeFont(-1)">A-</span>
     </div>
   </div>
 
