@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.urbilog</groupId>
+	<artifactId>rgaa</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<name>rgaa-parent</name>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.security.version>5.0.4.RELEASE</spring.security.version>
+		<spring.data.jpa.version>2.0.5.RELEASE</spring.data.jpa.version>
+		<org.hibernate.version>5.0.7.Final</org.hibernate.version>
+		<org.json.version>20140107</org.json.version>
+		<org.slf4j.version>1.7.12</org.slf4j.version>
+		<spring.batch.version>3.0.6.RELEASE</spring.batch.version>
+		<javax.mail.version>1.4.7</javax.mail.version>
+		<hibernate.version>5.0.7.Final</hibernate.version>
+		<org.springframework.version>5.0.4.RELEASE</org.springframework.version>
+		<javax.servlet.jsp.version>2.0</javax.servlet.jsp.version>
+		<javax.servlet.version>2.5</javax.servlet.version>
+		<project.scm.id>git</project.scm.id>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.0</version>
+					<configuration>
+						<source>${maven.compiler.source}</source>
+						<target>${maven.compiler.target}</target>
+						<executable>${env.JAVA_18_HOME}\bin\javac</executable>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<configuration>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<dependencies>
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>${javax.servlet.jsp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${javax.servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+
+	<modules>
+		<module>rgaa-core</module>
+ 		<module>rgaa-front</module>
+		<module>rgaa-middleware</module>
+	</modules>
+</project>

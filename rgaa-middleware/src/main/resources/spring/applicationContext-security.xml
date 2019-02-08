@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:ldap="http://www.springframework.org/schema/ldap"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/ldap http://www.springframework.org/schema/ldap/spring-ldap.xsd">
+
+
+	<bean id="crypt"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+
+
+	<security:http entry-point-ref="unauthorizedEntryPoint">
+		<security:session-management
+			session-fixation-protection="none" />
+
+		<security:custom-filter
+			ref="authenticationTokenProcessingFilter" position="PRE_AUTH_FILTER" />
+		<security:intercept-url pattern="*"
+			access="isAnonymous()" />
+		<!-- <security:intercept-url pattern="/rest/ref/*" -->
+		<!-- access="isAnonymous()" /> -->
+		<!-- <security:intercept-url pattern="*" access="isAuthenticated()" /> -->
+
+		<security:csrf disabled="true" />
+		<security:form-login
+			login-processing-url="/rest/login" username-parameter="username"
+			password-parameter="password"
+			authentication-success-handler-ref="handlerSuccess"
+			authentication-failure-handler-ref="handlerFailure" />
+	</security:http>
+
+	<security:authentication-manager
+		alias="authenticationManager">
+		<security:ldap-authentication-provider
+			server-ref="contextSource" user-search-filter="sAMAccountName={0}"
+			user-search-base="${ldap.base}" group-search-filter="member={1}"
+			group-search-base="${ldap.base}"
+			user-context-mapper-ref="ldapContextMapper" />
+		<!-- <security:ldap-authentication-provider -->
+		<!-- server-ref="ldapServer" user-search-filter="sAMAccountName={0}" -->
+		<!-- user-search-base="${ldap.base}" group-search-filter="member={1}" -->
+		<!-- group-search-base="${ldap.base}" -->
+		<!-- user-context-mapper-ref="ldapContextMapper" /> -->
+	</security:authentication-manager>
+
+	<!-- <security:ldap-server id="ldapServer" -->
+	<!-- url="${ldap.url}" manager-dn="${ldap.userDN}" -->
+	<!-- manager-password="${ldap.password}" /> -->
+	
+	 <bean class="com.urbilog.rgaa.middleware.conf.BeanPostProcessorLdapPopulator" />
+
+	<bean id="ldapTemplate"
+		class="org.springframework.ldap.core.LdapTemplate">
+		<constructor-arg ref="contextSource" />
+		<!-- <constructor-arg ref="ldapServer" /> -->
+		<property name="ignorePartialResultException" value="true" />
+	</bean>
+	
+	<bean id="contextSource"
+		class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
+		<constructor-arg value="${ldap.url}" />
+		<property name="userDn" value="${ldap.userDN}" />
+		<property name="password" value="${ldap.password}" />
+	</bean>
+
+</beans>
