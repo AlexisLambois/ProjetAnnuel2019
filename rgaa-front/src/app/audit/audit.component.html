@@ -1,0 +1,88 @@
+<div class="outer">
+  <div class="inner_fixed">
+    <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
+  </div>
+
+  <div class="inner_remaining">
+    <app-collapse-menu class="m-1" [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-collapse-menu>
+    <div class="container">
+      <h1 class="color-vertUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+          [ngStyle]="{'font-size':fontSizeParam+20+'px'}">UN AUDIT DE VOTRE SITE ?</h1>
+      <hr class="bar background-vertUrbilog mb-5">
+      <div class="row ml-4 mr-4 mb-4">
+        <h2 class="mb-4 color-vertUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+            [ngStyle]="{'font-size':fontSizeParam+3+'px'}">Pourquoi faire un audit de mon site ?</h2>
+        <p [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+           [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut
+          labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est
+          laborum.</p>
+      </div>
+      <div class="row ml-4 mr-4 mb-4">
+        <h2 class="mb-4 color-vertUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+            [ngStyle]="{'font-size':fontSizeParam+3+'px'}">Quels bénéfices ?</h2>
+        <p [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+           [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut
+          labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est
+          laborum.</p>
+      </div>
+      <form>
+        <div class="row ml-4 mr-4 mb-5" style="border: black 1px solid">
+          <div class="col-6 pl-5 mt-5 mb-5">
+            <div class="row mb-3">
+              <h2 class="color-vertUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+                  [ngStyle]="{'font-size':fontSizeParam+2+'px'}">Envoyer votre demande d'audit pour votre site :</h2>
+            </div>
+            <div class="row mb-4">
+              <label class="col-12 mb-4" for="domaineName"
+                     [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Nom de
+                domaine :</label>
+              <input class="col-10 offset-1 p-1" type="text" id="domaineName" required>
+            </div>
+            <div class="row mb-4">
+              <label class="col-12 mb-4" for="email"
+                     [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Mail de
+                contact :</label>
+              <input class="col-10 offset-1 p-1" type="email" id="email" required>
+            </div>
+            <div class="row mb-4">
+              <label class="col-12 mb-4" for="phoneNumber"
+                     [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">N° de
+                téléphone :</label>
+              <input class="col-10 offset-1" type="tel" id="phoneNumber" required>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="row mt-xl-5 mb-5">
+              <label class="col-12 mt-5 mb-4" for="comment"
+                     [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Commentaires :</label>
+              <textarea class="col-10 offset-1 p-1" id="comment" rows="7"></textarea>
+            </div>
+            <div class="row">
+              <button class="btn sendForm pt-2 pb-2 pl-3 pr-3 background-vertUrbilog"
+                      style="width: 13em;"
+                      [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+                      [ngStyle]="{'font-size':fontSizeParam-2+'px'}">ENVOYER
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+            [fontFamily]='fontFamilyParam'></app-footer>

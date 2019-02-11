@@ -1,0 +1,14 @@
+.inner_fixed {
+  height: fit-content;
+  display: table-row;
+}
+
+.inner_remaining {
+  display: table-row;
+}
+
+.outer{
+  display: table;
+  height: 100%;
+  width: 100%;
+}

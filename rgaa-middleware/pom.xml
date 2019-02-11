@@ -1,0 +1,239 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.urbilog</groupId>
+		<artifactId>rgaa</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>rgaa-middleware</artifactId>
+	<name>rgaa</name>
+	<packaging>war</packaging>
+	<properties>
+		<org.springframework-version>5.0.4.RELEASE</org.springframework-version>
+		<org.springframework.security-version>5.0.4.RELEASE</org.springframework.security-version>
+		<org.slf4j-version>1.7.12</org.slf4j-version>
+		<env.CATALINA_HOME>./target/war</env.CATALINA_HOME>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.urbilog</groupId>
+			<artifactId>rgaa-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Jackson JSON Processor -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.4</version>
+		</dependency>
+
+		<!-- CSV -->
+		<dependency>
+			<groupId>net.sf.supercsv</groupId>
+			<artifactId>super-csv</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+		<!-- JSR 303 with Hibernate Validator -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>javax.validation</groupId> -->
+<!-- 			<artifactId>validation-api</artifactId> -->
+<!-- 			<version>1.0.0.GA</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.hibernate</groupId> -->
+<!-- 			<artifactId>hibernate-validator</artifactId> -->
+<!-- 			<version>5.0.7.Final</version> -->
+<!-- 		</dependency> -->
+
+		<!-- Security (used for CSRF protection only) -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${org.springframework.security-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${org.springframework.security-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-ldap</artifactId>
+			<version>${org.springframework.security-version}</version>
+		</dependency>
+		<!-- Test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Apache Velocity -->
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring.data.jpa.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.thetransactioncompany</groupId>
+			<artifactId>cors-filter</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<!-- Upload de fichiers -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.1</version> <!-- makesure correct version here -->
+		</dependency>
+
+		<!-- swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>rgaa</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<!-- Jetty -->
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.4.8.v20171121</version>
+				<configuration>
+					<webApp>
+						<contextPath>/rgaa-middleware</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<id>copy-webapp</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>./target/${project.build.finalName}</outputDirectory>
+							<overwrite>true</overwrite>
+							<nonFilteredFileExtensions>
+								<nonFilteredFileExtension>eot</nonFilteredFileExtension>
+								<nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+								<nonFilteredFileExtension>woff</nonFilteredFileExtension>
+								<nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+								<nonFilteredFileExtension>svg</nonFilteredFileExtension>
+							</nonFilteredFileExtensions>
+							<resources>
+								<resource>
+									<directory>../rgaa-front/dist</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- in order to put the generated war into the webapp or our server -->
+			<!-- <plugin> <artifactId>maven-antrun-plugin</artifactId> <version>1.7</version> 
+				<executions> <execution> <phase>install</phase> <configuration> <target> 
+				<copy file="./target/${project.build.finalName}.${project.packaging}" todir="${env.CATALINA_HOME}" /> </target> </configuration> <goals> <goal>run</goal> </goals> </execution> 
+				</executions> </plugin> -->
+		</plugins>
+	</build>
+
+
+</project>

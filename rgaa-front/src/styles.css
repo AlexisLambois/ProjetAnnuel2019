@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+.background-grisUrbilog {
+  background-color: #383838;
+}
+
+.color-grisUrbilog {
+  color: #383838;
+}
+
+.background-bleucielUrbilog {
+  background-color: #1271B8;
+}
+
+.color-bleucielUrbilog {
+  color: #1271B8;
+}
+
+.background-bordUrbilog {
+  background-color: #A2195B;
+}
+
+.color-bordUrbilog {
+  color: #A2195B;
+}
+
+.background-vertUrbilog {
+  background-color: #09A198;
+}
+
+.color-vertUrbilog {
+  color: #09A198;
+}
+
+.background-orangeUrbilog {
+  background-color: #F29100;
+}
+
+.color-orangeUrbilog {
+  color: #F29100;
+}
+
+.background-bleuUrbilog {
+  background-color: #336172;
+}
+
+.color-bleuUrbilog {
+  color: #336172;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently */
+}
+
+.pointer{
+  cursor:pointer !important;
+}
+
+.not-allowed{
+  cursor:not-allowed !important;;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/******* MyRiadPro ****/
+@font-face {
+  font-family: myMyriadPro;
+  src: url(assets/font/myriad/MYRIADPRO-REGULAR.woff);
+}
+
+@font-face {
+  font-family: myMyriadProBold;
+  src: url(assets/font/myriad/MYRIADPRO-BOLD.woff);
+}
+
+@font-face {
+  font-family: myMyriadProBoldCond;
+  src: url(assets/font/myriad/MYRIADPRO-BOLDCOND.woff);
+}
+
+.myMyriadProFont {
+  font-family: myMyriadPro;
+}
+
+.myMyriadProBoldFont {
+  font-family: myMyriadProBold;
+}
+
+.myMyriadProBoldCondFont {
+  font-family: myMyriadProBoldCond;
+}
+
+/******* OpenDyslexic ****/
+@font-face {
+  font-family: openDyslexic;
+  src: url(assets/font/openDyslexic/OpenDyslexic-Regular.otf);
+}
+
+@font-face {
+  font-family: openDyslexicBold;
+  src: url(assets/font/openDyslexic/OpenDyslexic-Bold.otf);
+}
+
+@font-face {
+  font-family: openDyslexicBoldItalic;
+  src: url(assets/font/openDyslexic/OpenDyslexic-BoldItalic.otf);
+}
+
+.openDyslexicFont {
+  font-family: openDyslexic;
+}
+
+.openDyslexicBoldFont {
+  font-family: openDyslexicBold;
+}
+
+.openDyslexicBoldCondFont {
+  font-family: openDyslexicBoldItalic;
+}
