@@ -1,6 +1,0 @@
-bleu ciel : 1271B8
-bord : A2195B
-vert : 09A198
-orange : F29100
-gris : 383838
-header : 213D48
