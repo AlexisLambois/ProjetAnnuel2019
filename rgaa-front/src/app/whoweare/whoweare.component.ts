@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
+import {RoutingService} from '../general/routing.service';
 
 @Component({
   selector: 'app-whoweare',
@@ -28,5 +29,9 @@ export class WhoweareComponent implements OnInit {
 
   get fontFamilyParam(): boolean {
     return this.paramService.fontFamily;
+  }
+
+  redirectTo(path: string): void {
+    window.location.href = path;
   }
 }

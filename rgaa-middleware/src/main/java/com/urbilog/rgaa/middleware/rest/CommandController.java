@@ -161,6 +161,70 @@
 //		return ResponseEntity.status(HttpStatus.OK).body(paramEtatPossible);
 //	}
 //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Creating a PdfWriter object
+//			String dest = "C:/Users/alambois/Desktop/Modeoperatoire.docx";
+//			String dest2 = "C:/Users/alambois/Desktop/test2.pdf";
+//			
+//			String records = "";
+//			try {
+//				BufferedReader reader = new BufferedReader(new FileReader(dest));
+//				String line;
+//				while ((line = reader.readLine()) != null) {
+//					records+=line+"\n";
+//				}
+//				reader.close();
+//			} catch (Exception e) {
+//				System.err.format("Exception occurred trying to read '%s'.", dest);
+//				e.printStackTrace();
+//			}
+//			
+//			records = records.replace("\t","	");
+//			
+//			PdfWriter writer;
+//			PdfDocument pdf;
+//			Document doc = null;
+//			PdfFont font;
+//
+//			try {
+//				writer = new PdfWriter(dest2);
+//				pdf = new PdfDocument(writer);
+//				doc = new Document(pdf);
+//				Paragraph para = new Paragraph(records);
+//				font = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
+//				para.setFont(font);
+//				doc.add(para);
+//				doc.close();
+//				writer.close();
+//			} catch (FileNotFoundException e) {
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
 //	@ApiOperation(value = "get status matrix", produces = "application/json")
 //	@RequestMapping(method = RequestMethod.GET, value = "/statusMatrix")
 //	@ApiResponses(value = {

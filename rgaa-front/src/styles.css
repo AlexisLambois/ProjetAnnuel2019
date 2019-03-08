@@ -56,12 +56,12 @@
   user-select: none; /* Non-prefixed version, currently */
 }
 
-.pointer{
-  cursor:pointer !important;
+.pointer {
+  cursor: pointer !important;
 }
 
-.not-allowed{
-  cursor:not-allowed !important;;
+.not-allowed {
+  cursor: not-allowed !important;;
 }
 
 html,
@@ -125,4 +125,8 @@ body {
 
 .openDyslexicBoldCondFont {
   font-family: openDyslexicBoldItalic;
+}
+
+.blur {
+  filter: blur(2px);
 }

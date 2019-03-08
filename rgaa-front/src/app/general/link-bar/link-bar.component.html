@@ -1,3 +1,97 @@
-<div class="background-grisUrbilog" style="height: 10px;width: 20px;">
-  <i class="fab fa-facebook-f"></i>
+<div class="position-fixed right d-inline-block background-grisUrbilog">
+  <img (click)="redirectTo('https://www.facebook.com/Urbilog-1975569372471723/')" alt="" class="img pointer"
+       src="./assets/img/facebook.png">
+  <img (click)="redirectTo('https://twitter.com/Urbilog')" alt="" class="img pointer" src="./assets/img/twitter.png">
+  <img (click)="toForm(content)" alt="" class="img pointer" src="./assets/img/play.png">
+  <a href="#param" *ngIf="param"><img alt="" class="img pointer" src="./assets/img/param.png"></a>
 </div>
+
+<ngb-alert *ngIf="displayAlert" class="alert" (close)="close()">
+  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</ngb-alert>
+
+<ng-template #content let-ca="close('Close click')" let-da="dismiss()">
+
+  <div class="modal-header">
+    <h4 class="modal-title color-proxiad-light" [ngStyle]="{'font-size':fontSize+10+'px'}"
+        [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Essayer les options !</h4>
+    <button type="button" class="close" aria-label="Close" (click)="da">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            La Cataracte
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p [ngStyle]="{'font-size':fontSize+1+'px'}" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'">
+          C’est l’opacification partielle ou totale du cristallin, lentille
+          convergente située à l’intérieur de l’œil.
+          Cette opacification est responsable d’une baisse progressive de la vue, au début accompagnée de gêne à la
+          lumière.
+        </p>
+        <button type="button" class="btn btn-primary" (click)="setCataracte()">Vue Cataracte</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <hr>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            La Cataracte
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p [ngStyle]="{'font-size':fontSize+1+'px'}" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'">
+          C’est l’opacification partielle ou totale du cristallin, lentille
+          convergente située à l’intérieur de l’œil.
+          Cette opacification est responsable d’une baisse progressive de la vue, au début accompagnée de gêne à la
+          lumière.
+        </p>
+        <button type="button" class="btn btn-primary" (click)="setCataracte()">Vue Cataracte</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <hr>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            La Cataracte
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p [ngStyle]="{'font-size':fontSize+1+'px'}" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'">
+          C’est l’opacification partielle ou totale du cristallin, lentille
+          convergente située à l’intérieur de l’œil.
+          Cette opacification est responsable d’une baisse progressive de la vue, au début accompagnée de gêne à la
+          lumière.
+        </p>
+        <button type="button" class="btn btn-primary" (click)="setCataracte()">Vue Cataracte</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <hr>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            La Cataracte
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p [ngStyle]="{'font-size':fontSize+1+'px'}" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'">
+          C’est l’opacification partielle ou totale du cristallin, lentille
+          convergente située à l’intérieur de l’œil.
+          Cette opacification est responsable d’une baisse progressive de la vue, au début accompagnée de gêne à la
+          lumière.
+        </p>
+        <button type="button" class="btn btn-primary" (click)="setCataracte()">Vue Cataracte</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+  </div>
+
+</ng-template>

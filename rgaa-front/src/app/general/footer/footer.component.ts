@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {RoutingService} from '../routing.service';
 
 @Component({
   selector: 'app-footer',
@@ -11,7 +12,7 @@ export class FooterComponent implements OnInit {
   @Input() fontFamily: boolean;
   @Output() changeFamily: EventEmitter<void> = new EventEmitter();
 
-  constructor() {
+  constructor(private routing: RoutingService) {
   }
 
   ngOnInit() {
@@ -25,4 +26,7 @@ export class FooterComponent implements OnInit {
     this.changeFamily.emit();
   }
 
+  redirectTo(path: string): void {
+    this.routing.redirectTo(path);
+  }
 }

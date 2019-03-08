@@ -31,11 +31,13 @@
         <button class="btn moreInfo pt-2 pb-2 pl-4 pr-4 background-orangeUrbilog"
                 style="width: 13em;"
                 [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
-                [ngStyle]="{'font-size':fontSizeParam+'px'}">En savoir plus
+                (click)="redirectTo('https://www.urbilog.fr/')"
+                [ngStyle]="{'font-size':fontSizeParam+'px'}" >En savoir plus
         </button>
       </div>
     </div>
   </div>
 </div>
+<app-link-bar [param]='true'></app-link-bar>
 <app-footer class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
             [fontFamily]='fontFamilyParam'></app-footer>

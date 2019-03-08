@@ -1,0 +1,23 @@
+<div class="outer">
+  <div class="inner_fixed">
+    <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
+  </div>
+
+  <div class="inner_remaining">
+    <app-collapse-menu class="m-1" [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-collapse-menu>
+    <div class="container">
+      <h1 [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+          [ngStyle]="{'font-size':fontSizeParam+20+'px'}">Plan du site</h1>
+      <hr class="bar mb-5">
+      <ul>
+        <li><a class="link" (click)="redirectTo('home')">Accueil</a></li>
+        <li><a class="link" (click)="redirectTo('reforme')">Les réformes</a></li>
+        <li><a class="link" (click)="redirectTo('formatage')">Formater vos fichiers</a></li>
+        <li><a class="link" (click)="redirectTo('audit')">Demander un audit</a></li>
+        <li><a class="link" (click)="redirectTo('whoweare')">En savoir plus</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<app-footer class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+            [fontFamily]='fontFamilyParam'></app-footer>

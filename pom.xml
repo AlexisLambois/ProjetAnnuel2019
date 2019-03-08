@@ -16,15 +16,12 @@
 		<spring.security.version>5.0.4.RELEASE</spring.security.version>
 		<spring.data.jpa.version>2.0.5.RELEASE</spring.data.jpa.version>
 		<org.hibernate.version>5.0.7.Final</org.hibernate.version>
-		<org.json.version>20140107</org.json.version>
-		<org.slf4j.version>1.7.12</org.slf4j.version>
 		<spring.batch.version>3.0.6.RELEASE</spring.batch.version>
 		<javax.mail.version>1.4.7</javax.mail.version>
 		<hibernate.version>5.0.7.Final</hibernate.version>
 		<org.springframework.version>5.0.4.RELEASE</org.springframework.version>
 		<javax.servlet.jsp.version>2.0</javax.servlet.jsp.version>
 		<javax.servlet.version>2.5</javax.servlet.version>
-		<project.scm.id>git</project.scm.id>
 	</properties>
 
 	<build>

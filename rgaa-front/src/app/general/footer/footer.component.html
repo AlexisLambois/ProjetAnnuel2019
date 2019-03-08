@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div id="param" class="container-fluid">
   <div class="row background-grisUrbilog py-3 text-footer" [ngStyle]="{'font-size':fontSizeAdapted}">
     <div class="col-2 offset-4 no-select">
-      <span class="not-allowed" [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Le plan du site</span>
+      <span class="pointer" (click)="redirectTo('mapsite')" [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Le plan du site</span>
     </div>
     <div class="col-2 no-select">
       <span class="not-allowed" [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Version contrastée</span>

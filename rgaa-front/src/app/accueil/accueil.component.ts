@@ -30,4 +30,12 @@ export class AccueilComponent implements OnInit {
     return this.paramService.fontFamily;
   }
 
+  get effectParam(): number {
+    return this.paramService.effects;
+  }
+
+  redirectTo(path: string): void {
+    window.location.href = path;
+  }
+
 }

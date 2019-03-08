@@ -1,7 +1,16 @@
+import {HttpHeaders} from '@angular/common/http';
+
 export const environment = {
   production: false,
   isDebug: false,
   apis: {
-    rest: 'http://localhost:3000/api'
-  }
+    rest: 'http://localhost:8081/rgaa/rest'
+  },
+  httpHeaders : new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': 'true',
+    'Accept': '*/*',
+    'Access-Control-Expose-Headers': 'Authorization',
+  })
 };

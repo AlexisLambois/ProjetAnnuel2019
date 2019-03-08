@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
+import {RoutingService} from '../general/routing.service';
+import {LinkBarComponent} from '../general/link-bar/link-bar.component';
 
 @Component({
   selector: 'app-reforme',
@@ -8,7 +10,9 @@ import {ParameterService} from '../general/parameter.service';
 })
 export class ReformeComponent implements OnInit {
 
-  constructor(private paramService: ParameterService) {
+  @ViewChild(LinkBarComponent) linkBarComponent: LinkBarComponent;
+
+  constructor(private paramService: ParameterService, private routing: RoutingService) {
   }
 
   ngOnInit() {
@@ -29,4 +33,9 @@ export class ReformeComponent implements OnInit {
   get fontFamilyParam(): boolean {
     return this.paramService.fontFamily;
   }
+
+  redirectTo(path: string): void {
+    this.routing.redirectTo(path);
+  }
+
 }

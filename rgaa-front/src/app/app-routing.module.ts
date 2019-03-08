@@ -7,6 +7,7 @@ import {FormatageComponent} from './formatage/formatage.component';
 import {AuditComponent} from './audit/audit.component';
 import {LinkBarComponent} from './general/link-bar/link-bar.component';
 import {WhoweareComponent} from './whoweare/whoweare.component';
+import {MapsiteComponent} from './mapsite/mapsite.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -16,11 +17,12 @@ const routes: Routes = [
   {path: 'formatage', component: FormatageComponent},
   {path: 'audit', component: AuditComponent},
   {path: 'link', component: LinkBarComponent},
-  {path: 'whoweare', component: WhoweareComponent}
+  {path: 'whoweare', component: WhoweareComponent},
+  {path: 'mapsite', component: MapsiteComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

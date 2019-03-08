@@ -115,12 +115,13 @@
         </div>
       </div>
       <div class="row m-5" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-        <button class="btn background-bleucielUrbilog btn-action pt-2 pb-2 pl-5 pr-5"
+        <button class="btn background-bleucielUrbilog btn-action pt-2 pb-2 pl-5 pr-5" (click)="redirectTo('audit')"
                 [ngStyle]="{'font-size':fontSizeParam-2+'px'}">Suis-je éligible ?
         </button>
       </div>
     </div>
   </div>
 </div>
+<app-link-bar [param]='true'></app-link-bar>
 <app-footer [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
             [fontFamily]='fontFamilyParam'></app-footer>

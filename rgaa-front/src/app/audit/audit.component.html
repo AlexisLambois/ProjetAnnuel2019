@@ -39,7 +39,7 @@
           est
           laborum.</p>
       </div>
-      <form>
+      <form (ngSubmit)="onSubmit(hostname,email,phonenumber,comment)">
         <div class="row ml-4 mr-4 mb-5" style="border: black 1px solid">
           <div class="col-6 pl-5 mt-5 mb-5">
             <div class="row mb-3">
@@ -47,36 +47,49 @@
                   [ngStyle]="{'font-size':fontSizeParam+2+'px'}">Envoyer votre demande d'audit pour votre site :</h2>
             </div>
             <div class="row mb-4">
-              <label class="col-12 mb-4" for="domaineName"
+              <label class="col-12 mb-4" for="hostname"
                      [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Nom de
                 domaine :</label>
-              <input class="col-10 offset-1 p-1" type="text" id="domaineName" required>
+              <input class="col-10 offset-1 p-1" type="text" id="hostname" #hostname required>
             </div>
             <div class="row mb-4">
               <label class="col-12 mb-4" for="email"
                      [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Mail de
                 contact :</label>
-              <input class="col-10 offset-1 p-1" type="email" id="email" required>
+              <input class="col-10 offset-1 p-1" type="email" id="email" #email required>
             </div>
             <div class="row mb-4">
-              <label class="col-12 mb-4" for="phoneNumber"
+              <label class="col-12 mb-4" for="phonenumber"
                      [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">N° de
                 téléphone :</label>
-              <input class="col-10 offset-1" type="tel" id="phoneNumber" required>
+              <input class="col-10 offset-1 p-1" type="tel" id="phonenumber" size="10" #phonenumber required>
             </div>
           </div>
           <div class="col-6">
             <div class="row mt-xl-5 mb-5">
               <label class="col-12 mt-5 mb-4" for="comment"
                      [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Commentaires :</label>
-              <textarea class="col-10 offset-1 p-1" id="comment" rows="7"></textarea>
+              <textarea class="col-10 offset-1 p-1" id="comment" rows="7" #comment></textarea>
             </div>
             <div class="row">
-              <button class="btn sendForm pt-2 pb-2 pl-3 pr-3 background-vertUrbilog"
-                      style="width: 13em;"
-                      [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+              <button type="submit" class="btn sendForm pt-2 pb-2 pl-3 pr-3 background-vertUrbilog"
+                      style="width: 13em;" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
                       [ngStyle]="{'font-size':fontSizeParam-2+'px'}">ENVOYER
               </button>
+            </div>
+          </div>
+          <div *ngIf="message!==''" class="container-fluid">
+            <div class="row">
+              <ng-template [ngIf]="message.charAt(0) == '2'" [ngIfElse]="error">
+                <div class="alert alert-success bannerAudit" role="alert">
+                  {{message.substring(2, message.length)}}
+                </div>
+              </ng-template>
+              <ng-template #error>
+                <div class="alert alert-danger bannerAudit" role="alert">
+                  {{message.substring(2, message.length)}}
+                </div>
+              </ng-template>
             </div>
           </div>
         </div>
@@ -84,5 +97,6 @@
     </div>
   </div>
 </div>
+<app-link-bar [param]='true'></app-link-bar>
 <app-footer [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
             [fontFamily]='fontFamilyParam'></app-footer>

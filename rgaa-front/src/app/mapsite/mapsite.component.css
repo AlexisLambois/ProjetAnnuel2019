@@ -1,0 +1,10 @@
+.bar {
+  height: 0.15em;
+  background-color: black;
+}
+
+.link {
+  color: blue !important;
+  cursor: pointer;
+  text-decoration: underline !important;
+}

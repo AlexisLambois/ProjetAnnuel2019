@@ -1,4 +1,4 @@
-<div class="outer">
+<div id="context1" class="outer">
   <div class="inner_fixed">
     <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
   </div>
@@ -6,5 +6,10 @@
   <div class="inner_remaining">
     <app-menu class="outer" [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-menu>
   </div>
+
 </div>
-<app-footer class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)" [fontFamily]='fontFamilyParam'></app-footer>
+
+<app-link-bar [param]='false' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
+
+<app-footer id="context2" class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+            [fontFamily]='fontFamilyParam'></app-footer>

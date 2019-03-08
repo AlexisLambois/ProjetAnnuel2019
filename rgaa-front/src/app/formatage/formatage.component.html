@@ -28,8 +28,7 @@
         <div class="col-6">
           <div class="row" style="height: 50%">
             <div class="col-6 text-center my-auto">
-              <input (change)="fileSelected($event)" type="file" id="file" accept="application/pdf" ng2FileSelect
-                     [uploader]="uploader" style="display: none"/>
+              <input (change)="fileSelected($event)" type="file" id="file" accept=".doc,.docx,txt" style="display: none"/>
               <label for="file" class="btn uploadFileNameBtn-action pt-2 pb-2 pl-5 pr-5"
                      [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
                      [ngStyle]="{'font-size':fontSizeParam-2+'px'}">Choisir un fichier
@@ -43,8 +42,8 @@
           <div class="row text-center">
             <button (click)="display()" class="btn formatage-action pt-2 pb-2 pl-5 pr-5 background-bordUrbilog"
                     style="width: 17em;"
-                    [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam,'not-allowed':this.uploader.queue.length == 0,'pointer':this.uploader.queue.length != 0}"
-                    [ngStyle]="{'font-size':fontSizeParam-2+'px'}">FORMATER
+                    [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam,'not-allowed':this.currentFileUpload == undefined,'pointer':this.currentFileUpload != undefined}"
+                    [ngStyle]="{'font-size':fontSizeParam-2+'px'}">UPLOAD
             </button>
           </div>
         </div>
