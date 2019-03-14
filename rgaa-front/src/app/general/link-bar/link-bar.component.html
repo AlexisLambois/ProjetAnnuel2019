@@ -7,7 +7,7 @@
 </div>
 
 <ngb-alert *ngIf="displayAlert" class="alert" (close)="close()">
-  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+  <strong>Warning!</strong> Vous êtes en mode : {{nameMode}}. Fermer ce message pour revenir en mode normal
 </ngb-alert>
 
 <ng-template #content let-ca="close('Close click')" let-da="dismiss()">
@@ -42,56 +42,21 @@
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            La Cataracte
+            La DMLA
           </mat-panel-title>
         </mat-expansion-panel-header>
         <p [ngStyle]="{'font-size':fontSize+1+'px'}" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'">
-          C’est l’opacification partielle ou totale du cristallin, lentille
-          convergente située à l’intérieur de l’œil.
-          Cette opacification est responsable d’une baisse progressive de la vue, au début accompagnée de gêne à la
-          lumière.
+          La Dégénérescence Maculaire Liée à l’Age est la maladie ophtalmologique la plus répandue dans les pays
+          industrialisés. Elle atteint la rétine centrale, ce qui se traduit par une déformation des lignes puis par
+          l’apparition d’une tache centrale permanente.
         </p>
-        <button type="button" class="btn btn-primary" (click)="setCataracte()">Vue Cataracte</button>
-      </mat-expansion-panel>
-    </mat-accordion>
-    <hr>
-    <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            La Cataracte
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p [ngStyle]="{'font-size':fontSize+1+'px'}" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'">
-          C’est l’opacification partielle ou totale du cristallin, lentille
-          convergente située à l’intérieur de l’œil.
-          Cette opacification est responsable d’une baisse progressive de la vue, au début accompagnée de gêne à la
-          lumière.
-        </p>
-        <button type="button" class="btn btn-primary" (click)="setCataracte()">Vue Cataracte</button>
-      </mat-expansion-panel>
-    </mat-accordion>
-    <hr>
-    <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            La Cataracte
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p [ngStyle]="{'font-size':fontSize+1+'px'}" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'">
-          C’est l’opacification partielle ou totale du cristallin, lentille
-          convergente située à l’intérieur de l’œil.
-          Cette opacification est responsable d’une baisse progressive de la vue, au début accompagnée de gêne à la
-          lumière.
-        </p>
-        <button type="button" class="btn btn-primary" (click)="setCataracte()">Vue Cataracte</button>
+        <button type="button" class="btn btn-primary" (click)="setDmla()">Vue DMLA</button>
       </mat-expansion-panel>
     </mat-accordion>
   </div>
 
   <div class="modal-footer">
-    <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+    <button type="button" class="btn btn-danger" (click)="close()">Réinitialiser</button>
   </div>
 
 </ng-template>

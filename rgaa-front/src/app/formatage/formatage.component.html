@@ -1,10 +1,10 @@
 <div class="outer">
   <div class="inner_fixed">
-    <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
+    <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
+                [fontSize]='fontSizeParam'></app-header>
   </div>
 
   <div class="inner_remaining">
-    <app-collapse-menu class="m-1" [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-collapse-menu>
     <div class="container">
       <h1 class="color-bordUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
           [ngStyle]="{'font-size':fontSizeParam+20+'px'}">FORMATER
@@ -28,7 +28,8 @@
         <div class="col-6">
           <div class="row" style="height: 50%">
             <div class="col-6 text-center my-auto">
-              <input (change)="fileSelected($event)" type="file" id="file" accept=".doc,.docx,txt" style="display: none"/>
+              <input (change)="fileSelected($event)" type="file" id="file" accept=".doc,.docx,txt"
+                     style="display: none"/>
               <label for="file" class="btn uploadFileNameBtn-action pt-2 pb-2 pl-5 pr-5"
                      [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
                      [ngStyle]="{'font-size':fontSizeParam-2+'px'}">Choisir un fichier

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {RoutingService} from '../routing.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   @Input() fontFamily: boolean;
   @Output() changeSize: EventEmitter<number> = new EventEmitter();
 
-  constructor(private routing: RoutingService) {
+  constructor(private routing: RoutingService, private router: Router) {
   }
 
   ngOnInit() {
@@ -32,6 +33,10 @@ export class HeaderComponent implements OnInit {
 
   redirectTo(path: string): void {
     this.routing.redirectTo(path);
+  }
+
+  notOnHome(): boolean {
+    return !this.router.url.includes('home');
   }
 
 }

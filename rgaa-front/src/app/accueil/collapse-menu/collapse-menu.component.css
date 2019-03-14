@@ -1,16 +1,13 @@
 .block {
   color: white;
   /*box-shadow: 5px 5px 20px black;*/
+  transition: height 0.50s ease-in;
 }
 
 .m-r {
-  margin-right: 3%;
+  margin-right: 5%;
 }
 
 .text-menu {
   text-align: right;
-}
-
-.img {
-  transition: height 0.20s ease-in;
 }

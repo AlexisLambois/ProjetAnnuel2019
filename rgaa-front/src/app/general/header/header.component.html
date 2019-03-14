@@ -14,7 +14,7 @@
     <div class="col-3 offset-1">
       <img src="assets/img/logoUrbilogBlanc.png" alt="" class="no-select img-fluid" (click)="redirectTo('home')" style="cursor: pointer">
     </div>
-    <div class="col-7">
+    <div *ngIf="notOnHome()" class="col-7">
       <app-collapse-menu  [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-collapse-menu>
     </div>
   </div>

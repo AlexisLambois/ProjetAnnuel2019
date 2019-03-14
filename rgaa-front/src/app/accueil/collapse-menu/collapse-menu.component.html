@@ -1,34 +1,41 @@
 <div class="row">
   <div class="col-3">
     <div class="block background-bleucielUrbilog pointer pt-2 pb-2 no-select"
-         [ngStyle]="{height: hover1==true  ? '5em' : '0em' }" (mouseover)="hover1=true" (mouseleave)="hover1=false"
+         [ngStyle]="{height: hover1==true  ? '150%' : '3em'}"
+         (mouseover)="hover1=true" (mouseleave)="hover1=false"
          (click)="redirectTo('reforme')">
       <p class="text-menu m-r mb-0" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'"
-         [ngStyle]="{'font-size':fontSizeAdapted+'px'}">La réforme RGAA</p>
+         [ngStyle]="{'font-size':fontSizeAdapted+'px' ,transform: hover1==true ? ' translateY(25%)' : ''}">La réforme
+        RGAA</p>
     </div>
   </div>
   <div class="col-3">
     <div class="block background-bordUrbilog pointer pt-2 pb-2 no-select"
-         [ngStyle]="{height: hover2==true  ? '5em' : '0em' }" (mouseover)="hover2=true" (mouseleave)="hover2=false"
+         [ngStyle]="{height: hover2==true  ? '150%' : '3em'}"
+         (mouseover)="hover2=true" (mouseleave)="hover2=false"
          (click)="redirectTo('formatage')">
       <p class="text-menu m-r mb-0" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'"
-         [ngStyle]="{'font-size':fontSizeAdapted+'px'}">Formater vos fichiers</p>
+         [ngStyle]="{'font-size':fontSizeAdapted+'px' ,transform: hover2==true ? ' translateY(25%)' : ''}">Formater vos
+        fichiers</p>
     </div>
   </div>
   <div class="col-3">
     <div class="block background-vertUrbilog pointer pt-2 pb-2 no-select"
-         [ngStyle]="{height: hover3==true  ? '5em' : '0em' }" (mouseover)="hover3=true" (mouseleave)="hover3=false"
+         [ngStyle]="{height: hover3==true  ? '150%' : '3em'}"
+         (mouseover)="hover3=true" (mouseleave)="hover3=false"
          (click)="redirectTo('audit')">
       <p class="text-menu m-r mb-0" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'"
-         [ngStyle]="{'font-size':fontSizeAdapted+'px'}">Audit</p>
+         [ngStyle]="{'font-size':fontSizeAdapted+'px' ,transform: hover3==true ? ' translateY(25%)' : ''}">Audit</p>
     </div>
   </div>
   <div class="col-3">
     <div class="block background-orangeUrbilog pointer pt-2 pb-2 no-select"
-         [ngStyle]="{height: hover4==true  ? '5em' : '0em' }" (mouseover)="hover4=true" (mouseleave)="hover4=false"
+         [ngStyle]="{height: hover4==true  ? '150%' : '3em'}"
+         (mouseover)="hover4=true" (mouseleave)="hover4=false"
          (click)="redirectTo('whoweare')">
       <p class="text-menu m-r mb-0" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'"
-         [ngStyle]="{'font-size':fontSizeAdapted+'px'}">Qui sommes-nous ?</p>
+         [ngStyle]="{'font-size':fontSizeAdapted+'px' ,transform: hover4==true ? ' translateY(25%)' : ''}">Qui
+        sommes-nous ?</p>
     </div>
   </div>
 </div>
