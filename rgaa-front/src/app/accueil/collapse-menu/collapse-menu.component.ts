@@ -10,10 +10,6 @@ export class CollapseMenuComponent implements OnInit {
 
   @Input() fontSize: number;
   @Input() fontFamily: boolean;
-  hover1: boolean;
-  hover2: boolean;
-  hover3: boolean;
-  hover4: boolean;
 
   constructor(private routing: RoutingService) {
   }

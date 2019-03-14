@@ -1,9 +1,6 @@
 .block {
-  width: 22%;
-  cursor: pointer;
   color: white;
-  height: fit-content;
-  box-shadow: 5px 5px 20px grey;
+  /*box-shadow: 5px 5px 20px black;*/
 }
 
 .m-r {

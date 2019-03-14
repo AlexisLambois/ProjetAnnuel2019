@@ -8,7 +8,8 @@ import {RoutingService} from '../routing.service';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() fontSize: string;
+  @Input() fontSize: number;
+  @Input() fontFamily: boolean;
   @Output() changeSize: EventEmitter<number> = new EventEmitter();
 
   constructor(private routing: RoutingService) {
@@ -21,10 +22,13 @@ export class HeaderComponent implements OnInit {
     this.changeSize.emit(change);
   }
 
-  // get cursorType(): boolean {
-  //   console.log(this.fontSize);
-  //   return this.fontSize === '23 || this.fontSize === 16;
-  // }
+  get fontSizeParam(): number {
+    return this.fontSize;
+  }
+
+  get fontFamilyParam(): boolean {
+    return this.fontFamily;
+  }
 
   redirectTo(path: string): void {
     this.routing.redirectTo(path);
