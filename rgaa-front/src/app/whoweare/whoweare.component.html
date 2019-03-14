@@ -1,10 +1,10 @@
 <div class="outer">
   <div class="inner_fixed">
-    <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
+    <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
+                [fontSize]='fontSizeParam'></app-header>
   </div>
 
   <div class="inner_remaining">
-    <app-collapse-menu class="m-1" [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-collapse-menu>
     <div class="container">
       <h1 class="color-orangeUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
           [ngStyle]="{'font-size':fontSizeParam+20+'px'}">QUI SOMMES NOUS ?</h1>
@@ -32,7 +32,7 @@
                 style="width: 13em;"
                 [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
                 (click)="redirectTo('https://www.urbilog.fr/')"
-                [ngStyle]="{'font-size':fontSizeParam+'px'}" >En savoir plus
+                [ngStyle]="{'font-size':fontSizeParam+'px'}">En savoir plus
         </button>
       </div>
     </div>
