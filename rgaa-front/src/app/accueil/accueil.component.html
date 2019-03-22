@@ -1,15 +1,20 @@
-<div id="context1" class="outer">
-  <div class="inner_fixed">
-    <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
+<span *ngIf="getIsMobileResolution; else mobileVersion">
+  <div id="context1" class="outer">
+    <div class="inner_fixed">
+      <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
+    </div>
+
+    <div class="inner_remaining">
+      <app-menu class="outer" [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-menu>
+    </div>
   </div>
 
-  <div class="inner_remaining">
-    <app-menu class="outer" [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-menu>
-  </div>
+  <div id="circle"></div>
+  <app-link-bar [param]='false' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
 
-</div>
-
-<app-link-bar [param]='false' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
-
-<app-footer id="context2" class="toBottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-            [fontFamily]='fontFamilyParam'></app-footer>
+  <app-footer id="context2" class="toBottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+              [fontFamily]='fontFamilyParam'></app-footer>
+</span>
+<ng-template #mobileVersion>
+  Responsive en cours
+</ng-template>

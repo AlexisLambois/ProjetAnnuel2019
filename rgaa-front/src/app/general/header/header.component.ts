@@ -13,7 +13,13 @@ export class HeaderComponent implements OnInit {
   @Input() fontFamily: boolean;
   @Output() changeSize: EventEmitter<number> = new EventEmitter();
 
+  navbarOpen = false;
+
   constructor(private routing: RoutingService, private router: Router) {
+  }
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
 
   ngOnInit() {

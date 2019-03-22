@@ -1,7 +1,7 @@
 .block {
   color: white;
   /*box-shadow: 5px 5px 20px black;*/
-  transition: height 0.50s ease-in;
+  /*transition: height 0.50s ease-in;*/
 }
 
 .m-r {
@@ -10,4 +10,6 @@
 
 .text-menu {
   text-align: right;
+  top: 50%;
+  margin-top: 0.75em;
 }

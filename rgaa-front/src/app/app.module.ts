@@ -19,7 +19,7 @@ import {AuditComponent} from './audit/audit.component';
 import {LinkBarComponent} from './general/link-bar/link-bar.component';
 import {WhoweareComponent} from './whoweare/whoweare.component';
 import {MapsiteComponent} from './mapsite/mapsite.component';
-import{MatExpansionModule} from '@angular/material';
+import {MatExpansionModule, MatIconModule, MatMenuModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -43,6 +43,8 @@ import{MatExpansionModule} from '@angular/material';
     AppRoutingModule,
     NgbModule,
     MatExpansionModule,
+    MatMenuModule,
+    MatIconModule,
     BrowserAnimationsModule,
     FileUploadModule,
     HttpClientModule

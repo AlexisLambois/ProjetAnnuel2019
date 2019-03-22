@@ -1,92 +1,98 @@
-<div class="outer">
-  <div class="inner_fixed">
-    <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
-                [fontSize]='fontSizeParam'></app-header>
-  </div>
+<span *ngIf="getIsMobileResolution; else mobileVersion">
+  <div id="context1" class="outer">
+    <div class="inner_fixed">
+      <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
+                  [fontSize]='fontSizeParam'></app-header>
+    </div>
 
-  <div class="inner_remaining">
-    <div class="container">
-      <h1 class="color-bleucielUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
-          [ngStyle]="{'font-size':fontSizeParam+20+'px'}">LA RÉFORME RGAA</h1>
-      <hr class="bar background-bleucielUrbilog mb-5">
-      <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-        <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-          Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.</p>
-      </div>
-      <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-        <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor
-          incididunt ut
-          labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est
-          laborum.</p>
-      </div>
-      <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-        <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor
-          incididunt ut
-          labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est
-          laborum.</p>
-      </div>
-      <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-        <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor
-          incididunt ut
-          labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est
-          laborum.</p>
-      </div>
-      <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-        <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor
-          incididunt ut
-          labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est
-          laborum.</p>
-      </div>
-      <div class="row m-5" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-        <button class="btn background-bleucielUrbilog btn-action pt-2 pb-2 pl-5 pr-5" (click)="redirectTo('audit')"
-                [ngStyle]="{'font-size':fontSizeParam-2+'px'}">Suis-je éligible ?
-        </button>
+    <div class="inner_remaining">
+      <div class="container">
+        <h1 class="color-bleucielUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+            [ngStyle]="{'font-size':fontSizeParam+20+'px'}">LA RÉFORME RGAA</h1>
+        <hr class="bar background-bleucielUrbilog mb-5">
+        <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+          <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.
+            Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.
+            Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.
+            Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est laborum.</p>
+        </div>
+        <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+          <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor
+            incididunt ut
+            labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum.</p>
+        </div>
+        <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+          <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor
+            incididunt ut
+            labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum.</p>
+        </div>
+        <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+          <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor
+            incididunt ut
+            labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum.</p>
+        </div>
+        <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+          <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor
+            incididunt ut
+            labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum.</p>
+        </div>
+        <div class="row m-5" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+          <button class="btn background-bleucielUrbilog btn-action pt-2 pb-2 pl-5 pr-5" (click)="redirectTo('audit')"
+                  [ngStyle]="{'font-size':fontSizeParam-2+'px'}">Suis-je éligible ?
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
-<app-footer [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-            [fontFamily]='fontFamilyParam'></app-footer>
+  <div id="circle"></div>
+  <app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
+  <app-footer id="context2" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+              [fontFamily]='fontFamilyParam'></app-footer>
+</span>
+<ng-template #mobileVersion>
+  Responsive en cours
+</ng-template>

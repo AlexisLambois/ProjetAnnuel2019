@@ -5,3 +5,28 @@
 .button-start {
   cursor: pointer;
 }
+
+.liendenav {
+  font-style: normal;
+  color: white !important;
+}
+
+.shadownavbar {
+  box-shadow: 0 5px 7px grey;
+}
+
+.itemdenav {
+  width: 13em;
+}
+
+.brandImg{
+  height: fit-content;
+  width: 50%;
+}
+
+/*Small size*/
+@media only screen and (max-width: 1220px) and (min-width: 998px) {
+  .brandImg {
+    display: none;
+  }
+}

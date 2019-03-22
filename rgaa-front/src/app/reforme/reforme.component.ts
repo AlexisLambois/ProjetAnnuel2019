@@ -11,8 +11,27 @@ import {LinkBarComponent} from '../general/link-bar/link-bar.component';
 export class ReformeComponent implements OnInit {
 
   @ViewChild(LinkBarComponent) linkBarComponent: LinkBarComponent;
+  private isMobileResolution: boolean;
 
   constructor(private paramService: ParameterService, private routing: RoutingService) {
+    this.checkResolution();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkResolution();
+  }
+
+  checkResolution(): void {
+    if (window.innerWidth <= 800) {
+      this.isMobileResolution = false;
+    } else {
+      this.isMobileResolution = true;
+    }
+  }
+
+  get getIsMobileResolution(): boolean {
+    return true;
   }
 
   ngOnInit() {

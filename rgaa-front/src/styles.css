@@ -129,5 +129,19 @@ body {
 }
 
 .blur {
-  filter: blur(2px);
+  filter: blur(4px);
+}
+
+#circle {
+  width: 40em;
+  height: 40em;
+  border-radius: 50%;
+  position: fixed;
+  background: black;
+  z-index: 1055;
+  top: 50%;
+  left: 50%;
+  margin-top: -20em;
+  margin-left: -20em;
+  display: none;
 }

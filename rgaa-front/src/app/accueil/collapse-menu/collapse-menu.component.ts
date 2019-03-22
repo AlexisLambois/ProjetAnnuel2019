@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {RoutingService} from '../../general/routing.service';
 
 @Component({
@@ -10,12 +10,27 @@ export class CollapseMenuComponent implements OnInit {
 
   @Input() fontSize: number;
   @Input() fontFamily: boolean;
-  hover1: boolean;
-  hover2: boolean;
-  hover3: boolean;
-  hover4: boolean;
+  private isMobileResolution: boolean;
 
   constructor(private routing: RoutingService) {
+    this.checkResolution();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkResolution();
+  }
+
+  checkResolution(): void {
+    if (window.innerWidth <= 1024) {
+      this.isMobileResolution = false;
+    } else {
+      this.isMobileResolution = true;
+    }
+  }
+
+  get getIsMobileResolution(): boolean {
+    return this.isMobileResolution;
   }
 
   ngOnInit() {

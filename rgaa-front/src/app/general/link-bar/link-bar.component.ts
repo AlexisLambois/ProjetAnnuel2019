@@ -18,7 +18,7 @@ export class LinkBarComponent implements OnInit {
   @Input() fontSize: number;
   @Input() fontFamily: boolean;
   displayAlert = false;
-  nameMode: string;
+  nameMode = '';
 
   constructor(private modalService: NgbModal, private renderer: Renderer2) {
   }
@@ -53,15 +53,17 @@ export class LinkBarComponent implements OnInit {
     this.renderer.addClass(document.getElementById('context1'), 'blur');
     this.renderer.addClass(document.getElementById('context2'), 'blur');
     this.displayAlert = true;
-    this.nameMode = 'Cataracte';
+    this.nameMode += ' Cataracte';
   }
 
   setDmla() {
+    document.getElementById('circle').setAttribute('style', 'display:block');
     this.displayAlert = true;
-    this.nameMode = 'DMLA';
+    this.nameMode += ' DMLA';
   }
 
   reset(): void {
+    document.getElementById('circle').setAttribute('style', 'display:none');
     this.renderer.removeClass(document.getElementById('context1'), 'blur');
     this.renderer.removeClass(document.getElementById('context2'), 'blur');
   }

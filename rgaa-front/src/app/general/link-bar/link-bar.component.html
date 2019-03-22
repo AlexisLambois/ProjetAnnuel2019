@@ -7,7 +7,7 @@
 </div>
 
 <ngb-alert *ngIf="displayAlert" class="alert" (close)="close()">
-  <strong>Warning!</strong> Vous êtes en mode : {{nameMode}}. Fermer ce message pour revenir en mode normal
+  <strong>Warning!</strong> Vous êtes en mode :{{nameMode}}. Fermer ce message pour revenir en mode normal
 </ngb-alert>
 
 <ng-template #content let-ca="close('Close click')" let-da="dismiss()">
