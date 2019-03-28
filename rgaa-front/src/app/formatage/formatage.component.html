@@ -1,4 +1,4 @@
-<div class="outer">
+<div id="context1" class="outer">
   <div class="inner_fixed">
     <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
                 [fontSize]='fontSizeParam'></app-header>
@@ -10,10 +10,10 @@
           [ngStyle]="{'font-size':fontSizeParam+20+'px'}">FORMATER
         VOS FICHIERS ?</h1>
       <hr class="bar background-bordUrbilog mb-5">
-      <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+      <div class="row ml-4 mr-4 mb-5" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
            [ngStyle]="{'font-size':fontSizeParam-1+'px'}">
         <div class="col-6">
-          <p class="ml-4 mr-4" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+          <p [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
              [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit
             amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
             ut
@@ -25,32 +25,64 @@
             est
             laborum.</p>
         </div>
-        <div class="col-6">
-          <div class="row" style="height: 50%">
-            <div class="col-6 text-center my-auto">
-              <input (change)="fileSelected($event)" type="file" id="file" accept=".doc,.docx,txt"
-                     style="display: none"/>
-              <label for="file" class="btn uploadFileNameBtn-action pt-2 pb-2 pl-5 pr-5"
-                     [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
-                     [ngStyle]="{'font-size':fontSizeParam-2+'px'}">Choisir un fichier
-              </label>
+      </div>
+      <div>
+        <form>
+          <div class="row ml-4 mr-4 mb-5" style="border: black 1px solid">
+            <div class="col-6 pl-5 mt-5 mb-5">
+              <div class="row mb-3">
+                <h2 class="color-bordUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+                    [ngStyle]="{'font-size':fontSizeParam+2+'px'}">Envoyer votre demande d'audit pour votre site :</h2>
+              </div>
+              <div class="row mb-4">
+                <label class="col-12 mb-4" for="hostname"
+                       [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Nom de
+                  domaine :</label>
+                <input class="col-10 offset-1 p-1" type="text" id="hostname" #hostname required>
+              </div>
+              <div class="row mb-4">
+                <label class="col-12 mb-4" for="email"
+                       [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Mail de
+                  contact :</label>
+                <input class="col-10 offset-1 p-1" type="email" id="email" #email required>
+              </div>
+              <div class="row mb-4">
+                <label class="col-12 mb-4" for="phonenumber"
+                       [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">N° de
+                  téléphone :</label>
+                <input class="col-10 offset-1 p-1" type="tel" id="phonenumber" size="10" #phonenumber required>
+              </div>
             </div>
-            <div class="col-6 text-center my-auto uploadFileNameText">
+            <div class="col-6 pl-5 mt-5 mb-5">
+              <div class="row" style="height: 50%">
+                <div class="col-6 text-center my-auto">
+                  <input (change)="fileSelected($event)" type="file" id="file" accept=".doc,.docx,txt"
+                         style="display: none"/>
+                  <label for="file" class="btn uploadFileNameBtn-action pt-2 pb-2 pl-5 pr-5"
+                         [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+                         [ngStyle]="{'font-size':fontSizeParam-2+'px'}">Choisir un fichier
+                  </label>
+                </div>
+                <div class="col-6 text-center my-auto uploadFileNameText">
               <span [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
                     [ngStyle]="{'font-size':fontSizeParam-2+'px'}">{{uploadFileName}}</span>
+                </div>
+              </div>
+              <div class="row text-center">
+                <button (click)="display()" class="btn formatage-action pt-2 pb-2 pl-5 pr-5 background-bordUrbilog"
+                        style="width: 17em;"
+                        [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam,'not-allowed':this.currentFileUpload == undefined,'pointer':this.currentFileUpload != undefined}"
+                        [ngStyle]="{'font-size':fontSizeParam-2+'px'}">UPLOAD
+                </button>
+              </div>
             </div>
           </div>
-          <div class="row text-center">
-            <button (click)="display()" class="btn formatage-action pt-2 pb-2 pl-5 pr-5 background-bordUrbilog"
-                    style="width: 17em;"
-                    [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam,'not-allowed':this.currentFileUpload == undefined,'pointer':this.currentFileUpload != undefined}"
-                    [ngStyle]="{'font-size':fontSizeParam-2+'px'}">UPLOAD
-            </button>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
-<app-footer [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+<div id="circle"></div>
+<app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
+<app-footer id="context2" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
             [fontFamily]='fontFamilyParam'></app-footer>

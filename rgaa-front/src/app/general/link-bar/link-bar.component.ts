@@ -1,5 +1,6 @@
-import {Component, Input, OnInit, Renderer2} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ParameterService} from '../parameter.service';
 
 interface Alert {
   type: string;
@@ -20,7 +21,7 @@ export class LinkBarComponent implements OnInit {
   displayAlert = false;
   nameMode = '';
 
-  constructor(private modalService: NgbModal, private renderer: Renderer2) {
+  constructor(private modalService: NgbModal, private paramService: ParameterService) {
   }
 
   ngOnInit() {
@@ -50,28 +51,23 @@ export class LinkBarComponent implements OnInit {
   }
 
   setCataracte(): void {
-    this.renderer.addClass(document.getElementById('context1'), 'blur');
-    this.renderer.addClass(document.getElementById('context2'), 'blur');
+    this.close();
     this.displayAlert = true;
+    this.paramService.setEffects(1);
     this.nameMode += ' Cataracte';
   }
 
   setDmla() {
-    document.getElementById('circle').setAttribute('style', 'display:block');
+    this.close();
     this.displayAlert = true;
+    this.paramService.setEffects(2);
     this.nameMode += ' DMLA';
-  }
-
-  reset(): void {
-    document.getElementById('circle').setAttribute('style', 'display:none');
-    this.renderer.removeClass(document.getElementById('context1'), 'blur');
-    this.renderer.removeClass(document.getElementById('context2'), 'blur');
   }
 
   close(): void {
     this.displayAlert = false;
     this.nameMode = '';
-    this.reset();
+    this.paramService.resetEffect();
   }
 
 }

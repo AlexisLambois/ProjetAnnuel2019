@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
 import {Contact} from '../shared/contact';
 import {AuditService} from './audit.service';
@@ -8,7 +8,7 @@ import {AuditService} from './audit.service';
   templateUrl: './audit.component.html',
   styleUrls: ['./audit.component.css']
 })
-export class AuditComponent implements OnInit {
+export class AuditComponent implements OnInit, AfterViewInit {
 
   available: boolean = false;
   message: String = '';
@@ -17,6 +17,10 @@ export class AuditComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.paramService.refreshEffect();
   }
 
   onSubmit(hostname, email, phonenumber, comment) {

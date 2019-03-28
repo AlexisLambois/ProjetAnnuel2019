@@ -1,4 +1,4 @@
-<div class="outer">
+<div id="context1" class="outer">
   <div class="inner_fixed">
     <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
                 [fontSize]='fontSizeParam'></app-header>
@@ -19,7 +19,7 @@
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            pariatur. Excepteur occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
             est
             laborum.</p>
         </div>
@@ -38,6 +38,7 @@
     </div>
   </div>
 </div>
-<app-link-bar [param]='true'></app-link-bar>
-<app-footer class="toBottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+<div id="circle"></div>
+<app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
+<app-footer id="context2" class="toBottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
             [fontFamily]='fontFamilyParam'></app-footer>

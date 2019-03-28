@@ -1,18 +1,21 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
-import {RoutingService} from '../general/routing.service';
 
 @Component({
   selector: 'app-whoweare',
   templateUrl: './whoweare.component.html',
   styleUrls: ['./whoweare.component.css']
 })
-export class WhoweareComponent implements OnInit {
+export class WhoweareComponent implements OnInit, AfterViewInit {
 
   constructor(private paramService: ParameterService) {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.paramService.refreshEffect();
   }
 
   changeSize(event) {

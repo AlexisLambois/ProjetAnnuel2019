@@ -9,7 +9,6 @@ export class RoutingService {
   constructor(private router: Router) {
   }
 
-
   redirectTo(path: string): void {
     this.router.navigate([path]);
   }

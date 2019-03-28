@@ -6,9 +6,8 @@ import {Injectable} from '@angular/core';
 export class ParameterService {
 
   constructor() {
+    this.refreshEffect();
   }
-
-  // filter: blur(2px);
 
   get fontSize(): number {
     const actualSize = +localStorage.getItem('size');
@@ -30,11 +29,42 @@ export class ParameterService {
     localStorage.setItem('family', String(!this.fontFamily));
   }
 
-  get effects(): number {
-    return +localStorage.getItem('effects');
+  refreshEffect(): void {
+    const actualEffect: number = +localStorage.getItem('effects');
+    switch (actualEffect) {
+      case 1: {
+        if (document.getElementById('context1') !== null) {
+          document.getElementById('context1').classList.add('blur');
+        }
+        if (document.getElementById('context2') !== null) {
+          document.getElementById('context2').classList.add('blur');
+        }
+        break;
+      }
+      case 2: {
+        if (document.getElementById('circle') !== null) {
+          document.getElementById('circle').setAttribute('style', 'display:block');
+        }
+        break;
+      }
+    }
   }
 
-  setEffects(effects: string) {
-    localStorage.setItem('effects',effects);
+  resetEffect(): void {
+    if (document.getElementById('circle') !== null) {
+      document.getElementById('circle').setAttribute('style', 'display:none');
+    }
+    if (document.getElementById('context1') !== null) {
+      document.getElementById('context1').classList.remove('blur');
+    }
+    if (document.getElementById('context2') !== null) {
+      document.getElementById('context2').classList.remove('blur');
+    }
+    localStorage.removeItem('effects');
+  }
+
+  setEffects(effects: number) {
+    localStorage.setItem('effects', String(effects));
+    this.refreshEffect();
   }
 }

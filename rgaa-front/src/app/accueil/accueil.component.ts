@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {ParameterService} from '../general/parameter.service';
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.css']
 })
-export class AccueilComponent implements OnInit {
+export class AccueilComponent implements OnInit, AfterViewInit {
 
   private isMobileResolution: boolean;
 
@@ -34,6 +34,10 @@ export class AccueilComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngAfterViewInit() {
+    this.paramService.refreshEffect();
+  }
+
   changeSize(event) {
     this.paramService.setFontSize(event);
   }
@@ -48,10 +52,6 @@ export class AccueilComponent implements OnInit {
 
   get fontFamilyParam(): boolean {
     return this.paramService.fontFamily;
-  }
-
-  get effectParam(): number {
-    return this.paramService.effects;
   }
 
   redirectTo(path: string): void {

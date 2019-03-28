@@ -1,4 +1,4 @@
-<div class="outer">
+<div id="context1" class="outer">
   <div class="inner_fixed">
     <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
                 [fontSize]='fontSizeParam'></app-header>
@@ -97,6 +97,7 @@
     </div>
   </div>
 </div>
-<app-link-bar [param]='true'></app-link-bar>
-<app-footer [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+<div id="circle"></div>
+<app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
+<app-footer id="context2" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
             [fontFamily]='fontFamilyParam'></app-footer>

@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, OnInit, AfterViewInit, ViewChild} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
 import {RoutingService} from '../general/routing.service';
 import {LinkBarComponent} from '../general/link-bar/link-bar.component';
@@ -8,7 +8,7 @@ import {LinkBarComponent} from '../general/link-bar/link-bar.component';
   templateUrl: './reforme.component.html',
   styleUrls: ['./reforme.component.css']
 })
-export class ReformeComponent implements OnInit {
+export class ReformeComponent implements OnInit, AfterViewInit {
 
   @ViewChild(LinkBarComponent) linkBarComponent: LinkBarComponent;
   private isMobileResolution: boolean;
@@ -35,6 +35,10 @@ export class ReformeComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.paramService.refreshEffect();
   }
 
   changeSize(event) {

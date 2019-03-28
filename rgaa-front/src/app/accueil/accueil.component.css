@@ -14,7 +14,7 @@
 }
 
 /*Small size*/
-@media only screen and (min-height: 700px) {
+@media only screen and (min-height: 750px) {
   .toBottom {
     position: fixed;
     right: 0;

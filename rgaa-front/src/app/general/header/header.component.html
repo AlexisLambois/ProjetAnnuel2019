@@ -10,40 +10,45 @@
 
   <div class="row mb-5">
     <div class="col-12 p-0">
-      <nav class="navbar navbar-expand-lg navbar-dark background-bleuUrbilog shadownavbar">
+      <nav style="min-height: 127px;" class="navbar navbar-expand-lg navbar-dark background-bleuUrbilog shadownavbar">
         <a class="navbar-brand no-select brandImg" href="#" (click)="redirectTo('home')">
           <img src="./assets/img/logoUrbilogBlanc.png" alt="" class="img-fluid" style="cursor: pointer">
         </a>
+        <span *ngIf="notOnHome()">
+          <button class="navbar-toggler" type="button"
+                  (click)="toggleNavbar()">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <button class="navbar-toggler" type="button"
-                (click)="toggleNavbar()">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <div class="collapse navbar-collapse"
+               [ngClass]="{ 'show': navbarOpen }">
+            <ul class="navbar-nav ml-auto mr-auto">
+              <li class="nav-item pointer background-bleucielUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
+                <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
+                   [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('reforme')">La
+                  réforme RGAA</a>
+              </li>
 
-        <div class="collapse navbar-collapse"
-             [ngClass]="{ 'show': navbarOpen }">
-          <ul class="navbar-nav ml-auto mr-auto">
-            <li class="nav-item pointer background-bleucielUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
-              <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
-                 [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" href="">La réforme RGAA</a>
-            </li>
+              <li class="nav-item pointer background-bordUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
+                <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
+                   [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('formatage')">Formater
+                  vos fichiers</a>
+              </li>
 
-            <li class="nav-item pointer background-bordUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
-              <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
-                 [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" href="#">Formater vos fichiers</a>
-            </li>
+              <li class="nav-item pointer background-vertUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
+                <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
+                   [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+                   (click)="redirectTo('audit')">Avis d'expert</a>
+              </li>
 
-            <li class="nav-item pointer background-vertUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
-              <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
-                 [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" href="#">Audit</a>
-            </li>
-
-            <li class="nav-item pointer background-orangeUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
-              <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
-                 [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" href="#">Qui sommes-nous ?</a>
-            </li>
-          </ul>
-        </div>
+              <li class="nav-item pointer background-orangeUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
+                <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
+                   [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('whoweare')">Qui
+                  sommes-nous ?</a>
+              </li>
+            </ul>
+          </div>
+        </span>
       </nav>
     </div>
   </div>
