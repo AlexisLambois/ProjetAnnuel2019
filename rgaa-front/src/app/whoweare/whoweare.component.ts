@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
 
 @Component({
@@ -8,10 +8,30 @@ import {ParameterService} from '../general/parameter.service';
 })
 export class WhoweareComponent implements OnInit, AfterViewInit {
 
+  private isMobileResolution: boolean;
+
   constructor(private paramService: ParameterService) {
+    this.checkResolution();
   }
 
   ngOnInit() {
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkResolution();
+  }
+
+  checkResolution(): void {
+    if (window.innerWidth <= 800) {
+      this.isMobileResolution = true;
+    } else {
+      this.isMobileResolution = false;
+    }
+  }
+
+  get getIsMobileResolution(): boolean {
+    return this.isMobileResolution;
   }
 
   ngAfterViewInit() {

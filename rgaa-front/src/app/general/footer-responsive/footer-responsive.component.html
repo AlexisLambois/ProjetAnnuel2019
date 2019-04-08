@@ -1,0 +1,30 @@
+<div id="param" class="py-3 background-grisUrbilog container-fluid">
+  <div class="row pb-3 text-footer" [ngStyle]="{'font-size':fontSizeAdapted}">
+    <div class="col-5 no-select center">
+      <span class="pointer" (click)="redirectTo('mapsite')"
+            [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Le plan du site</span>
+    </div>
+    <div class="col-5 no-select center">
+      <span class="pointer" (click)="changeFamilyFont()"
+            [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Police dyslexique</span>
+    </div>
+    <div class="col-2 no-select center">
+      <img (click)="redirectTo('https://www.facebook.com/Urbilog-1975569372471723/')" alt="" class="img pointer"
+           src="./assets/img/facebook.png">
+    </div>
+  </div>
+  <div class="row pt-3 text-footer" [ngStyle]="{'font-size':fontSizeAdapted}">
+    <div class="col-5 no-select center">
+      <span class="not-allowed"
+            [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Version contrastée</span>
+    </div>
+    <div class="col-5 no-select center">
+      <span class="not-allowed"
+            [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Mentions légales</span>
+    </div>
+    <div class="col-2 no-select center">
+      <img (click)="redirectTo('https://twitter.com/Urbilog')" alt="" class="img pointer"
+           src="./assets/img/twitter.png">
+    </div>
+  </div>
+</div>

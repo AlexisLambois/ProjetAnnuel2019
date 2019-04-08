@@ -16,5 +16,15 @@
               [fontFamily]='fontFamilyParam'></app-footer>
 </span>
 <ng-template #mobileVersion>
-  Responsive en cours
+  <div class="outer">
+    <div class="inner_remaining">
+      <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
+    </div>
+
+    <div class="inner_fixed">
+
+    </div>
+  </div>
+  <app-footer-responsive class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+                         [fontFamily]='fontFamilyParam'></app-footer-responsive>
 </ng-template>

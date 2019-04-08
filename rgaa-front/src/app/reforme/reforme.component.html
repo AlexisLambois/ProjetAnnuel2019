@@ -1,4 +1,4 @@
-<span *ngIf="getIsMobileResolution; else mobileVersion">
+<span *ngIf="!getIsMobileResolution; else mobileVersion">
   <div id="context1" class="outer">
     <div class="inner_fixed">
       <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
@@ -8,82 +8,78 @@
     <div class="inner_remaining">
       <div class="container">
         <h1 class="color-bleucielUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
-            [ngStyle]="{'font-size':fontSizeParam+20+'px'}">LA RÉFORME RGAA</h1>
-        <hr class="bar background-bleucielUrbilog mb-5">
+            [ngStyle]="{'font-size':fontSizeParam+20+'px'}">LA LOI RGAA</h1>
+        <hr class="bar background-bleucielUrbilog mb-4">
         <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-          <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.</p>
+          <div class="col-9 mt-3">
+            <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+              <div class="col-12">
+                <div class="row">
+                  <p id="image1" class="m-4" style="display: none"
+                     [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                      MODE D'EMPLOI Masquer le mode d'emploi
+            Ce référentiel s'applique à tout contenu HTML (HTML4, XHTML1 et HTML5). Il utilise, pour certains tests une base de référence prenant en compte un ensemble de technologies d'assistance, de navigateurs et de systèmes d'exploitation sur lesquels l'accessibilité des composants d'interface développés par JavaScript doit être vérifiée notamment. Une description détaillée de la base de référence est disponible ici : base de référence.
+
+            Note importante pour tout contenu antérieur à la spécification HTML5 :
+            Lorsque le code HTML de la page n'est pas du HTML5, les éléments HTML5 (balises et attributs) exigés par un critère ou test sont non applicables. Tous les autres critères ou tests restent applicables, y compris les dispositifs ARIA. Les critères et tests suivants sont non applicables :
+
+            Critère 1.10 ;
+            Critère 9.2 ;
+            Test 11.10.1 (condition 2 relative à l'attribut HTML5 required).
+            Méthode de validation
+            Le niveau de conformité est établi au niveau des critères selon ces statuts :
+
+            Conforme (C) : l'ensemble des tests applicables sont réussis ;
+            Non Conforme (NC) : un test applicable est échoué, au moins ;
+            Non Applicable (NA) : il n'y a pas de contenu concerné par le critère.
+            RGAA propose, en plus de ces trois statuts de validation, deux statuts complémentaires :
+
+            Dérogé (D) : il existe des contenus dérogés applicables au critère ;
+            Non Testé (NT) : le critère n'a pas été testé.
+            Vous pouvez consulter, à ce sujet, le guide d'accompagnement : Comment vérifie-t-on la conformité au RGAA ?
+                  </p>
+                  <p id="cadres1" class="m-4" style="display: none"
+                     [ngStyle]="{'font-size':fontSizeParam+'px'}">Cadres</p>
+                  <p id="couleurs1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Couleurs</p>
+                  <p id="multimedia1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Multimedia</p>
+                  <p id="tableaux1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Tableaux</p>
+                  <p id="liens1" class="m-4" style="display: none"
+                     [ngStyle]="{'font-size':fontSizeParam+'px'}">Liens</p>
+                  <p id="scripts1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Scripts</p>
+                  <p id="elementsobli1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Elements Oblig</p>
+                  <p id="structurationsinfo1" class="m-4" style="display: none"
+                     [ngStyle]="{'font-size':fontSizeParam+'px'}">Structuration Info</p>
+                  <p id="presentationinfo1" class="m-4" style="display: none"
+                     [ngStyle]="{'font-size':fontSizeParam+'px'}">Présentation Info</p>
+                  <p id="formulaires1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Formulaires</p>
+                  <p id="navigation1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Navigation</p>
+                  <p id="consultation1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Consultatiob</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <h2 class="color-bleucielUrbilog mb-3" style="text-align: center"
+                [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+                [ngStyle]="{'font-size':fontSizeParam+7+'px'}">SOMMAIRE</h2>
+            <mat-list>
+              <mat-list-item *ngFor="let item of listItems; let i = index;"
+                             [ngClass]="selectedItem == item.element ?'selected':''">
+                <p mat-line class="pointer" (click)="swip(item.element)">{{i + 1}}. {{item.label}}</p>
+                <mat-divider [inset]="true"></mat-divider>
+             </mat-list-item>
+            </mat-list>
+          </div>
         </div>
-        <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-          <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor
-            incididunt ut
-            labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est
-            laborum.</p>
-        </div>
-        <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-          <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor
-            incididunt ut
-            labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est
-            laborum.</p>
-        </div>
-        <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-          <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor
-            incididunt ut
-            labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est
-            laborum.</p>
-        </div>
-        <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-          <p class="ml-4 mr-4 mb-4" [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor
-            incididunt ut
-            labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est
-            laborum.</p>
-        </div>
-        <div class="row m-5" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-          <button class="btn background-bleucielUrbilog btn-action pt-2 pb-2 pl-5 pr-5" (click)="redirectTo('audit')"
-                  [ngStyle]="{'font-size':fontSizeParam-2+'px'}">Suis-je éligible ?
-          </button>
+          <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+          <div class="col-12">
+            <div class="row m-5" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+              <button class="btn background-bleucielUrbilog btn-action pt-2 pb-2 pl-5 pr-5"
+                      (click)="redirectTo('audit')"
+                      [ngStyle]="{'font-size':fontSizeParam-2+'px'}">Suis-je éligible ?
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -93,6 +89,198 @@
   <app-footer id="context2" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
               [fontFamily]='fontFamilyParam'></app-footer>
 </span>
+
 <ng-template #mobileVersion>
-  Responsive en cours
+  <div class="outer">
+
+    <div class="inner_fixed">
+      <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
+                  [fontSize]='fontSizeParam'></app-header>
+    </div>
+
+    <div class="inner_remaining">
+
+      <div class="container">
+        <h1 class="color-bleucielUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+            [ngStyle]="{'font-size':fontSizeParam+20+'px'}">LA LOI RGAA</h1>
+        <hr class="bar background-bleucielUrbilog mb-4">
+
+        <div class="row m-0" [ngClass]="fontFamilyParam?'myMyriadProdFont':'openDyslexicFont'"
+             [ngStyle]="{'font-size':fontSizeParam+'px'}">
+          <ngb-tabset>
+            <ngb-tab title="Image">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Cadres">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Couleurs">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Multimédia">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Tableaux">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Liens">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Scripts">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Éléments obligatoires">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Structurations de l'information">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Présentation de l'information">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Formulaires">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Navigation">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Consulation">
+              <ng-template ngbTabContent>
+                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                  stumptown aliqua,
+                  retro synth
+                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                  retro keffiyeh
+                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                  salvia cillum
+                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+          </ngb-tabset>
+        </div>
+
+        <div class="row m-0" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+          <div class="col-12">
+            <div class="row m-5">
+              <button class="btn background-bleucielUrbilog btn-action pt-2 pb-2 pl-5 pr-5"
+                      (click)="redirectTo('audit')"
+                      [ngStyle]="{'font-size':fontSizeParam-2+'px'}">Suis-je éligible ?
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <app-footer-responsive [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+                         [fontFamily]='fontFamilyParam'></app-footer-responsive>
 </ng-template>

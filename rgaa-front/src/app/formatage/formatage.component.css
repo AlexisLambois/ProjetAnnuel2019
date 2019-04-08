@@ -19,13 +19,12 @@
   font-style: italic;
 }
 
-.formatage-action {
-  margin: auto;
-  color: white;
-  border-radius: 15px;
-  box-shadow: 5px 5px 20px grey;
+.sendForm {
+    margin: auto;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px grey;
 }
-
-.formatage-action:hover {
-  background-color: #811448;
+.sendForm:hover {
+    background-color: #811448;
 }

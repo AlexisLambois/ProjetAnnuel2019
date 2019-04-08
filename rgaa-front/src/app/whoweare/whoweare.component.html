@@ -1,3 +1,4 @@
+<span *ngIf="!getIsMobileResolution; else mobileVersion">
 <div id="context1" class="outer">
   <div class="inner_fixed">
     <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
@@ -11,7 +12,7 @@
       <hr class="bar background-orangeUrbilog mb-5">
       <div class="row mb-3">
         <div class="col-7">
-          <p class="ml-4" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+          <p class="ml-4 mr-4" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
              [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit
             amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
             ut
@@ -39,6 +40,53 @@
   </div>
 </div>
 <div id="circle"></div>
-<app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
-<app-footer id="context2" class="toBottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+<app-link-bar [param]='false' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
+<app-footer id="context2" class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
             [fontFamily]='fontFamilyParam'></app-footer>
+</span>
+<ng-template #mobileVersion>
+  <div class="outer">
+    <div class="inner_fixed">
+      <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
+                  [fontSize]='fontSizeParam'></app-header>
+    </div>
+
+    <div class="inner_remaining">
+      <div class="container">
+        <h1 class="color-orangeUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+            [ngStyle]="{'font-size':fontSizeParam+20+'px'}">QUI SOMMES NOUS ?</h1>
+        <hr class="bar background-orangeUrbilog mb-5">
+        <div class="row mb-3">
+          <div class="col-12">
+            <p class="ml-4" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+               [ngStyle]="{'font-size':fontSizeParam+'px'}">Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              ut
+              labore et dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+              est
+              laborum.</p>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-6 offset-3 text-center">
+            <img src="./assets/img/urbilog.png" alt="" style="width: auto;height: 7em" class="no-select img-fluid"/>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <button class="btn moreInfo pt-2 pb-2 pl-4 pr-4 background-orangeUrbilog"
+                  style="width: 13em;"
+                  [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+                  (click)="redirectTo('https://www.urbilog.fr/')"
+                  [ngStyle]="{'font-size':fontSizeParam+'px'}">En savoir plus
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer-responsive [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+                         [fontFamily]='fontFamilyParam'></app-footer-responsive>
+</ng-template>

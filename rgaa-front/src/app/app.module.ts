@@ -19,7 +19,9 @@ import {AuditComponent} from './audit/audit.component';
 import {LinkBarComponent} from './general/link-bar/link-bar.component';
 import {WhoweareComponent} from './whoweare/whoweare.component';
 import {MapsiteComponent} from './mapsite/mapsite.component';
-import {MatExpansionModule, MatIconModule, MatMenuModule} from '@angular/material';
+import {MatExpansionModule, MatIconModule, MatListModule, MatMenuModule, MatTabsModule} from '@angular/material';
+import {MatDividerModule} from '@angular/material/divider';
+import {FooterResponsiveComponent} from './general/footer-responsive/footer-responsive.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import {MatExpansionModule, MatIconModule, MatMenuModule} from '@angular/materia
     AuditComponent,
     LinkBarComponent,
     WhoweareComponent,
-    MapsiteComponent
+    MapsiteComponent,
+    FooterResponsiveComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,10 @@ import {MatExpansionModule, MatIconModule, MatMenuModule} from '@angular/materia
     AppRoutingModule,
     NgbModule,
     MatExpansionModule,
+    MatDividerModule,
     MatMenuModule,
+    MatListModule,
+    MatTabsModule,
     MatIconModule,
     BrowserAnimationsModule,
     FileUploadModule,

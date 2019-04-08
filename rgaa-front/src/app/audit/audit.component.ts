@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
 import {Contact} from '../shared/contact';
 import {AuditService} from './audit.service';
@@ -10,10 +10,29 @@ import {AuditService} from './audit.service';
 })
 export class AuditComponent implements OnInit, AfterViewInit {
 
-  available: boolean = false;
+  private isMobileResolution: boolean;
+  available = false;
   message: String = '';
 
   constructor(private paramService: ParameterService, private auditService: AuditService) {
+    this.checkResolution();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkResolution();
+  }
+
+  checkResolution(): void {
+    if (window.innerWidth <= 800) {
+      this.isMobileResolution = true;
+    } else {
+      this.isMobileResolution = false;
+    }
+  }
+
+  get getIsMobileResolution(): boolean {
+    return this.isMobileResolution;
   }
 
   ngOnInit() {

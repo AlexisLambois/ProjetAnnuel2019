@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
 import {RoutingService} from '../general/routing.service';
 
@@ -9,7 +9,27 @@ import {RoutingService} from '../general/routing.service';
 })
 export class MapsiteComponent implements OnInit {
 
+  private isMobileResolution: boolean;
+
   constructor(private paramService: ParameterService, private routing: RoutingService) {
+    this.checkResolution();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkResolution();
+  }
+
+  checkResolution(): void {
+    if (window.innerWidth <= 800) {
+      this.isMobileResolution = true;
+    } else {
+      this.isMobileResolution = false;
+    }
+  }
+
+  get getIsMobileResolution(): boolean {
+    return this.isMobileResolution;
   }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
 import {FormatageService} from './formatage.service';
 
@@ -11,8 +11,27 @@ export class FormatageComponent implements OnInit {
 
   uploadFileName: string;
   currentFileUpload: File;
+  private isMobileResolution: boolean;
 
   constructor(private paramService: ParameterService, private formatageService: FormatageService) {
+    this.checkResolution();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkResolution();
+  }
+
+  checkResolution(): void {
+    if (window.innerWidth <= 800) {
+      this.isMobileResolution = true;
+    } else {
+      this.isMobileResolution = false;
+    }
+  }
+
+  get getIsMobileResolution(): boolean {
+    return this.isMobileResolution;
   }
 
   ngOnInit() {
