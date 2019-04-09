@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
 import {RoutingService} from '../routing.service';
 
 @Component({
@@ -11,8 +11,27 @@ export class FooterComponent implements OnInit {
   @Input() fontSize: number;
   @Input() fontFamily: boolean;
   @Output() changeFamily: EventEmitter<void> = new EventEmitter();
+  private isMobileResolution: boolean;
 
   constructor(private routing: RoutingService) {
+    this.checkResolution();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkResolution();
+  }
+
+  checkResolution(): void {
+    if (window.innerWidth <= 800) {
+      this.isMobileResolution = false;
+    } else {
+      this.isMobileResolution = true;
+    }
+  }
+
+  get IsMobileResolution(): boolean {
+    return this.isMobileResolution;
   }
 
   ngOnInit() {

@@ -8,3 +8,13 @@
   cursor: pointer;
   text-decoration: underline !important;
 }
+
+/*Small size*/
+@media only screen and (min-height: 640px) {
+  .toBottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}

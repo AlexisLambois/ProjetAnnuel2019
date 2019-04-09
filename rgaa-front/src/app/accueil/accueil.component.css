@@ -23,3 +23,8 @@
     z-index: 1030;
   }
 }
+
+.brandImg{
+  height: fit-content;
+  width: 50%;
+}

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ParameterService} from '../parameter.service';
 
@@ -20,11 +20,22 @@ export class LinkBarComponent implements OnInit {
   @Input() fontFamily: boolean;
   displayAlert = false;
   nameMode = '';
+  private isMobileResolution: boolean;
 
   constructor(private modalService: NgbModal, private paramService: ParameterService) {
+    this.checkResolution();
   }
 
   ngOnInit() {
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkResolution();
+  }
+
+  get getIsMobileResolution(): boolean {
+    return this.isMobileResolution;
   }
 
   redirectTo(path: string): void {
@@ -38,6 +49,14 @@ export class LinkBarComponent implements OnInit {
       return 'by clicking on a backdrop';
     } else {
       return `with: ${reason}`;
+    }
+  }
+
+  checkResolution(): void {
+    if (window.innerWidth <= 800) {
+      this.isMobileResolution = false;
+    } else {
+      this.isMobileResolution = true;
     }
   }
 
