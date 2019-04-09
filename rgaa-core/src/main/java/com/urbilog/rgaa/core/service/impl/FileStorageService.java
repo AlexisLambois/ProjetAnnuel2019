@@ -28,7 +28,6 @@ public class FileStorageService {
 	
 	public void init() {
 		this.fileStorageLocation = Paths.get(fileStorageProperties.getUploadDir()).toAbsolutePath().normalize();
-		System.out.println(this.fileStorageLocation );
 		try {
 			Files.createDirectories(this.fileStorageLocation);
 		} catch (Exception ex) {
@@ -37,7 +36,7 @@ public class FileStorageService {
 		}
 	}
 
-	public String storeFile(MultipartFile file) {
+	public String storeFile(Integer id,MultipartFile file) {
 		this.init();
 		// Normalize file name
 		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
@@ -49,7 +48,7 @@ public class FileStorageService {
 			}
 
 			// Copy file to the target location (Replacing existing file with the same name)
-			Path targetLocation = this.fileStorageLocation.resolve(fileName);
+			Path targetLocation = this.fileStorageLocation.resolve(fileName+"/"+id);
 			Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
 			return fileName;

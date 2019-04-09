@@ -1,6 +1,8 @@
 package com.urbilog.rgaa.core.entity;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.*;
 
 /**
@@ -23,32 +25,29 @@ public class Contact implements Serializable {
 	@Column(unique = true, nullable = false)
 	private Integer id;
 
-	private String hostname;
+	private String name;
 
 	private String email;
 
 	private String phonenumber;
 
 	private String comment;
+	
+	private Integer type;
+	
+	@Column(name="date_demande")
+	private Date dateDemande;
 
 	public Contact() {
 	}
 
-	public Contact(String hostname, String email, String phonenumber, String comment) {
+	public Contact(String name, String email, String phonenumber, String comment, Integer type) {
 		super();
-		this.hostname = hostname;
+		this.name = name;
 		this.email = email;
 		this.phonenumber = phonenumber;
 		this.comment = comment;
-	}
-
-	public Contact(Integer id, String hostname, String email, String phonenumber, String comment) {
-		super();
-		this.id = id;
-		this.hostname = hostname;
-		this.email = email;
-		this.phonenumber = phonenumber;
-		this.comment = comment;
+		this.type = type;
 	}
 
 	public Integer getId() {
@@ -59,12 +58,12 @@ public class Contact implements Serializable {
 		this.id = id;
 	}
 
-	public String getHostname() {
-		return hostname;
+	public String getName() {
+		return name;
 	}
 
-	public void setHostname(String hostname) {
-		this.hostname = hostname;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -91,10 +90,26 @@ public class Contact implements Serializable {
 		this.comment = comment;
 	}
 
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
+
+	public Date getDateDemande() {
+		return dateDemande;
+	}
+
+	public void setDateDemande(Date dateDemande) {
+		this.dateDemande = dateDemande;
+	}
+
 	@Override
 	public String toString() {
-		return "Contact [id=" + id + ", hostname=" + hostname + ", email=" + email + ", phonenumber=" + phonenumber
-				+ ", comment=" + comment + "]";
+		return "Contact [name=" + name + ", email=" + email + ", phonenumber=" + phonenumber + ", comment=" + comment
+				+ ", type=" + type + ", dateDemande=" + dateDemande + "]";
 	}
 
 }

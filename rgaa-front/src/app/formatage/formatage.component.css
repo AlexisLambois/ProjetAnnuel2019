@@ -28,3 +28,10 @@
 .sendForm:hover {
     background-color: #811448;
 }
+
+.bannerAudit {
+  width: 90%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

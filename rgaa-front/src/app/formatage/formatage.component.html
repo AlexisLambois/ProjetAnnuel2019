@@ -6,7 +6,7 @@
 
   <div class="inner_remaining">
     <div class="container">
-      <h1 class="color-bordUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+      <h1 class="color-bordUrbilog mt-5" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
           [ngStyle]="{'font-size':fontSizeParam+20+'px'}">RENDRE ACCESSIBLE VOS FICHIERS ?</h1>
       <hr class="bar background-bordUrbilog mb-5">
       <div class="row ml-4 mr-4 mb-5" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div>
-        <form>
+        <form (ngSubmit)="onSubmit(name,email,phonenumber)">
           <div class="row ml-4 mr-4 mb-5" style="border: black 1px solid">
             <div class="col-6 pl-5 mt-5 mb-5">
               <div class="row mb-3">
@@ -34,9 +34,9 @@
                     [ngStyle]="{'font-size':fontSizeParam+2+'px'}">Envoyer votre demande de formatage de fichier :</h2>
               </div>
               <div class="row mb-4">
-                <label class="col-12 mb-4" for="hostname"
+                <label class="col-12 mb-4" for="name"
                        [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Nom et Prénom de contact :</label>
-                <input class="col-10 offset-1 p-1" type="text" id="hostname" #hostname required>
+                <input class="col-10 offset-1 p-1" type="text" id="name" #name required>
               </div>
               <div class="row mb-4">
                 <label class="col-12 mb-4" for="email"
@@ -68,7 +68,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <button type="submit" class="btn sendForm pt-2 pb-2 pl-3 pr-3 background-bordUrbilog" (click)="display()"
+                  <button type="submit" class="btn sendForm pt-2 pb-2 pl-3 pr-3 background-bordUrbilog"
                           style="width: 75%;" [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam,'not-allowed':this.currentFileUpload == undefined,'pointer':this.currentFileUpload != undefined}"
                           [ngStyle]="{'font-size':fontSizeParam-2+'px'}">UPLOAD
                   </button>
@@ -102,6 +102,20 @@
                   </div>
                 </div>
               </ng-template>
+            </div>
+            <div *ngIf="message!==''" class="container-fluid">
+              <div class="row">
+                <ng-template [ngIf]="message.charAt(0) == '2'" [ngIfElse]="error">
+                  <div class="alert alert-success bannerAudit" role="alert">
+                    {{message.substring(2, message.length)}}
+                  </div>
+                </ng-template>
+                <ng-template #error>
+                  <div class="alert alert-danger bannerAudit" role="alert">
+                    {{message.substring(2, message.length)}}
+                  </div>
+                </ng-template>
+              </div>
             </div>
           </div>
         </form>

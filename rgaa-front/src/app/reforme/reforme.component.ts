@@ -71,9 +71,6 @@ export class ReformeComponent implements OnInit, AfterViewInit {
 
   constructor(private paramService: ParameterService, private routing: RoutingService, private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
     this.checkResolution();
-    iconRegistry.addSvgIcon(
-      'more_vert',
-      sanitizer.bypassSecurityTrustResourceUrl('./assets/img/more_vert.svg'));
   }
 
   @HostListener('window:resize', ['$event'])
@@ -94,10 +91,12 @@ export class ReformeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.selectedItem = 'image1';
   }
 
   ngAfterViewInit() {
     this.paramService.refreshEffect();
+    this.swip('image1');
   }
 
   changeSize(event) {

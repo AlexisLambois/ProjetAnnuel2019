@@ -17,14 +17,58 @@
 </span>
 <ng-template #mobileVersion>
   <div class="outer">
-    <div class="inner_remaining">
+    <div class="inner_fixed">
       <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
     </div>
-
-    <div class="inner_fixed">
-
+    <div class="inner_remaining">
+      <div class="container-fluid m-0 p-0" style="height: 100%">
+        <div class="row m-0" style="height: 50%;width: 100%;">
+          <div class="col-6 p-0 background-bleucielUrbilog pointer" (click)="redirectTo('reforme')">
+            <div class="child">
+              <img src="assets/img/lois1.png" style="width: 100%;" alt="">
+              <p style="color:white;" class="mt-4"
+                 [ngStyle]="{'font-size':fontSizeParam+10+'px'}"
+                 [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">
+                La loi RGAA
+              </p>
+            </div>
+          </div>
+          <div class="col-6 p-0 background-bordUrbilog pointer" (click)="redirectTo('formatage')">
+            <div class="child">
+              <img src="assets/img/formater.png" style="width: 40%;" alt="">
+              <p style="color:white;" class="mt-4"
+                 [ngStyle]="{'font-size':fontSizeParam+10+'px'}"
+                 [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">
+                Vos fichiers accessibles
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row m-0" style="height: 50%">
+          <div class="col-6 p-0 background-vertUrbilog pointer" (click)="redirectTo('audit')">
+            <div class="child">
+              <img src="assets/img/audit.png" style="width: 70%;" alt="">
+              <p style="color:white;" class="mt-4"
+                 [ngStyle]="{'font-size':fontSizeParam+10+'px'}"
+                 [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">
+                Avis d'expert
+              </p>
+            </div>
+          </div>
+          <div class="col-6 p-0 background-orangeUrbilog pointer" (click)="redirectTo('whoweare')">
+            <div class="child">
+              <img src="assets/img/group.png" style="width: 55%;" alt="">
+              <p style="color:white;" class="mt-4"
+                 [ngStyle]="{'font-size':fontSizeParam+10+'px'}"
+                 [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">
+                Qui sommes-nous ?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <app-footer-responsive class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+  <app-footer-responsive [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
                          [fontFamily]='fontFamilyParam'></app-footer-responsive>
 </ng-template>

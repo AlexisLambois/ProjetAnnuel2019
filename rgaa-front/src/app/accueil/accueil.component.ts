@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
+import {RoutingService} from '../general/routing.service';
 
 @Component({
   selector: 'app-accueil',
@@ -10,7 +11,7 @@ export class AccueilComponent implements OnInit, AfterViewInit {
 
   private isMobileResolution: boolean;
 
-  constructor(private paramService: ParameterService) {
+  constructor(private paramService: ParameterService,private routing: RoutingService) {
     this.checkResolution();
   }
 
@@ -55,7 +56,7 @@ export class AccueilComponent implements OnInit, AfterViewInit {
   }
 
   redirectTo(path: string): void {
-    window.location.href = path;
+    this.routing.redirectTo(path);
   }
 
 }

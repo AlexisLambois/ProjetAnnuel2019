@@ -1,9 +1,9 @@
 package com.urbilog.rgaa.core.service;
 
-import com.urbilog.rgaa.core.dto.ContactDTO;
+import com.urbilog.rgaa.core.entity.Contact;
 
 public interface IContactService {
 
-	ContactDTO postContact(ContactDTO contact);
+	Contact save(String name, String email, String phonenumber, String filename);
 
 }

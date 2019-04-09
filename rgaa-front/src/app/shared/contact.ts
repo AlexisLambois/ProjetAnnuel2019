@@ -1,14 +1,13 @@
-export class Contact {
+export class ContactFormatage {
 
-  hostname: string;
+  id: number;
+  name: string;
   email: string;
   phonenumber: string;
-  comment: string;
 
-  constructor(hostname: string, email: string, phonenumber: string, comment: string) {
-    this.hostname = hostname;
+  constructor(id: number, name: string, email: string, phonenumber: string) {
+    this.name = name;
     this.email = email;
     this.phonenumber = phonenumber;
-    this.comment = comment;
   }
 }
