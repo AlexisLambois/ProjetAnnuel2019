@@ -14,7 +14,8 @@ export const environment = {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Credentials': 'true',
     'Accept': '*/*',
-    'Access-Control-Expose-Headers': 'Authorization',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Expose-Headers': 'Authorization'
    })
 };
 

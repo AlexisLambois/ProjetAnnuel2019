@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.urbilog.rgaa.core.dao.IEnregistrementDAO;
 import com.urbilog.rgaa.core.exception.FileStorageException;
 import com.urbilog.rgaa.core.exception.MyFileNotFoundException;
 import com.urbilog.rgaa.core.placeholder.FileStorageProperties;
@@ -22,6 +23,9 @@ import com.urbilog.rgaa.core.placeholder.FileStorageProperties;
 public class FileStorageService {
 
 	private Path fileStorageLocation;
+	
+	@Autowired
+	private IEnregistrementDAO contactDAO;
 
 	@Autowired
 	private FileStorageProperties fileStorageProperties;
@@ -46,9 +50,16 @@ public class FileStorageService {
 			if (fileName.contains("..")) {
 				throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
 			}
+			
+			try {
+				Files.createDirectories(this.fileStorageLocation.resolve(id+"/"));
+			} catch (Exception ex) {
+				throw new FileStorageException("Could not create the directory where the uploaded files will be stored.",
+						ex);
+			}
 
 			// Copy file to the target location (Replacing existing file with the same name)
-			Path targetLocation = this.fileStorageLocation.resolve(fileName+"/"+id);
+			Path targetLocation = this.fileStorageLocation.resolve(id+"/"+fileName);
 			Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
 			return fileName;

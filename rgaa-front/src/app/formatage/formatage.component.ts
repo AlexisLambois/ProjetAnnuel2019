@@ -68,8 +68,8 @@ export class FormatageComponent implements OnInit, AfterViewInit {
 
   onSubmit(name, email, phonenumber) {
     if (this.available = this.isAvailable(name.value, email.value, phonenumber.value)) {
-      this.formatageService.postContact(name.value, email.value, phonenumber.value).then((contact: ContactFormatage) => {
-        this.formatageService.sendFile(name.value, email.value, phonenumber.value, this.currentFileUpload).then(res => {
+      this.formatageService.postContact(name.value, email.value, phonenumber.value, this.uploadFileName).then((contactId: number) => {
+        this.formatageService.sendFile(contactId, this.currentFileUpload).then(res => {
           this.message = res;
           if (res.charAt(0) == '2') {
             (<HTMLInputElement>document.getElementById('name')).value = '';

@@ -55,7 +55,7 @@ import {FooterResponsiveComponent} from './general/footer-responsive/footer-resp
     FileUploadModule,
     HttpClientModule
   ],
-  providers: [],
+	providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

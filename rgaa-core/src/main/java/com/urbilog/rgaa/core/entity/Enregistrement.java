@@ -10,9 +10,9 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name = "contacts")
-@NamedQuery(name = "Contact.findAll", query = "SELECT c FROM Contact c")
-public class Contact implements Serializable {
+@Table(name = "enregistrements")
+@NamedQuery(name = "Enregistrement.findAll", query = "SELECT e FROM Enregistrement e")
+public class Enregistrement implements Serializable {
 
 	/**
 	 * 
@@ -20,8 +20,8 @@ public class Contact implements Serializable {
 	private static final long serialVersionUID = -5819678252827199264L;
 
 	@Id
-	@SequenceGenerator(name = "contact_generator", sequenceName = "contacts_id_seq", initialValue = 1, allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contact_generator")
+	@SequenceGenerator(name = "enregistrement_generator", sequenceName = "enregistrements_id_seq", initialValue = 1, allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "enregistrement_generator")
 	@Column(unique = true, nullable = false)
 	private Integer id;
 
@@ -38,16 +38,26 @@ public class Contact implements Serializable {
 	@Column(name="date_demande")
 	private Date dateDemande;
 
-	public Contact() {
+	public Enregistrement() {
 	}
 
-	public Contact(String name, String email, String phonenumber, String comment, Integer type) {
+	public Enregistrement(String name, String email, String phonenumber, String comment, Integer type) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.phonenumber = phonenumber;
 		this.comment = comment;
 		this.type = type;
+	}
+
+	public Enregistrement(String name, String email, String phonenumber, String comment, Integer type, Date dateDemande) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.phonenumber = phonenumber;
+		this.comment = comment;
+		this.type = type;
+		this.dateDemande = dateDemande;
 	}
 
 	public Integer getId() {

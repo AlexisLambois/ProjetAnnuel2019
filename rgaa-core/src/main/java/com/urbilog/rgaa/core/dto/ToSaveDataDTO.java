@@ -1,7 +1,5 @@
 package com.urbilog.rgaa.core.dto;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class ToSaveDataDTO {
 
 	private String name;
@@ -10,18 +8,29 @@ public class ToSaveDataDTO {
 
 	private String phonenumber;
 
-	private MultipartFile file;
+	private String fileName;
+	
+	private String comment;
 
 	public ToSaveDataDTO() {
 		super();
 	}
 
-	public ToSaveDataDTO(String name, String email, String phonenumber, MultipartFile file) {
+	public ToSaveDataDTO(String name, String email, String phonenumber) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.phonenumber = phonenumber;
-		this.file = file;
+	}
+
+	public ToSaveDataDTO(String name, String email, String phonenumber, String fileName) {
+		this(name,email,phonenumber);
+		this.fileName = fileName;
+	}
+
+	public ToSaveDataDTO(String name, String email, String phonenumber, String fileName, String comment) {
+		this(name,email,phonenumber,null);
+		this.comment = comment;
 	}
 
 	public String getName() {
@@ -48,18 +57,26 @@ public class ToSaveDataDTO {
 		this.phonenumber = phonenumber;
 	}
 
-	public MultipartFile getFile() {
-		return file;
+	public String getFileName() {
+		return fileName;
 	}
 
-	public void setFile(MultipartFile file) {
-		this.file = file;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 	@Override
 	public String toString() {
-		return "ToSaveDataDTO [name=" + name + ", email=" + email + ", phonenumber=" + phonenumber + ", file=" + file
-				+ "]";
+		return "ToSaveDataDTO [name=" + name + ", email=" + email + ", phonenumber=" + phonenumber + ", fileName="
+				+ fileName + ", comment=" + comment + "]";
 	}
 
 }

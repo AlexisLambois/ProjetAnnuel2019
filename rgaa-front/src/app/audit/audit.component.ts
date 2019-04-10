@@ -1,6 +1,5 @@
 import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
-import {Contact} from '../shared/contact';
 import {AuditService} from './audit.service';
 
 @Component({
@@ -44,7 +43,7 @@ export class AuditComponent implements OnInit, AfterViewInit {
 
   onSubmit(hostname, email, phonenumber, comment) {
     if (this.available = this.isAvailable(hostname.value, email.value, phonenumber.value)) {
-      this.auditService.postContact(new Contact(hostname.value, email.value, phonenumber.value, comment.value)).then(res => {
+      this.auditService.postContact(hostname.value, email.value, phonenumber.value, comment.value).then(res => {
         this.message = res;
         if (res.charAt(0) == '2') {
           (<HTMLInputElement>document.getElementById('hostname')).value = '';

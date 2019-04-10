@@ -19,9 +19,9 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 import com.urbilog.rgaa.core.dto.ToSaveDataDTO;
-import com.urbilog.rgaa.core.entity.Contact;
+import com.urbilog.rgaa.core.entity.Enregistrement;
 import com.urbilog.rgaa.core.entity.UploadFileResponse;
-import com.urbilog.rgaa.core.service.IContactService;
+import com.urbilog.rgaa.core.service.IEnregistrementService;
 import com.urbilog.rgaa.core.service.impl.FileStorageService;
 
 import java.io.BufferedReader;
@@ -40,47 +40,43 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-@RequestMapping("/contact")
-@Api(value = "/contact", description = "Public operations about contact")
+@RequestMapping("/enregistrement")
+@Api(value = "/enregistrement", description = "Public operations about Enregistrement")
 @RestController
-public class ContactController {
+public class EnregistrementController {
 
 	@Autowired
-	private IContactService contactService;
+	private IEnregistrementService enregistrementService;
 	
 	@Autowired
 	private FileStorageService fileStorageService;
 	
-//	@RequestMapping(value = "/", method = RequestMethod.POST)
-//	@ApiOperation(value = "Return contact posted", notes = "Return the message to display", response = ContactDTO.class, responseContainer = "")
-//	@ApiResponses(value = {
-//			@ApiResponse(code = 200, message = "Successful add of contact", response = ContactDTO.class),
-//			@ApiResponse(code = 406, message = "Hostname AlReady In Database") })
-//	public ResponseEntity<ContactDTO> postContact(
-//			@ApiParam(name = "contact", value = "contact to posted", required = true) @RequestBody final ContactDTO contact) {
-//
-//		ContactDTO contactSaved = null;
-//
-//		try {
-//			contactSaved = this.contactService.postContact(contact);
-//		} catch (DataIntegrityViolationException e2) {
-//			return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(contactSaved);
-//		}
-//
-//		return ResponseEntity.status(HttpStatus.OK).body(contactSaved);
-//	}
+	@RequestMapping(value = "/saveEnregistrement", method = RequestMethod.POST)
+	public ResponseEntity<Integer> saveEnregistrement(@RequestBody final ToSaveDataDTO dataToSave) {
 
-	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
-	public UploadFileResponse uploadFile(@RequestBody final ToSaveDataDTO dataToSave) {
+		Enregistrement c; 
+
+		try {
+			if(dataToSave.getFileName() != null) {
+				c = this.enregistrementService.saveTypeUn(dataToSave.getName(),dataToSave.getEmail(),dataToSave.getPhonenumber(),dataToSave.getFileName());
+			}else {
+				c = this.enregistrementService.saveTypeDeux(dataToSave.getName(),dataToSave.getEmail(),dataToSave.getPhonenumber(),dataToSave.getComment());
+			}
+		} catch (DataIntegrityViolationException e2) {
+			return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(null);
+		}
+		return ResponseEntity.status(HttpStatus.OK).body(c.getId());
+	}
+
+	@RequestMapping(value = "/uploadFile/{contactId}", method = RequestMethod.POST)
+	public UploadFileResponse uploadFile(@PathVariable("contactId") final Integer contactId,@RequestParam("file") MultipartFile file) {
 		
-		Contact c = this.contactService.save(dataToSave.getName(),dataToSave.getEmail(),dataToSave.getPhonenumber(),dataToSave.getFile().getName());
-		
-		String fileName = fileStorageService.storeFile(c.getId(),dataToSave.getFile());
+		String fileName = this.fileStorageService.storeFile(contactId,file);
 
 		String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/downloadFile/")
 				.path(fileName).toUriString();
 
-		return new UploadFileResponse(fileName, fileDownloadUri, dataToSave.getFile().getContentType(), dataToSave.getFile().getSize());
+		return new UploadFileResponse(fileName, fileDownloadUri, file.getContentType(), file.getSize());
 	}
 
 }
