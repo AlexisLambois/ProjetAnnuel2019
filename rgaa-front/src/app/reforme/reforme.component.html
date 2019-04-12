@@ -15,37 +15,834 @@
             <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
               <div class="col-12">
                 <div class="row">
-                  <p id="image1" class="m-4" style="display: none"
-                     [ngStyle]="{'font-size':fontSizeParam+'px'}">
-                      MODE D'EMPLOI Masquer le mode d'emploi
-            Ce référentiel s'applique à tout contenu HTML (HTML4, XHTML1 et HTML5). Il utilise, pour certains tests une base de référence prenant en compte un ensemble de technologies d'assistance, de navigateurs et de systèmes d'exploitation sur lesquels l'accessibilité des composants d'interface développés par JavaScript doit être vérifiée notamment. Une description détaillée de la base de référence est disponible ici : base de référence.
-
-            Note importante pour tout contenu antérieur à la spécification HTML5 :
-            Lorsque le code HTML de la page n'est pas du HTML5, les éléments HTML5 (balises et attributs) exigés par un critère ou test sont non applicables. Tous les autres critères ou tests restent applicables, y compris les dispositifs ARIA. Les critères et tests suivants sont non applicables :
-
-            Critère 1.10 ;
-            Critère 9.2 ;
-            Test 11.10.1 (condition 2 relative à l'attribut HTML5 required).
-            Méthode de validation
-            Le niveau de conformité est établi au niveau des critères selon ces statuts :
-
-            Conforme (C) : l'ensemble des tests applicables sont réussis ;
-            Non Conforme (NC) : un test applicable est échoué, au moins ;
-            Non Applicable (NA) : il n'y a pas de contenu concerné par le critère.
-            RGAA propose, en plus de ces trois statuts de validation, deux statuts complémentaires :
-
-            Dérogé (D) : il existe des contenus dérogés applicables au critère ;
-            Non Testé (NT) : le critère n'a pas été testé.
-            Vous pouvez consulter, à ce sujet, le guide d'accompagnement : Comment vérifie-t-on la conformité au RGAA ?
-                  </p>
-                  <p id="cadres1" class="m-4" style="display: none"
-                     [ngStyle]="{'font-size':fontSizeParam+'px'}">Cadres</p>
-                  <p id="couleurs1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Couleurs</p>
-                  <p id="multimedia1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Multimedia</p>
-                  <p id="tableaux1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Tableaux</p>
-                  <p id="liens1" class="m-4" style="display: none"
-                     [ngStyle]="{'font-size':fontSizeParam+'px'}">Liens</p>
-                  <p id="scripts1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Scripts</p>
+                  <span id="modeemploi1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <h2 class="mb-4" style="text-align: center;font-weight: bolder">Mode d'emploi</h2>
+                    <p>Ce référentiel s’applique à tout contenu HTML (HTML4, XHTML1 et HTML5). Il utilise, pour certains tests une base de référence prenant en compte un ensemble de technologies d’assistance, de navigateurs et de systèmes d’exploitation sur lesquels l’accessibilité des composants d’interface développés par JavaScript doit être vérifiée notamment. Une description détaillée de la base de référence est disponible ici : base de référence.</p>
+                    <p><strong>Note importante pour tout contenu antérieur à la spécification HTML5 :</strong></p>
+                    <p>Lorsque le code HTML de la page n’est pas du HTML5, les éléments HTML5 (balises et attributs) exigés par un critère ou test sont non applicables. Tous les autres critères ou tests restent applicables, y compris les dispositifs ARIA. Les critères et tests suivants sont non applicables :</p>
+                    <ul>
+                      <li>Critère 1.10 ;</li>
+                      <li>Critère 9.2 ;</li>
+                      <li>Test 11.10.1 ( condition 2 relative à l’attribut HTML5 <span style="font-style: italic">required</span> ).</li>
+                    </ul>
+                    <p><strong>Méthode de validation</strong></p>
+                    <p>Le niveau de conformité est établi au niveau des critères selon ces statuts :</p>
+                    <ul>
+                      <li>Conforme (C) : l’ensemble des tests applicables sont réussis ;</li>
+                      <li>Non Conforme (NC) : un test applicable est échoué, au moins ;</li>
+                      <li>Non Applicable (NA) : il n’y a pas de contenu concerné par le critère.</li>
+                    </ul>
+                    <p>RGAA propose, en plus de ces trois statuts de validation, deux statuts complémentaires :</p>
+                    <ul>
+                      <li>Dérogé (D) : il existe des contenus dérogés applicables au critère ;</li>
+                      <li>Non Testé (NT) : le critère n’a pas été testé.</li>
+                    </ul>
+                    <p>Vous pouvez consulter, à ce sujet, le <a
+                      href="http://references.modernisation.gouv.fr/rgaa-accessibilite/guide-accompagnement-RGAA.html">guide d’accompagnement</a> : Comment vérifie-t-on la conformité au RGAA ?</p>
+                  </span>
+                  <span id="image1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Donner à chaque image porteuse d’information une alternative textuelle pertinente et une description détaillée si nécessaire. Lier les légendes à leurs images. Remplacer les images textes par du texte stylé lorsque c’est possible.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.1 [A] Chaque image a-t-elle une alternative textuelle ?</h2>
+                     <ul>
+                       <li>Test 1.1.1 : Chaque image (balise <span style="font-style: italic">img</span>) a-t-elle un attribut <span
+                         style="font-style: italic">alt</span> ?</li>
+                       <li>Test 1.1.2 : Chaque zone (balise <span style="font-style: italic">area</span>) d’une image réactive a-t-elle un attribut <span
+                         style="font-style: italic">alt</span> ?</li>
+                       <li>Test 1.1.3 : Chaque bouton de type image (balise <span
+                         style="font-style: italic">input</span> avec l’attribut <span style="font-style: italic">type="image"</span>) a-t-il un attribut <span
+                         style="font-style: italic">alt</span> ?</li>
+                       <li>Test 1.1.4 : Chaque zone cliquable d’une image réactive coté serveur est-t-elle doublée d’un lien dans la page ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.2 [A] Pour chaque image de décoration ayant une alternative textuelle, cette alternative est-elle vide ?</h2>
+                    <ul>
+                      <li>Test 1.2.1 : Chaque image (balise img) de décoration, sans légende, et ayant un attribut alt, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>Le contenu de l’attribut alt est vide (alt="") ;</li>
+                          <li>L’image de décoration ne possède pas d’attribut title ;</li>
+                          <li>La balise img est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.2.2 : Chaque zone non cliquable (balise area sans attribut href) de décoration, et ayant un attribut alt, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>Le contenu de l’attribut alt est vide (alt="") ;</li>
+                          <li>La zone non cliquable ne possède pas d’attribut title ;</li>
+                          <li>La balise area est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.2.3 : Chaque image objet (balise object avec l’attribut type="image/…") de décoration, sans légende, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La balise object possède un attribut aria-hidden="true" ;</li>
+                          <li>L’alternative textuelle entre &lt;object&gt; et &lt;/object&gt; est vide ;</li>
+                          <li>La balise object ou l'un de ses enfants est dépourvue d'attribut title</li>
+                          <li>La balise object ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.2.4 : Chaque image vectorielle (balise svg) de décoration, sans légende, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La balise svg possède un attribut aria-hidden="true" ;</li>
+                          <li>Les balises title et desc sont absentes ou vides ;</li>
+                          <li>La balise svg ou l’un de ses enfants est dépourvue d’attribut title ;</li>
+                          <li>La balise svg ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image vectorielle (aria-label, aria-describedby, aria-labelledby par exemple).</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.2.5 : Chaque image bitmap (balise canvas) de décoration, sans légende, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La balise canvas possède un attribut aria-hidden="true" ;</li>
+                          <li>Le contenu entre &lt;canvas&gt; et &lt;/canvas&gt; est dépourvue de contenus textuels ;</li>
+                          <li>La balise canvas ou l’un de ses enfants est dépourvue d’attribut title ;</li>
+                          <li>La balise canvas ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.2.5 : Chaque image bitmap (balise canvas) de décoration, sans légende, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La balise canvas possède un attribut aria-hidden="true" ;</li>
+                          <li>Le contenu entre &lt;canvas&gt; et &lt;/canvas&gt; est dépourvue de contenus textuels ;</li>
+                          <li>La balise canvas ou l’un de ses enfants est dépourvue d’attribut title ;</li>
+                          <li>La balise canvas ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).</li>
+                        </ul>
+                      </li>
+                       <li>Test 1.2.6 : Chaque image embarquée (balise embed avec l’attribut type="image/…") de décoration, sans légende, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La balise embed possède un attribut aria-hidden="true" ;</li>
+                          <li>La balise La balise embed ou l’un de ses enfants est dépourvue d’attribut title ;</li>
+                          <li>La balise embed ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.3 [A] Pour chaque image porteuse d’information ayant une alternative textuelle, cette alternative est-elle pertinente (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 1.3.1 : Chaque image (balise img) porteuse d’information, ayant un attribut alt, vérifie-t-elle ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le contenu de l’attribut alt est pertinent ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.3.2 : Chaque zone (balise area) d’une image réactive porteuse d’information, ayant un attribut alt, vérifie-t-elle ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le contenu de l’attribut alt est pertinent ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.3.3 : Chaque bouton de type image (balise input avec l’attribut type="image"), ayant un attribut alt, vérifie-t-il ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le contenu de l’attribut alt est pertinent ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.3.4 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse d’information vérifie-t-elle une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’image objet est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative pertinente. ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image objet par un texte alternatif pertinent ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image objet par une image possédant une alternative pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.3.5 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse d’information, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label </li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.3.6 : Chaque image embarquée (balise embed avec l’attribut type="image/…") porteuse d’information vérifie-t-elle une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’image embarquée est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative pertinente ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par un texte alternatif pertinent ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par une image possédant une alternative pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.3.7 : Chaque image embarquée (balise embed avec l’attribut type="image/…") porteuse d’information, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.3.8 : Chaque image vectorielle (balise svg) porteuse d’information, en l’absence d’alternative, vérifie-t-elle ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>La balise svg possède un role="img" ;</li>
+                          <li>La balise svg possède une propriété aria-label dont le contenu est pertinent et identique à l’attribut title s’il est présent ;</li>
+                          <li>La balise svg possède une balise desc dont le contenu est pertinent et contient un passage de texte identique à la propriété aria-label.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.3.9 : Pour chaque image vectorielle (balise svg) porteuse d’information et possédant une alternative, cette alternative est-elle correctement restituée par les technologies d’assistance ?</li>
+                      <li>Test 1.3.10 : Chaque image bitmap (balise canvas) porteuse d’information vérifie-t-elle une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le contenu de l’alternative (contenu entre &lt;canvas&gt; et &lt;/canvas&gt;) est pertinent ;</li>
+                          <li>L’image bitmap est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative pertinente ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par un texte alternatif pertinent ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par une image possédant une alternative pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.3.11 : Chaque image bitmap (balise canvas) porteuse d’information, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.3.12 : Pour chaque image bitmap (balise canvas) porteuse d’information et possédant une alternative (contenu entre &lt;canvas&gt; et &lt;/canvas&gt;), cette alternative est-elle correctement restituée par les technologies d’assistance ?</li>
+                      <li>Test 1.3.13 : Pour chaque image porteuse d’information et ayant une alternative textuelle, l’alternative textuelle est-elle courte et concise (hors cas particuliers) ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.4 [A] Pour chaque image utilisée comme CAPTCHA ou comme image-test, ayant une alternative textuelle, cette alternative permet-elle d’identifier la nature et la fonction de l’image ?</h2>
+                    <ul>
+                      <li>Test 1.4.1 : Chaque image (balise img) utilisée comme CAPTCHA ou comme image-test, ayant un attribut alt, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>Le contenu de l’attribut alt permet de comprendre la nature et la fonction de l’image ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.4.2 : Chaque zone (balise area) d’une image réactive utilisée comme CAPTCHA ou comme image-test, ayant un attribut alt, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>Le contenu de l’attribut alt permet de comprendre la nature et la fonction de la zone ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.4.3 : Chaque bouton associé à une image (balise input avec l’attribut type="image") utilisée comme CAPTCHA ou comme image-test, ayant un attribut alt, vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>Le contenu de l’attribut alt permet de comprendre la nature et la fonction du bouton ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;</li>
+                          <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.4.4 : Chaque image objet (balise object avec l’attribut type="image/…") utilisée comme CAPTCHA ou comme image-test vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>L’image objet est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative permettant de comprendre la nature et la fonction de l’image ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image objet par un texte alternatif permettant de comprendre la nature et la fonction de l’image ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image objet par une image possédant une alternative permettant de comprendre la nature et la fonction de l’image.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.4.5 : Chaque image objet (balise object avec l’attribut type="image/…") utilisée comme CAPTCHA ou comme image-test, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.4.6 : Chaque image embarquée (balise embed avec l’attribut type="image/…") utilisée comme CAPTCHA ou comme image-test vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>L’image embarquée est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative permettant de comprendre la nature et la fonction de l’image ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par un texte alternatif permettant de comprendre la nature et la fonction de l’image ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par une image possédant une alternative permettant de comprendre la nature et la fonction de l’image.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.4.7 : Chaque image embarquée (balise embed avec l’attribut type="image/…") utilisée comme CAPTCHA ou comme image-test, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.4.8 : Chaque image vectorielle (balise svg) utilisée comme CAPTCHA ou comme image-test, en l’absence d’alternative, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La balise svg possède un role="img" ;</li>
+                          <li>La balise svg possède une propriété aria-label dont le contenu permet de comprendre la nature et la fonction de l’image et identique à l’attribut title s’il est présent ;</li>
+                          <li>La balise svg possède une balise desc dont le contenu permet de comprendre la nature et la fonction de l’image et identique à la propriété aria-label</li>
+                          <li>Un lien adjacent permet d’accéder à une alternative dont le contenu permet de comprendre la nature et la fonction de l’image et identique à la propriété aria-label.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.4.9 : Pour chaque image vectorielle (balise svg) utilisée comme CAPTCHA ou comme image-test, possédant une alternative, cette alternative est-elle correctement restituée par les technologies d’assistance ?</li>
+                      <li>Test 1.4.10 Chaque image bitmap (balise canvas) utilisée comme CAPTCHA ou comme image-test vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>Le contenu de l’alternative (contenu entre &lt;canvas&gt; et &lt;/canvas&gt;) permet de comprendre la nature et la fonction de l’image ;</li>
+                          <li>L’image bitmap est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative permettant de comprendre la nature et la fonction de l’image ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par un texte alternatif permettant de comprendre la nature et la fonction de l’image ;</li>
+                          <li>Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par une image possédant une alternative permettant de comprendre la nature et la fonction de l’image.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.4.11 : Chaque image bitmap (balise canvas) utilisée comme CAPTCHA ou comme image-test, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label ;</li>
+                          <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.4.12 : Pour chaque image bitmap (balise canvas) utilisée comme CAPTCHA ou comme image-test, ayant une alternative (contenu entre &lt;canvas&gt; et &lt;/canvas&gt;), cette, l’alternative textuelle est-elle correctement restituée par les technologies d’assistance ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.5 [A] Pour chaque image utilisée comme CAPTCHA, une solution d’accès alternatif au contenu ou à la fonction du CAPTCHA est-elle présente ?</h2>
+                    <ul>
+                      <li>Test 1.5.1 : Chaque image (balises img, area, object, embed, svg, canvas) utilisée comme CAPTCHA vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>Il existe une autre forme de CAPTCHA non graphique, au moins ;</li>
+                          <li>Il existe une autre solution d’accès à la fonctionnalité sécurisée par le CAPTCHA.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.5.2 : Chaque bouton associé à une image (balise input avec l’attribut type="image") utilisée comme CAPTCHA vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>Il existe une autre forme de CAPTCHA non graphique, au moins ;</li>
+                          <li>Il existe une autre solution d’accès à la fonctionnalité sécurisée par le CAPTCHA.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.6 [A] Chaque image porteuse d’information a-t-elle, si nécessaire, une description détaillée ?</h2>
+                    <ul>
+                      <li>Test 1.6.1 : Chaque image (balise img) porteuse d’information, qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>Il existe un attribut longdesc qui donne l’adresse (url) d’une page contenant la description détaillée ;</li>
+                          <li>Il existe un attribut alt contenant la référence à une description détaillée adjacente à l’image ;</li>
+                          <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.6.2 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse d’information, qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée ;</li>
+                          <li>Il existe une description détaillée clairement identifiable adjacente à l’image objet.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.6.3 : Chaque image embarquée (balise embed) porteuse d’information, qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée ;</li>
+                          <li>Il existe une description détaillée clairement identifiable adjacente à l’image embarquée.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.6.4 : Chaque bouton de type image (balise input avec l’attribut type="image") porteur d’information, qui nécessite une description détaillée, vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>Il existe un attribut alt contenant la référence à une description détaillée adjacente à l’image ;</li>
+                          <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée ;</li>
+                          <li>Il existe une propriété aria-describedby référençant un passage de texte faisant office de description détaillée.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.6.5 : Chaque bouton de type image (balise input avec l’attribut type="image") porteur d’information, qui implémente une référence à une description détaillée via une propriété aria-describedby, vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>Le passage de texte est identifié via un attribut id ;</li>
+                          <li>La valeur de l’attribut id est unique ;</li>
+                          <li>La valeur de la propriété ARIA aria-describedby est égale à la valeur de l’attribut id.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.6.6 : Chaque image vectorielle (balise svg) porteuse d’information, qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>Il existe une propriété aria-label contenant une référence à une description détaillée adjacente à l’image vectorielle ;</li>
+                          <li>La balise title contient la description détaillée ;</li>
+                          <li>Il existe une balise desc contenant la description détaillée ;</li>
+                          <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.6.7 : Pour chaque image vectorielle (balise svg) porteuse d’information, qui implémente une référence à une description détaillée adjacente via une propriété aria-label ou une balise desc, cette référence est-elle correctement restituée par les technologies d’assistance ?</li>
+                      <li>Test 1.6.8 : Chaque image bitmap (balise canvas), qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>Il existe un passage de texte entre &lt;canvas&gt; et &lt;/canvas&gt; contenant une référence à une description détaillée adjacente à l’image bitmap ;</li>
+                          <li>Il existe un contenu textuel entre &lt;canvas&gt; et &lt;/canvas&gt; faisant office de description détaillée ;</li>
+                          <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.6.9 : Pour chaque image bitmap (balise canvas) porteuse d’information, qui implémente une référence à une description détaillée adjacente, cette référence est-elle correctement restituée par les technologies d’assistance ?</li>
+                      <li>Test 1.6.10 : Pour chaque image (balise img, area, object, embed, svg, canvas) porteuse d’information, qui implémente une description détaillée et qui utilise une propriété aria-describedby, la propriété aria-describedby référence-t-elle la description détaillée ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.7 [A] Pour chaque image porteuse d’information ayant une description détaillée, cette description est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 1.7.1 : Chaque image (balise img) porteuse d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La description détaillée via l’adresse référencée dans l’attribut longdesc est pertinente ;</li>
+                          <li>La description détaillée dans la page et signalée dans l’attribut alt est pertinente ;</li>
+                          <li>La description détaillée via un lien adjacent est pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.7.2 : Chaque bouton de type image (balise input avec l’attribut type="image") porteur d’information, ayant une description détaillée, vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>La description détaillée dans la page et signalée dans l’attribut alt est pertinente ;</li>
+                          <li>La description détaillée via un lien adjacent est pertinente ;</li>
+                          <li>Le passage de texte référencé via la propriété aria-describedby est pertinent.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.7.3 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La description détaillée adjacente à l’image objet est pertinente ;</li>
+                          <li>La description détaillée via un lien adjacent est pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.7.4 : Chaque image embarquée (balise embed avec l’attribut type="image/…") porteuse d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La description détaillée adjacente à l’image embarquée est pertinente </li>
+                          <li>La description détaillée via un lien adjacent est pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.7.5 : Chaque image vectorielle (balise svg) porteuse d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La description détaillée adjacente à l'image vectorielle et signalée dans la propriété aria-label ou la balise desc est pertinente.</li>
+                          <li>La description détaillée contenue dans la balise desc est pertinente ;</li>
+                          <li>La description détaillée via un lien adjacent est pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.7.6 : Pour chaque image vectorielle (balise svg) porteuse d’information, ayant une description détaillée implémentée via la balise desc, cette description détaillée est-elle correctement restituée par les technologies d’assistance ?</li>
+                      <li>Test 1.7.7 : Chaque image bitmap (balise canvas) porteuse d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La description détaillée adjacente à l’image bitmap est pertinente ;</li>
+                          <li>La description détaillée contenue entre &lt;canvas&gt; et &lt;/canvas&gt; est pertinente ;</li>
+                          <li>La description détaillée via un lien adjacent est pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 1.7.8 : Pour chaque image bitmap (balise canvas) porteuse d’information, ayant une description détaillée entre &lt;canvas&gt; et &lt;/canvas&gt;, cette description détaillée est-elle correctement restituée par les technologies d’assistance ?</li>
+                    </ul>
+                  </span>
+                  <span id="cadres1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Donner à chaque cadre en ligne un titre pertinent.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 2.1 [A] Chaque cadre en ligne a-t-il un titre de cadre ?</h2>
+                    <ul>
+                       <li>Test 2.1.1 : Chaque cadre en ligne (balise iframe) a-t-il un attribut title ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 2.1 [A] Chaque cadre en ligne a-t-il un titre de cadre ?</h2>
+                    <ul>
+                      <li>Test 2.1.1 : Chaque cadre en ligne (balise iframe) a-t-il un attribut title ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 2.2 [A] Pour chaque cadre en ligne ayant un titre de cadre, ce titre de cadre est-il pertinent ?</h2>
+                    <ul>
+                      <li>Test 2.2.1 : Pour chaque cadre en ligne (balise iframe) ayant un attribut title, le contenu de cet attribut est-il pertinent ?</li>
+                    </ul>
+                  </span>
+                  <span id="couleurs1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Ne pas donner l’information uniquement par la couleur et utiliser des contrastes de couleurs suffisamment élevés.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 3.1 [A] Dans chaque page Web, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</h2>
+                    <ul>
+                      <li>Test 3.1.1 : Pour chaque mot ou ensemble de mots dont la mise en couleur est porteuse d’information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                      <li>Test 3.1.2 : Pour chaque indication de couleur donnée par un texte, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                      <li>Test 3.1.3 : Pour chaque image véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                      <li>Test 3.1.4 : Pour chaque propriété CSS déterminant une couleur et véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                      <li>Test 3.1.5 : Pour chaque média temporel véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                      <li>Test 3.1.6 : Pour chaque média non temporel véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 3.2 [A] Dans chaque page Web, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</h2>
+                    <ul>
+                      <li>Test 3.2.1 : Pour chaque mot ou ensemble de mots dont la mise en couleur est porteuse d’information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                      <li>Test 3.2.2 : Pour chaque indication de couleur donnée par un texte, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                      <li>Test 3.2.3 : Pour chaque image véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                      <li>Test 3.2.4 : Pour chaque propriété CSS déterminant une couleur et véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                      <li>Test 3.2.5 : Pour chaque média temporel véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                      <li>Test 3.2.6 : Pour chaque média non temporel véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 3.3 [AA] Dans chaque page Web, le contraste entre la couleur du texte et la couleur de son arrière-plan est-il suffisamment élevé (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 3.3.1 : Dans chaque page Web, jusqu’à 150% de la taille de police par défaut (ou 1.5em), le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 4.5:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 4.5:1, au moins</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.3.2 : Dans chaque page Web, jusqu’à 120% de la taille de police par défaut (ou 1.2em), le texte et le texte en image en gras vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 4.5:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 4.5:1, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.3.3 : Dans chaque page Web, à partir de 150% de la taille de police par défaut (ou 1.5em), le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 3:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 3:1, au moins</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.3.4 : Dans chaque page Web, à partir de 120% de la taille de police par défaut (ou 1.2em), le texte et le texte en image en gras vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 3:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 3:1, au moins</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.3.5 : Chaque mécanisme qui permet d'afficher le texte avec un rapport de contraste conforme a-t-il un rapport de contraste supérieur ou égal à 4,5:1 ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 3.4 [AAA] Dans chaque page Web, le contraste entre la couleur du texte et la couleur de son arrière-plan est-il amélioré (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 3.4.1 : Dans chaque page Web, jusqu’à 150% de la taille de police par défaut (ou 1.5em), le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 7:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 7:1, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.4.2 : Dans chaque page Web, jusqu’à 120% de la taille de police par défaut (ou 1.2em), le texte et le texte en image en gras vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 7:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 7:1, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.4.3 : Dans chaque page Web, à partir de 150% de la taille de police par défaut (ou 1.5em), le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 4.5:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 4.5:1, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.4.4 : Dans chaque page Web, à partir de 120% de la taille de police par défaut (ou 1.2em), le texte et le texte en image en gras vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 4.5:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 4.5:1, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.4.5 : Chaque mécanisme qui permet d'afficher le texte avec un rapport de contraste conforme a-t-il un rapport de contraste supérieur ou égal à 7:1 ?</li>
+                    </ul>
+                  </span>
+                  <span id="multimedia1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Donner si nécessaire à chaque média temporel une transcription textuelle, des sous-titres synchronisés et une audio-description synchronisée pertinents. Donner à chaque média non temporel une alternative textuelle pertinente. Rendre possible le contrôle de la consultation de chaque média temporel et non-temporel au clavier et s’assurer de leur compatibilité avec les technologies d’assistance.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.1 [A] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une transcription textuelle ou une audio-description (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.1.1 : Chaque média temporel pré-enregistré seulement audio, vérifie-t-il, si nécessaire, l’une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.1.2 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il, si nécessaire, l’une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une version alternative « audio seulement » accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une version version alternative « audio seulement » adjacente clairement identifiable ;</li>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable ;</li>
+                          <li>Il existe une audiodescription synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audiodescription synchronisée accessible via un lien adjacent (une url ou une ancre).</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.1.3 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable ;</li>
+                          <li>Il existe une audio-description synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audio-description synchronisée accessible via un lien adjacent (une url ou une ancre).</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.2 [A] Pour chaque média temporel pré-enregistré ayant une transcription textuelle ou une audio-description synchronisée, celles-ci sont-elles pertinentes (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.2.1 : Pour chaque média temporel pré-enregistré seulement audio, ayant une transcription textuelle, celle-ci est-elle pertinente (hors cas particuliers) ?</li>
+                      <li>Test 4.2.2 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>La transcription textuelle est pertinente ;</li>
+                          <li>L’audio-description synchronisée est pertinente ;</li>
+                          <li>L’audio-description synchronisée de la version alternative est pertinente ;</li>
+                          <li>La version alternative audio seulement est pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.2.3 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>La transcription textuelle est pertinente ;</li>
+                          <li>L’audio-description synchronisée est pertinente ;</li>
+                          <li>L’audio-description synchronisée de la version alternative est pertinente.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.3 [A] Chaque média temporel synchronisé pré-enregistré a-t-il, si nécessaire, des sous-titres synchronisés (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.3.1 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, l’une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le média temporel synchronisé possède des sous-titres synchronisés ;</li>
+                          <li>Il existe une version alternative possédant des sous-titres synchronisés accessible via un lien adjacent (une url ou une ancre)</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.3.2 : Pour chaque média temporel synchronisé pré-enregistré possédant des sous-titres synchronisés diffusés via une balise track, la balise track possède-t-elle un attribut kind="captions"</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.4 [A] Pour chaque média temporel synchronisé pré-enregistré ayant des sous-titres synchronisés, ces sous-titres sont-ils pertinents ?</h2>
+                    <ul>
+                      <li>Test 4.4.1 : Pour chaque média temporel synchronisé pré-enregistré ayant des sous-titres synchronisés, ces sous-titres sont-ils pertinents ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.5 [AA] Chaque média temporel en direct a-t-il, si nécessaire, des sous-titres synchronisés ou une transcription textuelle (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.5.1 : Chaque média temporel seulement audio en direct vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe des sous-titres synchronisés ;</li>
+                          <li>Il existe une version ayant des sous-titres synchronisés accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.5.2 : Chaque média temporel synchronisé en direct vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe des sous-titres synchronisés ;</li>
+                          <li>Il existe une version ayant des sous-titres synchronisés accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.6 [AA] Pour chaque média temporel en direct ayant des sous-titres synchronisés ou une transcription textuelle, ceux-ci sont-ils pertinents ?</h2>
+                    <ul>
+                      <li>Test 4.6.1 : Chaque média temporel seulement audio en direct vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>Les sous-titres synchronisés sont pertinents ;</li>
+                          <li>Les sous-titres synchronisés de la version alternative sont pertinents ;</li>
+                          <li>La transcription textuelle est pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.6.2 : Chaque média temporel synchronisé en direct vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>Les sous-titres synchronisés sont pertinents ;</li>
+                          <li>Les sous-titres synchronisés de la version alternative sont pertinents ;</li>
+                          <li>La transcription textuelle est pertinente.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.7 [AA] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une audio-description synchronisée (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.7.1 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une audio-description synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audio-description synchronisée.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.7.2 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une audio-description synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audio-description synchronisée.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.8 [AA] Pour chaque média temporel pré-enregistré ayant une audio-description synchronisée, celle-ci est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 4.8.1 : Pour chaque média temporel pré-enregistré seulement vidéo ayant une audio-description synchronisée, celle-ci est-elle pertinente ?</li>
+                      <li>Test 4.8.2 : Pour chaque média temporel synchronisé ayant une audio-description synchronisée, celle-ci est-elle pertinente ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.9 [AAA] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une interprétation en langue des signes (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.9.1 : Chaque média temporel pré-enregistré seulement audio a-t-il, si nécessaire, une interprétation en langue des signes adaptée à la langue du média (hors cas particuliers) ?</li>
+                      <li>Test 4.9.2 : Chaque média temporel synchronisé pré-enregistré a-t-il, si nécessaire, une interprétation en langue des signes adaptée à la langue du média (hors cas particuliers) ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.10 [AAA] Pour chaque média temporel pré-enregistré ayant une interprétation en langue des signes, celle-ci est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 4.10.1 : Pour chaque média temporel pré-enregistré seulement audio ayant une interprétation en langue des signes, celle-ci est-elle pertinente ?</li>
+                      <li>Test 4.10.2 : Pour chaque média temporel synchronisé pré-enregistré ayant une interprétation en langue des signes, celle-ci est-elle pertinente ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.11 [AAA] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une audio-description étendue synchronisée (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.11.1 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une audio-description étendue synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audio-description étendue synchronisée.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.11.2 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une audio-description étendue synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audio-description étendue synchronisée.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.12 [AAA] Pour chaque média temporel pré-enregistré ayant une audio-description étendue synchronisée, celle-ci est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 4.12.1 : Pour chaque média temporel synchronisé pré-enregistré ayant une audio-description étendue synchronisée, celle-ci est-elle pertinente ?</li>
+                      <li>Test 4.12.2 : Pour chaque média temporel pré-enregistré seulement vidéo ayant une audio-description étendue synchronisée, celle-ci est-elle pertinente ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.13 [AAA] Chaque média temporel synchronisé ou seulement vidéo a-t-il, si nécessaire, une transcription textuelle (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.13.1 : Chaque média temporel synchronisé vérifie-t-il si nécessaire une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.13.2 : Chaque média temporel seulement vidéo vérifie-t-il si nécessaire une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.14 [AAA] Pour chaque média temporel synchronisé ou seulement vidéo, ayant une transcription textuelle, celle-ci est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 4.14.1 : Pour chaque média temporel seulement vidéo ayant une transcription textuelle, celle-ci est-elle pertinente ?</li>
+                      <li>Test 4.14.2 : Pour chaque média temporel synchronisé ayant une transcription textuelle, celle-ci est-elle pertinente ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.15 [A] Chaque média temporel est-il clairement identifiable (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.15.1 : Pour chaque média temporel seulement son, seulement vidéo ou synchronisé, le contenu textuel adjacent permet-il d’identifier clairement le média temporel (hors cas particuliers) ?</li>
+                      <li>Test 4.15.2 : Pour chaque média temporel seulement son en direct, seulement vidéo en direct ou synchronisé en direct, le contenu textuel adjacent permet-il d’identifier clairement le média temporel (hors cas particuliers) ?</li>
+                    </ul>
+                  </span>
+                  <span id="tableaux1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Donner à chaque tableau de données complexe, un résumé et un titre pertinent, identifier clairement les cellules d’en-tête, utiliser un mécanisme pertinent pour lier les cellules de données aux cellules d’en-tête. Pour chaque tableau de mise en forme, veiller à sa bonne linéarisation.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.1 [A] Chaque tableau de données complexe a-t-il un résumé ?</h2>
+                    <ul>
+                      <li>Test 5.1.1 : Pour chaque tableau de données complexe (balise table) un résumé est-il disponible dans la balise caption ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.2 [A] Pour chaque tableau de données complexe ayant un résumé, celui-ci est-il pertinent ?</h2>
+                    <ul>
+                      <li>Test 5.2.1 : Pour chaque tableau de donnée complexes (balise table) ayant un résumé, celui-ci est-il pertinent ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.3 [A] Pour chaque tableau de mise en forme, le contenu linéarisé reste-t-il compréhensible (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 5.3.1 : Chaque tableau de mise en forme vérifie-t-il ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le contenu linéarisé reste compréhensible ;</li>
+                          <li>La balise table possède un attribut role="presentation".</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.4 [A] Chaque tableau de données a-t-il un titre ?</h2>
+                    <ul>
+                      <li>Test 5.4.1 : Chaque tableau de données (balise table) a-t-il une balise caption ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.5 [A] Pour chaque tableau de données ayant un titre, celui-ci est-il pertinent ?</h2>
+                    <ul>
+                      <li>Test 5.5.1 : Pour chaque tableau de données (balise table) ayant un titre de tableau dans la balise caption, le titre est-il pertinent ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.6 [A] Pour chaque tableau de données, chaque en-tête de colonnes et chaque en-tête de lignes sont-ils correctement déclarés ?</h2>
+                    <ul>
+                      <li>Test 5.6.1 : Pour chaque tableau de données (balise table), chaque en-tête de colonnes a-t-il une balise th ?</li>
+                      <li>Test 5.6.2 : Pour chaque tableau de données (balise table), chaque en-tête de lignes a-t-il une balise th ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.7 [A] Pour chaque tableau de données, la technique appropriée permettant d’associer chaque cellule avec ses en-têtes est-elle utilisée ?</h2>
+                    <ul>
+                      <li>Test 5.7.1 : Chaque en-tête (balise th) s’appliquant à la totalité de la ligne ou de la colonne possède-t-il un attribut id unique ou un attribut scope ?</li>
+                      <li>Test 5.7.2 : Chaque en-tête (balise th) s’appliquant à la totalité de la ligne ou de la colonne et possédant un attribut scope vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>L’en-tête possède un attribut scope avec la valeur "row" pour les en-tête de lignes ;</li>
+                          <li>L’en-tête possède un attribut scope avec la valeur "col" pour les en-tête de colonnes.</li>
+                        </ul>
+                      </li>
+                      <li>Test 5.7.3 : Chaque en-tête (balise th) ne s’appliquant pas à la totalité de la ligne ou de la colonne vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>L’en-tête ne possède pas d’attribut scope ;</li>
+                          <li>L’en-tête possède un attribut id unique.</li>
+                        </ul>
+                      </li>
+                      <li>Test 5.7.4 : Chaque cellule (balise td ou th) associée à un ou plusieurs en-têtes possédant un attribut id vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La cellule possède un attribut headers ;</li>
+                          <li>L’attribut headers possède la liste des valeurs des en-têtes associés à la cellule.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.8 [A] Chaque tableau de mise en forme ne doit pas utiliser d’éléments propres aux tableaux de données. Cette règle est-elle respectée ?</h2>
+                    <ul>
+                      <li>Test 5.8.1 : Chaque tableau de mise en forme (balise table) vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>Le tableau de mise en forme (balise table) ne possède pas de balises caption, th, thead, tfoot, colgroup ;</li>
+                          <li>Les cellules du tableau de mise en forme (balise td) ne possèdent pas d’attributs scope, headers, colgroup, axis.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </span>
+                  <span id="liens1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Donner des intitulés de lien explicites, grâce à des informations de contexte notamment, et utiliser le titre de lien le moins possible.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.1 [A] Chaque lien est-il explicite (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 6.1.1 : Chaque lien texte vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
+                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.1.2 : Chaque lien image vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
+                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.1.3 : Chaque lien composite vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
+                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.2 [A] Pour chaque lien ayant un titre de lien, celui-ci est-il pertinent ?</h2>
+                    <ul>
+                      <li>Test 6.2.1 : Pour chaque lien texte ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
+                      <li>Test 6.2.2 : Pour chaque lien image ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
+                      <li>Test 6.2.3 : Pour chaque lien composite ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.3 [AAA] Chaque intitulé de lien seul est-il explicite hors contexte (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 6.3.1 : Chaque lien texte vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé du lien est explicite hors contexte ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
+                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.3.2 : Chaque intitulé de lien image vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé du lien est explicite hors contexte ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
+                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.3.3 : Chaque lien composite (contenu texte et de l’attribut alt) est-il explicite hors contexte (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé du lien est explicite hors contexte ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
+                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.4 [A] Pour chaque page Web, chaque lien identique a-t-il les mêmes fonction et destination ?</h2>
+                    <ul>
+                      <li>Test 6.4.1 : Pour chaque page Web, chaque lien identique de type texte a-t-il les mêmes fonction et destination ?</li>
+                      <li>Test 6.4.2 : Pour chaque page Web, chaque lien identique de type image a-t-il les mêmes fonction et destination ?</li>
+                      <li>Test 6.4.3 : Pour chaque page Web, chaque lien identique de type composite a-t-il les mêmes fonction et destination ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.5 [A] Dans chaque page Web, chaque lien, à l’exception des ancres, a-t-il un intitulé ?</h2>
+                    <ul>
+                      <li>Test 6.5.1 : Dans chaque page Web, chaque lien (balise a avec un attribut href), à l’exception des ancres, a-t-il un intitulé entre &lt;a&gt; et &lt;/a&gt; ?</li>
+                    </ul>
+                  </span>
+                  <span id="scripts1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Donner si nécessaire à chaque script une alternative pertinente. Rendre possible le contrôle de chaque code script au moins par le clavier et la souris et s’assurer de leur compatibilité avec les technologies d’assistance.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 7.1 [A] Chaque script est-il, si nécessaire, compatible avec les technologies d’assistance ?</h2>
+                    <ul>
+                      <li>Test 6.1.1 : Chaque lien texte vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
+                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.1.2 : Chaque lien image vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
+                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.1.3 : Chaque lien composite vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
+                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.2 [A] Pour chaque lien ayant un titre de lien, celui-ci est-il pertinent ?</h2>
+                    <ul>
+                      <li>Test 6.2.1 : Pour chaque lien texte ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
+                      <li>Test 6.2.2 : Pour chaque lien image ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
+                      <li>Test 6.2.3 : Pour chaque lien composite ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.3 [AAA] Chaque intitulé de lien seul est-il explicite hors contexte (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 6.3.1 : Chaque lien texte vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé du lien est explicite hors contexte ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
+                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.3.2 : Chaque intitulé de lien image vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé du lien est explicite hors contexte ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
+                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.3.3 : Chaque lien composite (contenu texte et de l’attribut alt) est-il explicite hors contexte (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé du lien est explicite hors contexte ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
+                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.4 [A] Pour chaque page Web, chaque lien identique a-t-il les mêmes fonction et destination ?</h2>
+                    <ul>
+                      <li>Test 6.4.1 : Pour chaque page Web, chaque lien identique de type texte a-t-il les mêmes fonction et destination ?</li>
+                      <li>Test 6.4.2 : Pour chaque page Web, chaque lien identique de type image a-t-il les mêmes fonction et destination ?</li>
+                      <li>Test 6.4.3 : Pour chaque page Web, chaque lien identique de type composite a-t-il les mêmes fonction et destination ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.5 [A] Dans chaque page Web, chaque lien, à l’exception des ancres, a-t-il un intitulé ?</h2>
+                    <ul>
+                      <li>Test 6.5.1 : Dans chaque page Web, chaque lien (balise a avec un attribut href), à l’exception des ancres, a-t-il un intitulé entre &lt;a&gt; et &lt;/a&gt; ?</li>
+                    </ul>
+                  </span>
                   <p id="elementsobli1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Elements Oblig</p>
                   <p id="structurationsinfo1" class="m-4" style="display: none"
                      [ngStyle]="{'font-size':fontSizeParam+'px'}">Structuration Info</p>
@@ -65,7 +862,7 @@
             <mat-list>
               <mat-list-item *ngFor="let item of listItems; let i = index;"
                              [ngClass]="selectedItem == item.element ?'selected':''">
-                <p mat-line class="pointer" (click)="swip(item.element)">{{i + 1}}. {{item.label}}</p>
+                <p mat-line class="pointer" (click)="swip(item.element)">{{i !== 0 ? i + '.': ''}} {{item.label}}</p>
                 <mat-divider [inset]="true"></mat-divider>
              </mat-list-item>
             </mat-list>
@@ -86,7 +883,8 @@
   </div>
   <div id="circle"></div>
   <app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
-  <app-footer id="context2" style="position: absolute;width: 100%;" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+  <app-footer id="context2" style="position: absolute;width: 100%;" [fontSize]='fontSizeParam'
+              (changeFamily)="changeFamily($event)"
               [fontFamily]='fontFamilyParam'></app-footer>
 </span>
 
@@ -108,76 +906,1050 @@
         <div class="row m-0" [ngClass]="fontFamilyParam?'myMyriadProdFont':'openDyslexicFont'"
              [ngStyle]="{'font-size':fontSizeParam+'px'}">
           <ngb-tabset>
-            <ngb-tab title="Image" >
+            <ngb-tab title="Mode d'emploi">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                 <span class="mt-4 ml-2 mr-2">
+                    <h2 class="mb-4" style="text-align: center;font-weight: bolder">Mode d'emploi</h2>
+                    <p>Ce référentiel s’applique à tout contenu HTML (HTML4, XHTML1 et HTML5). Il utilise, pour certains tests une base de référence prenant en compte un ensemble de technologies d’assistance, de navigateurs et de systèmes d’exploitation sur lesquels l’accessibilité des composants d’interface développés par JavaScript doit être vérifiée notamment. Une description détaillée de la base de référence est disponible ici : base de référence.</p>
+                    <p><strong>Note importante pour tout contenu antérieur à la spécification HTML5 :</strong></p>
+                    <p>Lorsque le code HTML de la page n’est pas du HTML5, les éléments HTML5 (balises et attributs) exigés par un critère ou test sont non applicables. Tous les autres critères ou tests restent applicables, y compris les dispositifs ARIA. Les critères et tests suivants sont non applicables :</p>
+                    <ul>
+                      <li>Critère 1.10 ;</li>
+                      <li>Critère 9.2 ;</li>
+                      <li>Test 11.10.1 ( condition 2 relative à l’attribut HTML5 <span style="font-style: italic">required</span> ).</li>
+                    </ul>
+                    <p><strong>Méthode de validation</strong></p>
+                    <p>Le niveau de conformité est établi au niveau des critères selon ces statuts :</p>
+                    <ul>
+                      <li>Conforme (C) : l’ensemble des tests applicables sont réussis ;</li>
+                      <li>Non Conforme (NC) : un test applicable est échoué, au moins ;</li>
+                      <li>Non Applicable (NA) : il n’y a pas de contenu concerné par le critère.</li>
+                    </ul>
+                    <p>RGAA propose, en plus de ces trois statuts de validation, deux statuts complémentaires :</p>
+                      <ul>
+                      <li>Dérogé (D) : il existe des contenus dérogés applicables au critère ;</li>
+                      <li>Non Testé (NT) : le critère n’a pas été testé.</li>
+                    </ul>
+                    <p>Vous pouvez consulter, à ce sujet, le <a
+                      href="http://references.modernisation.gouv.fr/rgaa-accessibilite/guide-accompagnement-RGAA.html">guide d’accompagnement</a> : Comment vérifie-t-on la conformité au RGAA ?</p>
+                  </span>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Image">
+              <ng-template ngbTabContent>
+                <strong>Recommandation</strong>
+                <p>Donner à chaque image porteuse d’information une alternative textuelle pertinente et une description
+                  détaillée si nécessaire. Lier les légendes à leurs images. Remplacer les images textes par du texte
+                  stylé lorsque c’est possible.</p>
+                <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.1
+                  [A] Chaque image a-t-elle une alternative textuelle ?</h2>
+                <ul>
+                  <li>Test 1.1.1 : Chaque image (balise <span style="font-style: italic">img</span>) a-t-elle un
+                    attribut <span
+                      style="font-style: italic">alt</span> ?
+                  </li>
+                  <li>Test 1.1.2 : Chaque zone (balise <span style="font-style: italic">area</span>) d’une image
+                    réactive a-t-elle un attribut <span
+                      style="font-style: italic">alt</span> ?
+                  </li>
+                  <li>Test 1.1.3 : Chaque bouton de type image (balise <span
+                    style="font-style: italic">input</span> avec l’attribut <span style="font-style: italic">type="image"</span>)
+                    a-t-il un attribut <span
+                      style="font-style: italic">alt</span> ?
+                  </li>
+                  <li>Test 1.1.4 : Chaque zone cliquable d’une image réactive coté serveur est-t-elle doublée d’un lien
+                    dans la page ?
+                  </li>
+                </ul>
+                <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.2
+                  [A] Pour chaque image de décoration ayant une alternative textuelle, cette alternative est-elle vide
+                  ?</h2>
+                <ul>
+                  <li>Test 1.2.1 : Chaque image (balise img) de décoration, sans légende, et ayant un attribut alt,
+                    vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>Le contenu de l’attribut alt est vide (alt="") ;</li>
+                      <li>L’image de décoration ne possède pas d’attribut title ;</li>
+                      <li>La balise img est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image
+                        (aria-label, aria-describedby, aria-labelledby par exemple).
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.2.2 : Chaque zone non cliquable (balise area sans attribut href) de décoration, et ayant un
+                    attribut alt, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>Le contenu de l’attribut alt est vide (alt="") ;</li>
+                      <li>La zone non cliquable ne possède pas d’attribut title ;</li>
+                      <li>La balise area est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image
+                        (aria-label, aria-describedby, aria-labelledby par exemple).
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.2.3 : Chaque image objet (balise object avec l’attribut type="image/…") de décoration, sans
+                    légende, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>La balise object possède un attribut aria-hidden="true" ;</li>
+                      <li>L’alternative textuelle entre &lt;object&gt; et &lt;/object&gt; est vide ;</li>
+                      <li>La balise object ou l'un de ses enfants est dépourvue d'attribut title</li>
+                      <li>La balise object ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à
+                        labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.2.4 : Chaque image vectorielle (balise svg) de décoration, sans légende, vérifie-t-elle ces
+                    conditions ?
+                    <ul>
+                      <li>La balise svg possède un attribut aria-hidden="true" ;</li>
+                      <li>Les balises title et desc sont absentes ou vides ;</li>
+                      <li>La balise svg ou l’un de ses enfants est dépourvue d’attribut title ;</li>
+                      <li>La balise svg ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à
+                        labelliser l’image vectorielle (aria-label, aria-describedby, aria-labelledby par exemple).
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.2.5 : Chaque image bitmap (balise canvas) de décoration, sans légende, vérifie-t-elle ces
+                    conditions ?
+                    <ul>
+                      <li>La balise canvas possède un attribut aria-hidden="true" ;</li>
+                      <li>Le contenu entre &lt;canvas&gt; et &lt;/canvas&gt; est dépourvue de contenus textuels ;</li>
+                      <li>La balise canvas ou l’un de ses enfants est dépourvue d’attribut title ;</li>
+                      <li>La balise canvas ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à
+                        labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.2.5 : Chaque image bitmap (balise canvas) de décoration, sans légende, vérifie-t-elle ces
+                    conditions ?
+                    <ul>
+                      <li>La balise canvas possède un attribut aria-hidden="true" ;</li>
+                      <li>Le contenu entre &lt;canvas&gt; et &lt;/canvas&gt; est dépourvue de contenus textuels ;</li>
+                      <li>La balise canvas ou l’un de ses enfants est dépourvue d’attribut title ;</li>
+                      <li>La balise canvas ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à
+                        labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.2.6 : Chaque image embarquée (balise embed avec l’attribut type="image/…") de décoration,
+                    sans légende, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>La balise embed possède un attribut aria-hidden="true" ;</li>
+                      <li>La balise La balise embed ou l’un de ses enfants est dépourvue d’attribut title ;</li>
+                      <li>La balise embed ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à
+                        labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.3
+                  [A] Pour chaque image porteuse d’information ayant une alternative textuelle, cette alternative
+                  est-elle pertinente (hors cas particuliers) ?</h2>
+                <ul>
+                  <li>Test 1.3.1 : Chaque image (balise img) porteuse d’information, ayant un attribut alt,
+                    vérifie-t-elle ces conditions (hors cas particuliers) ?
+                    <ul>
+                      <li>Le contenu de l’attribut alt est pertinent ;</li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt
+                        ;
+                      </li>
+                      <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut
+                        alt ;
+                      </li>
+                      <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est
+                        identique au contenu de l’attribut alt.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.3.2 : Chaque zone (balise area) d’une image réactive porteuse d’information, ayant un
+                    attribut alt, vérifie-t-elle ces conditions (hors cas particuliers) ?
+                    <ul>
+                      <li>Le contenu de l’attribut alt est pertinent ;</li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt
+                        ;
+                      </li>
+                      <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut
+                        alt ;
+                      </li>
+                      <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est
+                        identique au contenu de l’attribut alt.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.3.3 : Chaque bouton de type image (balise input avec l’attribut type="image"), ayant un
+                    attribut alt, vérifie-t-il ces conditions (hors cas particuliers) ?
+                    <ul>
+                      <li>Le contenu de l’attribut alt est pertinent ;</li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt
+                        ;
+                      </li>
+                      <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut
+                        alt ;
+                      </li>
+                      <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est
+                        identique au contenu de l’attribut alt.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.3.4 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse
+                    d’information vérifie-t-elle une de ces conditions (hors cas particuliers) ?
+                    <ul>
+                      <li>L’image objet est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un
+                        passage de texte contenant une alternative pertinente. ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image objet par un texte alternatif
+                        pertinent ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image objet par une image possédant une
+                        alternative pertinente.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.3.5 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse
+                    d’information, qui utilise une propriété aria-label, aria-labelledby ou un attribut title,
+                    vérifie-t-elle ces conditions (hors cas particuliers) ?
+                    <ul>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut
+                        aria-label
+                      </li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la
+                        propriété aria-labelledby.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.3.6 : Chaque image embarquée (balise embed avec l’attribut type="image/…") porteuse
+                    d’information vérifie-t-elle une de ces conditions (hors cas particuliers) ?
+                    <ul>
+                      <li>L’image embarquée est immédiatement suivie d’un lien adjacent permettant d’afficher une page
+                        ou un passage de texte contenant une alternative pertinente ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par un texte alternatif
+                        pertinent ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par une image possédant une
+                        alternative pertinente.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.3.7 : Chaque image embarquée (balise embed avec l’attribut type="image/…") porteuse
+                    d’information, qui utilise une propriété aria-label, aria-labelledby ou un attribut title,
+                    vérifie-t-elle ces conditions (hors cas particuliers) ?
+                    <ul>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut
+                        aria-label ;
+                      </li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la
+                        propriété aria-labelledby.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.3.8 : Chaque image vectorielle (balise svg) porteuse d’information, en l’absence
+                    d’alternative, vérifie-t-elle ces conditions (hors cas particuliers) ?
+                    <ul>
+                      <li>La balise svg possède un role="img" ;</li>
+                      <li>La balise svg possède une propriété aria-label dont le contenu est pertinent et identique à
+                        l’attribut title s’il est présent ;
+                      </li>
+                      <li>La balise svg possède une balise desc dont le contenu est pertinent et contient un passage de
+                        texte identique à la propriété aria-label.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.3.9 : Pour chaque image vectorielle (balise svg) porteuse d’information et possédant une
+                    alternative, cette alternative est-elle correctement restituée par les technologies d’assistance ?
+                  </li>
+                  <li>Test 1.3.10 : Chaque image bitmap (balise canvas) porteuse d’information vérifie-t-elle une de ces
+                    conditions (hors cas particuliers) ?
+                    <ul>
+                      <li>Le contenu de l’alternative (contenu entre &lt;canvas&gt; et &lt;/canvas&gt;) est pertinent
+                        ;
+                      </li>
+                      <li>L’image bitmap est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou
+                        un passage de texte contenant une alternative pertinente ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par un texte alternatif
+                        pertinent ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par une image possédant une
+                        alternative pertinente.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.3.11 : Chaque image bitmap (balise canvas) porteuse d’information, qui utilise une
+                    propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions (hors cas
+                    particuliers) ?
+                    <ul>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut
+                        aria-label ;
+                      </li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la
+                        propriété aria-labelledby.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.3.12 : Pour chaque image bitmap (balise canvas) porteuse d’information et possédant une
+                    alternative (contenu entre &lt;canvas&gt; et &lt;/canvas&gt;), cette alternative est-elle
+                    correctement restituée par les technologies d’assistance ?
+                  </li>
+                  <li>Test 1.3.13 : Pour chaque image porteuse d’information et ayant une alternative textuelle,
+                    l’alternative textuelle est-elle courte et concise (hors cas particuliers) ?
+                  </li>
+                </ul>
+                <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.4
+                  [A] Pour chaque image utilisée comme CAPTCHA ou comme image-test, ayant une alternative textuelle,
+                  cette alternative permet-elle d’identifier la nature et la fonction de l’image ?</h2>
+                <ul>
+                  <li>Test 1.4.1 : Chaque image (balise img) utilisée comme CAPTCHA ou comme image-test, ayant un
+                    attribut alt, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>Le contenu de l’attribut alt permet de comprendre la nature et la fonction de l’image ;</li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt
+                        ;
+                      </li>
+                      <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut
+                        alt ;
+                      </li>
+                      <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est
+                        identique au contenu de l’attribut alt.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.4.2 : Chaque zone (balise area) d’une image réactive utilisée comme CAPTCHA ou comme
+                    image-test, ayant un attribut alt, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>Le contenu de l’attribut alt permet de comprendre la nature et la fonction de la zone ;</li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt
+                        ;
+                      </li>
+                      <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut
+                        alt ;
+                      </li>
+                      <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est
+                        identique au contenu de l’attribut alt.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.4.3 : Chaque bouton associé à une image (balise input avec l’attribut type="image")
+                    utilisée comme CAPTCHA ou comme image-test, ayant un attribut alt, vérifie-t-il ces conditions ?
+                    <ul>
+                      <li>Le contenu de l’attribut alt permet de comprendre la nature et la fonction du bouton ;</li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt
+                        ;
+                      </li>
+                      <li>S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut
+                        alt ;
+                      </li>
+                      <li>S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est
+                        identique au contenu de l’attribut alt.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.4.4 : Chaque image objet (balise object avec l’attribut type="image/…") utilisée comme
+                    CAPTCHA ou comme image-test vérifie-t-elle une de ces conditions ?
+                    <ul>
+                      <li>L’image objet est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un
+                        passage de texte contenant une alternative permettant de comprendre la nature et la fonction de
+                        l’image ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image objet par un texte alternatif
+                        permettant de comprendre la nature et la fonction de l’image ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image objet par une image possédant une
+                        alternative permettant de comprendre la nature et la fonction de l’image.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.4.5 : Chaque image objet (balise object avec l’attribut type="image/…") utilisée comme
+                    CAPTCHA ou comme image-test, qui utilise une propriété aria-label, aria-labelledby ou un attribut
+                    title, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut
+                        aria-label ;
+                      </li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la
+                        propriété aria-labelledby.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.4.6 : Chaque image embarquée (balise embed avec l’attribut type="image/…") utilisée comme
+                    CAPTCHA ou comme image-test vérifie-t-elle une de ces conditions ?
+                    <ul>
+                      <li>L’image embarquée est immédiatement suivie d’un lien adjacent permettant d’afficher une page
+                        ou un passage de texte contenant une alternative permettant de comprendre la nature et la
+                        fonction de l’image ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par un texte alternatif
+                        permettant de comprendre la nature et la fonction de l’image ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par une image possédant une
+                        alternative permettant de comprendre la nature et la fonction de l’image.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.4.7 : Chaque image embarquée (balise embed avec l’attribut type="image/…") utilisée comme
+                    CAPTCHA ou comme image-test, qui utilise une propriété aria-label, aria-labelledby ou un attribut
+                    title, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut
+                        aria-label ;
+                      </li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la
+                        propriété aria-labelledby.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.4.8 : Chaque image vectorielle (balise svg) utilisée comme CAPTCHA ou comme image-test, en
+                    l’absence d’alternative, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>La balise svg possède un role="img" ;</li>
+                      <li>La balise svg possède une propriété aria-label dont le contenu permet de comprendre la nature
+                        et la fonction de l’image et identique à l’attribut title s’il est présent ;
+                      </li>
+                      <li>La balise svg possède une balise desc dont le contenu permet de comprendre la nature et la
+                        fonction de l’image et identique à la propriété aria-label
+                      </li>
+                      <li>Un lien adjacent permet d’accéder à une alternative dont le contenu permet de comprendre la
+                        nature et la fonction de l’image et identique à la propriété aria-label.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.4.9 : Pour chaque image vectorielle (balise svg) utilisée comme CAPTCHA ou comme
+                    image-test, possédant une alternative, cette alternative est-elle correctement restituée par les
+                    technologies d’assistance ?
+                  </li>
+                  <li>Test 1.4.10 Chaque image bitmap (balise canvas) utilisée comme CAPTCHA ou comme image-test
+                    vérifie-t-elle une de ces conditions ?
+                    <ul>
+                      <li>Le contenu de l’alternative (contenu entre &lt;canvas&gt; et &lt;/canvas&gt;) permet de
+                        comprendre la nature et la fonction de l’image ;
+                      </li>
+                      <li>L’image bitmap est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou
+                        un passage de texte contenant une alternative permettant de comprendre la nature et la fonction
+                        de l’image ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par un texte alternatif
+                        permettant de comprendre la nature et la fonction de l’image ;
+                      </li>
+                      <li>Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par une image possédant une
+                        alternative permettant de comprendre la nature et la fonction de l’image.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.4.11 : Chaque image bitmap (balise canvas) utilisée comme CAPTCHA ou comme image-test, qui
+                    utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces
+                    conditions ?
+                    <ul>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut
+                        aria-label ;
+                      </li>
+                      <li>S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la
+                        propriété aria-labelledby.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.4.12 : Pour chaque image bitmap (balise canvas) utilisée comme CAPTCHA ou comme image-test,
+                    ayant une alternative (contenu entre &lt;canvas&gt; et &lt;/canvas&gt;), cette, l’alternative
+                    textuelle est-elle correctement restituée par les technologies d’assistance ?
+                  </li>
+                </ul>
+                <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.5
+                  [A] Pour chaque image utilisée comme CAPTCHA, une solution d’accès alternatif au contenu ou à la
+                  fonction du CAPTCHA est-elle présente ?</h2>
+                <ul>
+                  <li>Test 1.5.1 : Chaque image (balises img, area, object, embed, svg, canvas) utilisée comme CAPTCHA
+                    vérifie-t-elle une de ces conditions ?
+                    <ul>
+                      <li>Il existe une autre forme de CAPTCHA non graphique, au moins ;</li>
+                      <li>Il existe une autre solution d’accès à la fonctionnalité sécurisée par le CAPTCHA.</li>
+                    </ul>
+                  </li>
+                  <li>Test 1.5.2 : Chaque bouton associé à une image (balise input avec l’attribut type="image")
+                    utilisée comme CAPTCHA vérifie-t-il une de ces conditions ?
+                    <ul>
+                      <li>Il existe une autre forme de CAPTCHA non graphique, au moins ;</li>
+                      <li>Il existe une autre solution d’accès à la fonctionnalité sécurisée par le CAPTCHA.</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.6
+                  [A] Chaque image porteuse d’information a-t-elle, si nécessaire, une description détaillée ?</h2>
+                <ul>
+                  <li>Test 1.6.1 : Chaque image (balise img) porteuse d’information, qui nécessite une description
+                    détaillée, vérifie-t-elle une de ces conditions ?
+                    <ul>
+                      <li>Il existe un attribut longdesc qui donne l’adresse (url) d’une page contenant la description
+                        détaillée ;
+                      </li>
+                      <li>Il existe un attribut alt contenant la référence à une description détaillée adjacente à
+                        l’image ;
+                      </li>
+                      <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la
+                        description détaillée.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.6.2 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse
+                    d’information, qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+                    <ul>
+                      <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la
+                        description détaillée ;
+                      </li>
+                      <li>Il existe une description détaillée clairement identifiable adjacente à l’image objet.</li>
+                    </ul>
+                  </li>
+                  <li>Test 1.6.3 : Chaque image embarquée (balise embed) porteuse d’information, qui nécessite une
+                    description détaillée, vérifie-t-elle une de ces conditions ?
+                    <ul>
+                      <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la
+                        description détaillée ;
+                      </li>
+                      <li>Il existe une description détaillée clairement identifiable adjacente à l’image embarquée.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.6.4 : Chaque bouton de type image (balise input avec l’attribut type="image") porteur
+                    d’information, qui nécessite une description détaillée, vérifie-t-il une de ces conditions ?
+                    <ul>
+                      <li>Il existe un attribut alt contenant la référence à une description détaillée adjacente à
+                        l’image ;
+                      </li>
+                      <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la
+                        description détaillée ;
+                      </li>
+                      <li>Il existe une propriété aria-describedby référençant un passage de texte faisant office de
+                        description détaillée.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.6.5 : Chaque bouton de type image (balise input avec l’attribut type="image") porteur
+                    d’information, qui implémente une référence à une description détaillée via une propriété
+                    aria-describedby, vérifie-t-il ces conditions ?
+                    <ul>
+                      <li>Le passage de texte est identifié via un attribut id ;</li>
+                      <li>La valeur de l’attribut id est unique ;</li>
+                      <li>La valeur de la propriété ARIA aria-describedby est égale à la valeur de l’attribut id.</li>
+                    </ul>
+                  </li>
+                  <li>Test 1.6.6 : Chaque image vectorielle (balise svg) porteuse d’information, qui nécessite une
+                    description détaillée, vérifie-t-elle une de ces conditions ?
+                    <ul>
+                      <li>Il existe une propriété aria-label contenant une référence à une description détaillée
+                        adjacente à l’image vectorielle ;
+                      </li>
+                      <li>La balise title contient la description détaillée ;</li>
+                      <li>Il existe une balise desc contenant la description détaillée ;</li>
+                      <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la
+                        description détaillée.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.6.7 : Pour chaque image vectorielle (balise svg) porteuse d’information, qui implémente une
+                    référence à une description détaillée adjacente via une propriété aria-label ou une balise desc,
+                    cette référence est-elle correctement restituée par les technologies d’assistance ?
+                  </li>
+                  <li>Test 1.6.8 : Chaque image bitmap (balise canvas), qui nécessite une description détaillée,
+                    vérifie-t-elle une de ces conditions ?
+                    <ul>
+                      <li>Il existe un passage de texte entre &lt;canvas&gt; et &lt;/canvas&gt; contenant une référence
+                        à une description détaillée adjacente à l’image bitmap ;
+                      </li>
+                      <li>Il existe un contenu textuel entre &lt;canvas&gt; et &lt;/canvas&gt; faisant office de
+                        description détaillée ;
+                      </li>
+                      <li>Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la
+                        description détaillée.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Test 1.6.9 : Pour chaque image bitmap (balise canvas) porteuse d’information, qui implémente une
+                    référence à une description détaillée adjacente, cette référence est-elle correctement restituée par
+                    les technologies d’assistance ?
+                  </li>
+                  <li>Test 1.6.10 : Pour chaque image (balise img, area, object, embed, svg, canvas) porteuse
+                    d’information, qui implémente une description détaillée et qui utilise une propriété
+                    aria-describedby, la propriété aria-describedby référence-t-elle la description détaillée ?
+                  </li>
+                </ul>
+                <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.7
+                  [A] Pour chaque image porteuse d’information ayant une description détaillée, cette description
+                  est-elle pertinente ?</h2>
+                <ul>
+                  <li>Test 1.7.1 : Chaque image (balise img) porteuse d’information, ayant une description détaillée,
+                    vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>La description détaillée via l’adresse référencée dans l’attribut longdesc est pertinente ;
+                      </li>
+                      <li>La description détaillée dans la page et signalée dans l’attribut alt est pertinente ;</li>
+                      <li>La description détaillée via un lien adjacent est pertinente.</li>
+                    </ul>
+                  </li>
+                  <li>Test 1.7.2 : Chaque bouton de type image (balise input avec l’attribut type="image") porteur
+                    d’information, ayant une description détaillée, vérifie-t-il ces conditions ?
+                    <ul>
+                      <li>La description détaillée dans la page et signalée dans l’attribut alt est pertinente ;</li>
+                      <li>La description détaillée via un lien adjacent est pertinente ;</li>
+                      <li>Le passage de texte référencé via la propriété aria-describedby est pertinent.</li>
+                    </ul>
+                  </li>
+                  <li>Test 1.7.3 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse
+                    d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>La description détaillée adjacente à l’image objet est pertinente ;</li>
+                      <li>La description détaillée via un lien adjacent est pertinente.</li>
+                    </ul>
+                  </li>
+                  <li>Test 1.7.4 : Chaque image embarquée (balise embed avec l’attribut type="image/…") porteuse
+                    d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>La description détaillée adjacente à l’image embarquée est pertinente</li>
+                      <li>La description détaillée via un lien adjacent est pertinente.</li>
+                    </ul>
+                  </li>
+                  <li>Test 1.7.5 : Chaque image vectorielle (balise svg) porteuse d’information, ayant une description
+                    détaillée, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>La description détaillée adjacente à l'image vectorielle et signalée dans la propriété
+                        aria-label ou la balise desc est pertinente.
+                      </li>
+                      <li>La description détaillée contenue dans la balise desc est pertinente ;</li>
+                      <li>La description détaillée via un lien adjacent est pertinente.</li>
+                    </ul>
+                  </li>
+                  <li>Test 1.7.6 : Pour chaque image vectorielle (balise svg) porteuse d’information, ayant une
+                    description détaillée implémentée via la balise desc, cette description détaillée est-elle
+                    correctement restituée par les technologies d’assistance ?
+                  </li>
+                  <li>Test 1.7.7 : Chaque image bitmap (balise canvas) porteuse d’information, ayant une description
+                    détaillée, vérifie-t-elle ces conditions ?
+                    <ul>
+                      <li>La description détaillée adjacente à l’image bitmap est pertinente ;</li>
+                      <li>La description détaillée contenue entre &lt;canvas&gt; et &lt;/canvas&gt; est pertinente ;
+                      </li>
+                      <li>La description détaillée via un lien adjacent est pertinente.</li>
+                    </ul>
+                  </li>
+                  <li>Test 1.7.8 : Pour chaque image bitmap (balise canvas) porteuse d’information, ayant une
+                    description détaillée entre &lt;canvas&gt; et &lt;/canvas&gt;, cette description détaillée est-elle
+                    correctement restituée par les technologies d’assistance ?
+                  </li>
+                </ul>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Cadres">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                <span>
+                    <strong>Recommandation</strong>
+                    <p>Donner à chaque cadre en ligne un titre pertinent.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 2.1 [A] Chaque cadre en ligne a-t-il un titre de cadre ?</h2>
+                    <ul>
+                       <li>Test 2.1.1 : Chaque cadre en ligne (balise iframe) a-t-il un attribut title ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 2.1 [A] Chaque cadre en ligne a-t-il un titre de cadre ?</h2>
+                    <ul>
+                      <li>Test 2.1.1 : Chaque cadre en ligne (balise iframe) a-t-il un attribut title ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 2.2 [A] Pour chaque cadre en ligne ayant un titre de cadre, ce titre de cadre est-il pertinent ?</h2>
+                    <ul>
+                      <li>Test 2.2.1 : Pour chaque cadre en ligne (balise iframe) ayant un attribut title, le contenu de cet attribut est-il pertinent ?</li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Couleurs">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                <span>
+                    <strong>Recommandation</strong>
+                    <p>Ne pas donner l’information uniquement par la couleur et utiliser des contrastes de couleurs suffisamment élevés.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 3.1 [A] Dans chaque page Web, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</h2>
+                    <ul>
+                      <li>Test 3.1.1 : Pour chaque mot ou ensemble de mots dont la mise en couleur est porteuse d’information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                      <li>Test 3.1.2 : Pour chaque indication de couleur donnée par un texte, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                      <li>Test 3.1.3 : Pour chaque image véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                      <li>Test 3.1.4 : Pour chaque propriété CSS déterminant une couleur et véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                      <li>Test 3.1.5 : Pour chaque média temporel véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                      <li>Test 3.1.6 : Pour chaque média non temporel véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 3.2 [A] Dans chaque page Web, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</h2>
+                    <ul>
+                      <li>Test 3.2.1 : Pour chaque mot ou ensemble de mots dont la mise en couleur est porteuse d’information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                      <li>Test 3.2.2 : Pour chaque indication de couleur donnée par un texte, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                      <li>Test 3.2.3 : Pour chaque image véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                      <li>Test 3.2.4 : Pour chaque propriété CSS déterminant une couleur et véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                      <li>Test 3.2.5 : Pour chaque média temporel véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                      <li>Test 3.2.6 : Pour chaque média non temporel véhiculant une information, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle implémentée de façon pertinente ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 3.3 [AA] Dans chaque page Web, le contraste entre la couleur du texte et la couleur de son arrière-plan est-il suffisamment élevé (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 3.3.1 : Dans chaque page Web, jusqu’à 150% de la taille de police par défaut (ou 1.5em), le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 4.5:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 4.5:1, au moins</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.3.2 : Dans chaque page Web, jusqu’à 120% de la taille de police par défaut (ou 1.2em), le texte et le texte en image en gras vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 4.5:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 4.5:1, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.3.3 : Dans chaque page Web, à partir de 150% de la taille de police par défaut (ou 1.5em), le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 3:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 3:1, au moins</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.3.4 : Dans chaque page Web, à partir de 120% de la taille de police par défaut (ou 1.2em), le texte et le texte en image en gras vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 3:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 3:1, au moins</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.3.5 : Chaque mécanisme qui permet d'afficher le texte avec un rapport de contraste conforme a-t-il un rapport de contraste supérieur ou égal à 4,5:1 ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 3.4 [AAA] Dans chaque page Web, le contraste entre la couleur du texte et la couleur de son arrière-plan est-il amélioré (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 3.4.1 : Dans chaque page Web, jusqu’à 150% de la taille de police par défaut (ou 1.5em), le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 7:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 7:1, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.4.2 : Dans chaque page Web, jusqu’à 120% de la taille de police par défaut (ou 1.2em), le texte et le texte en image en gras vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 7:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 7:1, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.4.3 : Dans chaque page Web, à partir de 150% de la taille de police par défaut (ou 1.5em), le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 4.5:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 4.5:1, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.4.4 : Dans chaque page Web, à partir de 120% de la taille de police par défaut (ou 1.2em), le texte et le texte en image en gras vérifient-ils une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le rapport de contraste entre le texte et son arrière-plan est de 4.5:1, au moins ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’afficher le texte avec un rapport de contraste de 4.5:1, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 3.4.5 : Chaque mécanisme qui permet d'afficher le texte avec un rapport de contraste conforme a-t-il un rapport de contraste supérieur ou égal à 7:1 ?</li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Multimédia">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+               <span>
+                    <strong>Recommandation</strong>
+                    <p>Donner si nécessaire à chaque média temporel une transcription textuelle, des sous-titres synchronisés et une audio-description synchronisée pertinents. Donner à chaque média non temporel une alternative textuelle pertinente. Rendre possible le contrôle de la consultation de chaque média temporel et non-temporel au clavier et s’assurer de leur compatibilité avec les technologies d’assistance.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.1 [A] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une transcription textuelle ou une audio-description (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.1.1 : Chaque média temporel pré-enregistré seulement audio, vérifie-t-il, si nécessaire, l’une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.1.2 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il, si nécessaire, l’une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une version alternative « audio seulement » accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une version version alternative « audio seulement » adjacente clairement identifiable ;</li>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable ;</li>
+                          <li>Il existe une audiodescription synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audiodescription synchronisée accessible via un lien adjacent (une url ou une ancre).</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.1.3 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable ;</li>
+                          <li>Il existe une audio-description synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audio-description synchronisée accessible via un lien adjacent (une url ou une ancre).</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.2 [A] Pour chaque média temporel pré-enregistré ayant une transcription textuelle ou une audio-description synchronisée, celles-ci sont-elles pertinentes (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.2.1 : Pour chaque média temporel pré-enregistré seulement audio, ayant une transcription textuelle, celle-ci est-elle pertinente (hors cas particuliers) ?</li>
+                      <li>Test 4.2.2 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>La transcription textuelle est pertinente ;</li>
+                          <li>L’audio-description synchronisée est pertinente ;</li>
+                          <li>L’audio-description synchronisée de la version alternative est pertinente ;</li>
+                          <li>La version alternative audio seulement est pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.2.3 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>La transcription textuelle est pertinente ;</li>
+                          <li>L’audio-description synchronisée est pertinente ;</li>
+                          <li>L’audio-description synchronisée de la version alternative est pertinente.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.3 [A] Chaque média temporel synchronisé pré-enregistré a-t-il, si nécessaire, des sous-titres synchronisés (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.3.1 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, l’une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le média temporel synchronisé possède des sous-titres synchronisés ;</li>
+                          <li>Il existe une version alternative possédant des sous-titres synchronisés accessible via un lien adjacent (une url ou une ancre)</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.3.2 : Pour chaque média temporel synchronisé pré-enregistré possédant des sous-titres synchronisés diffusés via une balise track, la balise track possède-t-elle un attribut kind="captions"</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.4 [A] Pour chaque média temporel synchronisé pré-enregistré ayant des sous-titres synchronisés, ces sous-titres sont-ils pertinents ?</h2>
+                    <ul>
+                      <li>Test 4.4.1 : Pour chaque média temporel synchronisé pré-enregistré ayant des sous-titres synchronisés, ces sous-titres sont-ils pertinents ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.5 [AA] Chaque média temporel en direct a-t-il, si nécessaire, des sous-titres synchronisés ou une transcription textuelle (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.5.1 : Chaque média temporel seulement audio en direct vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe des sous-titres synchronisés ;</li>
+                          <li>Il existe une version ayant des sous-titres synchronisés accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.5.2 : Chaque média temporel synchronisé en direct vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe des sous-titres synchronisés ;</li>
+                          <li>Il existe une version ayant des sous-titres synchronisés accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.6 [AA] Pour chaque média temporel en direct ayant des sous-titres synchronisés ou une transcription textuelle, ceux-ci sont-ils pertinents ?</h2>
+                    <ul>
+                      <li>Test 4.6.1 : Chaque média temporel seulement audio en direct vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>Les sous-titres synchronisés sont pertinents ;</li>
+                          <li>Les sous-titres synchronisés de la version alternative sont pertinents ;</li>
+                          <li>La transcription textuelle est pertinente.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.6.2 : Chaque média temporel synchronisé en direct vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>Les sous-titres synchronisés sont pertinents ;</li>
+                          <li>Les sous-titres synchronisés de la version alternative sont pertinents ;</li>
+                          <li>La transcription textuelle est pertinente.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.7 [AA] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une audio-description synchronisée (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.7.1 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une audio-description synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audio-description synchronisée.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.7.2 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une audio-description synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audio-description synchronisée.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.8 [AA] Pour chaque média temporel pré-enregistré ayant une audio-description synchronisée, celle-ci est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 4.8.1 : Pour chaque média temporel pré-enregistré seulement vidéo ayant une audio-description synchronisée, celle-ci est-elle pertinente ?</li>
+                      <li>Test 4.8.2 : Pour chaque média temporel synchronisé ayant une audio-description synchronisée, celle-ci est-elle pertinente ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.9 [AAA] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une interprétation en langue des signes (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.9.1 : Chaque média temporel pré-enregistré seulement audio a-t-il, si nécessaire, une interprétation en langue des signes adaptée à la langue du média (hors cas particuliers) ?</li>
+                      <li>Test 4.9.2 : Chaque média temporel synchronisé pré-enregistré a-t-il, si nécessaire, une interprétation en langue des signes adaptée à la langue du média (hors cas particuliers) ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.10 [AAA] Pour chaque média temporel pré-enregistré ayant une interprétation en langue des signes, celle-ci est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 4.10.1 : Pour chaque média temporel pré-enregistré seulement audio ayant une interprétation en langue des signes, celle-ci est-elle pertinente ?</li>
+                      <li>Test 4.10.2 : Pour chaque média temporel synchronisé pré-enregistré ayant une interprétation en langue des signes, celle-ci est-elle pertinente ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.11 [AAA] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une audio-description étendue synchronisée (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.11.1 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une audio-description étendue synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audio-description étendue synchronisée.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.11.2 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une audio-description étendue synchronisée ;</li>
+                          <li>Il existe une version alternative avec une audio-description étendue synchronisée.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.12 [AAA] Pour chaque média temporel pré-enregistré ayant une audio-description étendue synchronisée, celle-ci est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 4.12.1 : Pour chaque média temporel synchronisé pré-enregistré ayant une audio-description étendue synchronisée, celle-ci est-elle pertinente ?</li>
+                      <li>Test 4.12.2 : Pour chaque média temporel pré-enregistré seulement vidéo ayant une audio-description étendue synchronisée, celle-ci est-elle pertinente ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.13 [AAA] Chaque média temporel synchronisé ou seulement vidéo a-t-il, si nécessaire, une transcription textuelle (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.13.1 : Chaque média temporel synchronisé vérifie-t-il si nécessaire une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable.</li>
+                        </ul>
+                      </li>
+                      <li>Test 4.13.2 : Chaque média temporel seulement vidéo vérifie-t-il si nécessaire une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;</li>
+                          <li>Il existe une transcription textuelle adjacente clairement identifiable.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.14 [AAA] Pour chaque média temporel synchronisé ou seulement vidéo, ayant une transcription textuelle, celle-ci est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 4.14.1 : Pour chaque média temporel seulement vidéo ayant une transcription textuelle, celle-ci est-elle pertinente ?</li>
+                      <li>Test 4.14.2 : Pour chaque média temporel synchronisé ayant une transcription textuelle, celle-ci est-elle pertinente ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.15 [A] Chaque média temporel est-il clairement identifiable (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 4.15.1 : Pour chaque média temporel seulement son, seulement vidéo ou synchronisé, le contenu textuel adjacent permet-il d’identifier clairement le média temporel (hors cas particuliers) ?</li>
+                      <li>Test 4.15.2 : Pour chaque média temporel seulement son en direct, seulement vidéo en direct ou synchronisé en direct, le contenu textuel adjacent permet-il d’identifier clairement le média temporel (hors cas particuliers) ?</li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Tableaux">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                <span>
+                    <strong>Recommandation</strong>
+                    <p>Donner à chaque tableau de données complexe, un résumé et un titre pertinent, identifier clairement les cellules d’en-tête, utiliser un mécanisme pertinent pour lier les cellules de données aux cellules d’en-tête. Pour chaque tableau de mise en forme, veiller à sa bonne linéarisation.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.1 [A] Chaque tableau de données complexe a-t-il un résumé ?</h2>
+                    <ul>
+                      <li>Test 5.1.1 : Pour chaque tableau de données complexe (balise table) un résumé est-il disponible dans la balise caption ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.2 [A] Pour chaque tableau de données complexe ayant un résumé, celui-ci est-il pertinent ?</h2>
+                    <ul>
+                      <li>Test 5.2.1 : Pour chaque tableau de donnée complexes (balise table) ayant un résumé, celui-ci est-il pertinent ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.3 [A] Pour chaque tableau de mise en forme, le contenu linéarisé reste-t-il compréhensible (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 5.3.1 : Chaque tableau de mise en forme vérifie-t-il ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le contenu linéarisé reste compréhensible ;</li>
+                          <li>La balise table possède un attribut role="presentation".</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.4 [A] Chaque tableau de données a-t-il un titre ?</h2>
+                    <ul>
+                      <li>Test 5.4.1 : Chaque tableau de données (balise table) a-t-il une balise caption ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.5 [A] Pour chaque tableau de données ayant un titre, celui-ci est-il pertinent ?</h2>
+                    <ul>
+                      <li>Test 5.5.1 : Pour chaque tableau de données (balise table) ayant un titre de tableau dans la balise caption, le titre est-il pertinent ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.6 [A] Pour chaque tableau de données, chaque en-tête de colonnes et chaque en-tête de lignes sont-ils correctement déclarés ?</h2>
+                    <ul>
+                      <li>Test 5.6.1 : Pour chaque tableau de données (balise table), chaque en-tête de colonnes a-t-il une balise th ?</li>
+                      <li>Test 5.6.2 : Pour chaque tableau de données (balise table), chaque en-tête de lignes a-t-il une balise th ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.7 [A] Pour chaque tableau de données, la technique appropriée permettant d’associer chaque cellule avec ses en-têtes est-elle utilisée ?</h2>
+                    <ul>
+                      <li>Test 5.7.1 : Chaque en-tête (balise th) s’appliquant à la totalité de la ligne ou de la colonne possède-t-il un attribut id unique ou un attribut scope ?</li>
+                      <li>Test 5.7.2 : Chaque en-tête (balise th) s’appliquant à la totalité de la ligne ou de la colonne et possédant un attribut scope vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>L’en-tête possède un attribut scope avec la valeur "row" pour les en-tête de lignes ;</li>
+                          <li>L’en-tête possède un attribut scope avec la valeur "col" pour les en-tête de colonnes.</li>
+                        </ul>
+                      </li>
+                      <li>Test 5.7.3 : Chaque en-tête (balise th) ne s’appliquant pas à la totalité de la ligne ou de la colonne vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>L’en-tête ne possède pas d’attribut scope ;</li>
+                          <li>L’en-tête possède un attribut id unique.</li>
+                        </ul>
+                      </li>
+                      <li>Test 5.7.4 : Chaque cellule (balise td ou th) associée à un ou plusieurs en-têtes possédant un attribut id vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La cellule possède un attribut headers ;</li>
+                          <li>L’attribut headers possède la liste des valeurs des en-têtes associés à la cellule.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.8 [A] Chaque tableau de mise en forme ne doit pas utiliser d’éléments propres aux tableaux de données. Cette règle est-elle respectée ?</h2>
+                    <ul>
+                      <li>Test 5.8.1 : Chaque tableau de mise en forme (balise table) vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>Le tableau de mise en forme (balise table) ne possède pas de balises caption, th, thead, tfoot, colgroup ;</li>
+                          <li>Les cellules du tableau de mise en forme (balise td) ne possèdent pas d’attributs scope, headers, colgroup, axis.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Liens">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                <span>
+                    <strong>Recommandation</strong>
+                    <p>Donner des intitulés de lien explicites, grâce à des informations de contexte notamment, et utiliser le titre de lien le moins possible.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.1 [A] Chaque lien est-il explicite (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 6.1.1 : Chaque lien texte vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
+                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.1.2 : Chaque lien image vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
+                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.1.3 : Chaque lien composite vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
+                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.2 [A] Pour chaque lien ayant un titre de lien, celui-ci est-il pertinent ?</h2>
+                    <ul>
+                      <li>Test 6.2.1 : Pour chaque lien texte ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
+                      <li>Test 6.2.2 : Pour chaque lien image ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
+                      <li>Test 6.2.3 : Pour chaque lien composite ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.3 [AAA] Chaque intitulé de lien seul est-il explicite hors contexte (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 6.3.1 : Chaque lien texte vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé du lien est explicite hors contexte ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
+                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.3.2 : Chaque intitulé de lien image vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé du lien est explicite hors contexte ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
+                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                        </ul>
+                      </li>
+                      <li>Test 6.3.3 : Chaque lien composite (contenu texte et de l’attribut alt) est-il explicite hors contexte (hors cas particuliers) ?
+                        <ul>
+                          <li>L’intitulé du lien est explicite hors contexte ;</li>
+                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
+                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.4 [A] Pour chaque page Web, chaque lien identique a-t-il les mêmes fonction et destination ?</h2>
+                    <ul>
+                      <li>Test 6.4.1 : Pour chaque page Web, chaque lien identique de type texte a-t-il les mêmes fonction et destination ?</li>
+                      <li>Test 6.4.2 : Pour chaque page Web, chaque lien identique de type image a-t-il les mêmes fonction et destination ?</li>
+                      <li>Test 6.4.3 : Pour chaque page Web, chaque lien identique de type composite a-t-il les mêmes fonction et destination ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.5 [A] Dans chaque page Web, chaque lien, à l’exception des ancres, a-t-il un intitulé ?</h2>
+                    <ul>
+                      <li>Test 6.5.1 : Dans chaque page Web, chaque lien (balise a avec un attribut href), à l’exception des ancres, a-t-il un intitulé entre &lt;a&gt; et &lt;/a&gt; ?</li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Scripts">

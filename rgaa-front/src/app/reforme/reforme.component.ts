@@ -16,6 +16,10 @@ export class ReformeComponent implements OnInit, AfterViewInit {
   private isMobileResolution: boolean;
   selectedItem: string;
   listItems: any[] = [{
+    label: 'Mode d\'emploi',
+    element: 'modeemploi1',
+    element2: 'modeemploi2'
+  },{
     label: 'Image',
     element: 'image1',
     element2: 'image2'
@@ -91,12 +95,12 @@ export class ReformeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.selectedItem = 'image1';
+    this.selectedItem = 'modeemploi1';
   }
 
   ngAfterViewInit() {
     this.paramService.refreshEffect();
-    this.swip('image1');
+    this.swip('modeemploi1');
   }
 
   changeSize(event) {
