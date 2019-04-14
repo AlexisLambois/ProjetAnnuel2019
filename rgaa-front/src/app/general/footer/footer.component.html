@@ -1,29 +1,34 @@
 <div id="param" class="container-fluid">
-  <div class="row background-grisUrbilog py-3 text-footer" [ngStyle]="{'font-size':fontSizeAdapted}">
-    <div class="col-3" *ngIf="!IsMobileResolution">
-      <img (click)="redirectTo('https://www.facebook.com/Urbilog-1975569372471723/')" alt="" class="img pointer"
-           src="./assets/img/facebook.png">
-      <img (click)="redirectTo('https://twitter.com/Urbilog')" alt="" class="img pointer ml-3" src="./assets/img/twitter.png">
+  <footer>
+    <div class="row background-grisUrbilog py-3 text-footer" [ngStyle]="{'font-size':fontSizeAdapted}">
+      <div class="col-3" *ngIf="!IsMobileResolution">
+        <img (click)="redirectTo('https://www.facebook.com/Urbilog-1975569372471723/')"
+             alt="Logo Facebook - Liens vers le facebook d'Urbilog" class="img pointer"
+             src="./assets/img/facebook.png">
+        <img (click)="redirectTo('https://twitter.com/Urbilog')" alt="Logo Twitter - Liens vers le twitter d'Urbilog"
+             class="img pointer ml-3"
+             src="./assets/img/twitter.png">
+      </div>
+      <div class="col-2 offset-1 no-select" *ngIf="!IsMobileResolution">
+        <a class="pointer" (click)="redirectTo('mapsite')"
+           [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Le plan du site</a>
+      </div>
+      <div class="col-2 offset-4 no-select" *ngIf="IsMobileResolution">
+        <a class="pointer" (click)="redirectTo('mapsite')"
+           [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Le plan du site</a>
+      </div>
+      <div class="col-2 no-select">
+      <a class="not-allowed" style="text-decoration: line-through;"
+            [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Version contrastée</a>
+      </div>
+      <div class="col-2 no-select">
+        <a class="pointer" (click)="changeFamilyFont()"
+           [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Police dyslexique</a>
+      </div>
+      <div class="col-2 no-select">
+        <a class="not-allowed" style="text-decoration: line-through;"
+           [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Mentions légales</a>
+      </div>
     </div>
-    <div class="col-2 offset-1 no-select" *ngIf="!IsMobileResolution">
-        <span class="pointer" (click)="redirectTo('mapsite')"
-              [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Le plan du site</span>
-    </div>
-    <div class="col-2 offset-4 no-select" *ngIf="IsMobileResolution">
-        <span class="pointer" (click)="redirectTo('mapsite')"
-              [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Le plan du site</span>
-    </div>
-    <div class="col-2 no-select">
-      <span class="not-allowed" style="text-decoration: line-through;"
-            [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Version contrastée</span>
-    </div>
-    <div class="col-2 no-select">
-      <span class="pointer" (click)="changeFamilyFont()"
-            [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Police dyslexique</span>
-    </div>
-    <div class="col-2 no-select">
-      <span class="not-allowed" style="text-decoration: line-through;"
-            [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Mentions légales</span>
-    </div>
-  </div>
+  </footer>
 </div>

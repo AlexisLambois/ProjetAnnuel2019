@@ -26,7 +26,7 @@
           <div class="col-6 p-0 background-bleucielUrbilog pointer" (click)="redirectTo('reforme')">
             <div class="child">
               <img src="assets/img/lois1.png" style="width: 100%;" alt="">
-              <p style="color:white;" class="mt-4"
+              <p style="color:white;" class="mt-4" tabindex="50"
                  [ngStyle]="{'font-size':fontSizeParam+10+'px'}"
                  [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">
                 La loi RGAA
@@ -46,14 +46,16 @@
         </div>
         <div class="row m-0" style="height: 50%">
           <div class="col-6 p-0 background-vertUrbilog pointer" (click)="redirectTo('audit')">
-            <div class="child">
-              <img src="assets/img/audit.png" style="width: 70%;" alt="">
-              <p style="color:white;" class="mt-4"
-                 [ngStyle]="{'font-size':fontSizeParam+10+'px'}"
-                 [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">
-                Avis d'expert
-              </p>
-            </div>
+            <section>
+              <div class="child">
+                <img src="assets/img/audit.png" style="width: 70%;" alt="">
+                <p style="color:white;" class="mt-4"
+                   [ngStyle]="{'font-size':fontSizeParam+10+'px'}"
+                   [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">
+                  Avis d'expert
+                </p>
+              </div>
+            </section>
           </div>
           <div class="col-6 p-0 background-orangeUrbilog pointer" (click)="redirectTo('whoweare')">
             <div class="child">

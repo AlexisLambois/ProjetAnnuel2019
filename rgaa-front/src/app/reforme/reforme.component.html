@@ -15,7 +15,7 @@
             <div class="row" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
               <div class="col-12">
                 <div class="row">
-                  <span id="modeemploi1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                  <span id="modeemploi1" class="m-3" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
                     <h2 class="mb-4" style="text-align: center;font-weight: bolder">Mode d'emploi</h2>
                     <p>Ce référentiel s’applique à tout contenu HTML (HTML4, XHTML1 et HTML5). Il utilise, pour certains tests une base de référence prenant en compte un ensemble de technologies d’assistance, de navigateurs et de systèmes d’exploitation sur lesquels l’accessibilité des composants d’interface développés par JavaScript doit être vérifiée notamment. Une description détaillée de la base de référence est disponible ici : base de référence.</p>
                     <p><strong>Note importante pour tout contenu antérieur à la spécification HTML5 :</strong></p>
@@ -38,20 +38,20 @@
                       <li>Non Testé (NT) : le critère n’a pas été testé.</li>
                     </ul>
                     <p>Vous pouvez consulter, à ce sujet, le <a
-                      href="http://references.modernisation.gouv.fr/rgaa-accessibilite/guide-accompagnement-RGAA.html">guide d’accompagnement</a> : Comment vérifie-t-on la conformité au RGAA ?</p>
+                            href="http://references.modernisation.gouv.fr/rgaa-accessibilite/guide-accompagnement-RGAA.html">guide d’accompagnement</a> : Comment vérifie-t-on la conformité au RGAA ?</p>
                   </span>
-                  <span id="image1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                  <span id="image1" class="m-3" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
                     <strong>Recommandation</strong>
                     <p>Donner à chaque image porteuse d’information une alternative textuelle pertinente et une description détaillée si nécessaire. Lier les légendes à leurs images. Remplacer les images textes par du texte stylé lorsque c’est possible.</p>
                     <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.1 [A] Chaque image a-t-elle une alternative textuelle ?</h2>
                      <ul>
                        <li>Test 1.1.1 : Chaque image (balise <span style="font-style: italic">img</span>) a-t-elle un attribut <span
-                         style="font-style: italic">alt</span> ?</li>
+                               style="font-style: italic">alt</span> ?</li>
                        <li>Test 1.1.2 : Chaque zone (balise <span style="font-style: italic">area</span>) d’une image réactive a-t-elle un attribut <span
-                         style="font-style: italic">alt</span> ?</li>
+                               style="font-style: italic">alt</span> ?</li>
                        <li>Test 1.1.3 : Chaque bouton de type image (balise <span
-                         style="font-style: italic">input</span> avec l’attribut <span style="font-style: italic">type="image"</span>) a-t-il un attribut <span
-                         style="font-style: italic">alt</span> ?</li>
+                               style="font-style: italic">input</span> avec l’attribut <span style="font-style: italic">type="image"</span>) a-t-il un attribut <span
+                               style="font-style: italic">alt</span> ?</li>
                        <li>Test 1.1.4 : Chaque zone cliquable d’une image réactive coté serveur est-t-elle doublée d’un lien dans la page ?</li>
                     </ul>
                     <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.2 [A] Pour chaque image de décoration ayant une alternative textuelle, cette alternative est-elle vide ?</h2>
@@ -379,7 +379,7 @@
                       <li>Test 1.7.8 : Pour chaque image bitmap (balise canvas) porteuse d’information, ayant une description détaillée entre &lt;canvas&gt; et &lt;/canvas&gt;, cette description détaillée est-elle correctement restituée par les technologies d’assistance ?</li>
                     </ul>
                   </span>
-                  <span id="cadres1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                  <span id="cadres1" class="m-3" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
                     <strong>Recommandation</strong>
                     <p>Donner à chaque cadre en ligne un titre pertinent.</p>
                     <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 2.1 [A] Chaque cadre en ligne a-t-il un titre de cadre ?</h2>
@@ -395,7 +395,7 @@
                       <li>Test 2.2.1 : Pour chaque cadre en ligne (balise iframe) ayant un attribut title, le contenu de cet attribut est-il pertinent ?</li>
                     </ul>
                   </span>
-                  <span id="couleurs1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                  <span id="couleurs1" class="m-3" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
                     <strong>Recommandation</strong>
                     <p>Ne pas donner l’information uniquement par la couleur et utiliser des contrastes de couleurs suffisamment élevés.</p>
                     <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 3.1 [A] Dans chaque page Web, l’information ne doit pas être donnée uniquement par la couleur. Cette règle est-elle respectée ?</h2>
@@ -473,7 +473,7 @@
                       <li>Test 3.4.5 : Chaque mécanisme qui permet d'afficher le texte avec un rapport de contraste conforme a-t-il un rapport de contraste supérieur ou égal à 7:1 ?</li>
                     </ul>
                   </span>
-                  <span id="multimedia1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                  <span id="multimedia1" class="m-3" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
                     <strong>Recommandation</strong>
                     <p>Donner si nécessaire à chaque média temporel une transcription textuelle, des sous-titres synchronisés et une audio-description synchronisée pertinents. Donner à chaque média non temporel une alternative textuelle pertinente. Rendre possible le contrôle de la consultation de chaque média temporel et non-temporel au clavier et s’assurer de leur compatibilité avec les technologies d’assistance.</p>
                     <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 4.1 [A] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une transcription textuelle ou une audio-description (hors cas particuliers) ?</h2>
@@ -648,7 +648,7 @@
                       <li>Test 4.15.2 : Pour chaque média temporel seulement son en direct, seulement vidéo en direct ou synchronisé en direct, le contenu textuel adjacent permet-il d’identifier clairement le média temporel (hors cas particuliers) ?</li>
                     </ul>
                   </span>
-                  <span id="tableaux1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                  <span id="tableaux1" class="m-3" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
                     <strong>Recommandation</strong>
                     <p>Donner à chaque tableau de données complexe, un résumé et un titre pertinent, identifier clairement les cellules d’en-tête, utiliser un mécanisme pertinent pour lier les cellules de données aux cellules d’en-tête. Pour chaque tableau de mise en forme, veiller à sa bonne linéarisation.</p>
                     <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 5.1 [A] Chaque tableau de données complexe a-t-il un résumé ?</h2>
@@ -713,7 +713,7 @@
                       </li>
                     </ul>
                   </span>
-                  <span id="liens1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                  <span id="liens1" class="m-3" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
                     <strong>Recommandation</strong>
                     <p>Donner des intitulés de lien explicites, grâce à des informations de contexte notamment, et utiliser le titre de lien le moins possible.</p>
                     <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.1 [A] Chaque lien est-il explicite (hors cas particuliers) ?</h2>
@@ -778,79 +778,283 @@
                       <li>Test 6.5.1 : Dans chaque page Web, chaque lien (balise a avec un attribut href), à l’exception des ancres, a-t-il un intitulé entre &lt;a&gt; et &lt;/a&gt; ?</li>
                     </ul>
                   </span>
-                  <span id="scripts1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                  <span id="scripts1" class="m-3" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
                     <strong>Recommandation</strong>
                     <p>Donner si nécessaire à chaque script une alternative pertinente. Rendre possible le contrôle de chaque code script au moins par le clavier et la souris et s’assurer de leur compatibilité avec les technologies d’assistance.</p>
                     <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 7.1 [A] Chaque script est-il, si nécessaire, compatible avec les technologies d’assistance ?</h2>
                     <ul>
-                      <li>Test 6.1.1 : Chaque lien texte vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                      <li>Test 7.1.1 : Chaque script qui génère ou contrôle un composant d’interface vérifie-t-il, si nécessaire, une de ces conditions ?
                         <ul>
-                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
-                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                          <li>Le nom, le rôle, la valeur, le paramétrage et les changements d’états sont accessibles aux technologies d’assistance via une API d’accessibilité ;</li>
+                          <li>Un composant d’interface accessible permettant d’accéder aux mêmes fonctionnalités est présent dans la page ;</li>
+                          <li>Une alternative accessible permet d’accéder aux mêmes fonctionnalités.</li>
                         </ul>
                       </li>
-                      <li>Test 6.1.2 : Chaque lien image vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                      <li>Test 7.1.2 : Chaque fonctionnalité d’insertion de contenu contrôlée par un script utilise-t-elle des propriétés et méthodes conformes à la spécification DOM (Document Object Model) ?</li>
+                      <li>Test 7.1.3 : Chaque script qui génère, met à jour ou contrôle un composant d’interface qui comporte des rôles des états ou des propriétés correspondant à un motif de conception défini par l’API ARIA vérifie-t-il une de ces conditions ?
                         <ul>
-                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
-                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                          <li>Le composant d’interface est conforme au motif de conception défini par l’API ARIA ;</li>
+                          <li>Un composant d’interface présent sur la page, permettant d’accéder aux mêmes fonctionnalités, est conforme au motif de conception défini par l’API ARIA ;</li>
+                          <li>Le composant d’interface adapte un motif de conception défini par l’API ARIA ;</li>
+                          <li>Une alternative accessible permet d’accéder aux mêmes fonctionnalités.</li>
                         </ul>
                       </li>
-                      <li>Test 6.1.3 : Chaque lien composite vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                      <li>Test 7.1.4 : Chaque modification du rôle natif d’un élément HTML respecte-t-elle les règles et préconisations indiquées dans la spécification HTML5 et les notes techniques associées ?</li>
+                      <li>Test 7.1.5 : Chaque script qui génère ou contrôle un composant d’interface respecte-t-il une de ces conditions ?
                         <ul>
-                          <li>L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;</li>
-                          <li>Le contexte du lien permet d’en comprendre la fonction et la destination.</li>
+                          <li>Le composant d’interface est correctement restitué par les technologies d’assistance ;</li>
+                          <li>Une alternative accessible permet d’accéder aux mêmes fonctionnalités.</li>
                         </ul>
                       </li>
-                    </ul>
-                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.2 [A] Pour chaque lien ayant un titre de lien, celui-ci est-il pertinent ?</h2>
-                    <ul>
-                      <li>Test 6.2.1 : Pour chaque lien texte ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
-                      <li>Test 6.2.2 : Pour chaque lien image ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
-                      <li>Test 6.2.3 : Pour chaque lien composite ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?</li>
-                    </ul>
-                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.3 [AAA] Chaque intitulé de lien seul est-il explicite hors contexte (hors cas particuliers) ?</h2>
-                    <ul>
-                      <li>Test 6.3.1 : Chaque lien texte vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                      <li>Test 7.1.6 : Chaque composant d’interface qui utilise un rôle ARIA application respecte-t-il une de ces conditions ?
                         <ul>
-                          <li>L’intitulé du lien est explicite hors contexte ;</li>
-                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
-                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                          <li>Le composant d’interface est correctement restitué par les technologies d’assistance ;</li>
+                          <li>Une alternative accessible permet d’accéder aux mêmes fonctionnalités.</li>
                         </ul>
                       </li>
-                      <li>Test 6.3.2 : Chaque intitulé de lien image vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                      <li>Test 7.1.7 : Chaque script qui génère ou contrôle un composant d'interface vérifie-t-il ces conditions ?
                         <ul>
-                          <li>L’intitulé du lien est explicite hors contexte ;</li>
-                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
-                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
-                        </ul>
-                      </li>
-                      <li>Test 6.3.3 : Chaque lien composite (contenu texte et de l’attribut alt) est-il explicite hors contexte (hors cas particuliers) ?
-                        <ul>
-                          <li>L’intitulé du lien est explicite hors contexte ;</li>
-                          <li>Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;</li>
-                          <li>Le contenu du titre de lien (attribut title) est explicite hors contexte.</li>
+                          <li>Le composant possède un nom pertinent ;</li>
+                          <li>Le composant possède un rôle pertinent.</li>
                         </ul>
                       </li>
                     </ul>
-                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.4 [A] Pour chaque page Web, chaque lien identique a-t-il les mêmes fonction et destination ?</h2>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 7.2 [A] Pour chaque script ayant une alternative, cette alternative est-elle pertinente ?</h2>
                     <ul>
-                      <li>Test 6.4.1 : Pour chaque page Web, chaque lien identique de type texte a-t-il les mêmes fonction et destination ?</li>
-                      <li>Test 6.4.2 : Pour chaque page Web, chaque lien identique de type image a-t-il les mêmes fonction et destination ?</li>
-                      <li>Test 6.4.3 : Pour chaque page Web, chaque lien identique de type composite a-t-il les mêmes fonction et destination ?</li>
-                    </ul>
-                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 6.5 [A] Dans chaque page Web, chaque lien, à l’exception des ancres, a-t-il un intitulé ?</h2>
-                    <ul>
-                      <li>Test 6.5.1 : Dans chaque page Web, chaque lien (balise a avec un attribut href), à l’exception des ancres, a-t-il un intitulé entre &lt;a&gt; et &lt;/a&gt; ?</li>
+                      <li>Test 7.2.1 : Chaque script débutant par la balise script et ayant une alternative vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>L’alternative entre <noscript> et </noscript> permet d’accéder à des contenus et des fonctionnalités similaires ;</li>
+                          <li>La page affichée, lorsque JavaScript est désactivé, permet d’accéder à des contenus et des fonctionnalités similaires ;</li>
+                          <li>La page alternative permet d’accéder à des contenus et des fonctionnalités similaires ;</li>
+                          <li>Le langage de script côté serveur permet d’accéder à des contenus et des fonctionnalités similaires ;</li>
+                          <li>L’alternative présente dans la page permet d’accéder à des contenus et des fonctionnalités similaires.</li>
+                        </ul>
+                      </li>
+                      <li>Test 7.2.2 : Chaque élément non textuel mis à jour par un script (dans la page, ou un cadre en ligne) et ayant une alternative vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>L’alternative de l’élément non textuel est mise à jour ;</li>
+                          <li>L’alternative mise à jour est pertinente.</li>
+                        </ul>
+                      </li>
                     </ul>
                   </span>
-                  <p id="elementsobli1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Elements Oblig</p>
-                  <p id="structurationsinfo1" class="m-4" style="display: none"
-                     [ngStyle]="{'font-size':fontSizeParam+'px'}">Structuration Info</p>
-                  <p id="presentationinfo1" class="m-4" style="display: none"
-                     [ngStyle]="{'font-size':fontSizeParam+'px'}">Présentation Info</p>
-                  <p id="formulaires1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Formulaires</p>
-                  <p id="navigation1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Navigation</p>
-                  <p id="consultation1" class="m-4" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">Consultatiob</p>
+                  <span id="elementsobli1" class="m-3" style="display: none"
+                        [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Vérifier que chaque page Web a un code source valide selon le type de document, un titre pertinent et une indication de langue par défaut. Vérifier que les balises ne sont pas utilisées uniquement à des fins de présentation, que les changements de langues et de direction de sens de lecture sont indiqués.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 8.1 [A] Chaque page Web est-elle définie par un type de document ?</h2>
+                    <ul>
+                      <li>Test 8.1.1 : Pour chaque page Web, le type de document (balise doctype) est-il présent ?</li>
+                      <li>Test 8.1.2 : Pour chaque page Web, le type de document (balise doctype) est-il valide ?</li>
+                      <li>Test 8.1.3 : Pour chaque page Web possédant une déclaration de type de document, celle-ci est-elle située avant la balise html dans le code source ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 8.2 [A] Pour chaque page Web, le code source est-il valide selon le type de document spécifié (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 8.2.1 : Pour chaque déclaration de type de document, le code source de la page vérifie-t-il ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Les balises respectent les règles d’écriture ;</li>
+                          <li>L’imbrication des balises est conforme ;</li>
+                          <li>L’ouverture et la fermeture des balises sont conformes ;</li>
+                          <li>Les attributs respectent les règles d’écriture ;</li>
+                          <li>Les valeurs des attributs respectent les règles d’écriture.</li>
+                        </ul>
+                      </li>
+                      <li>Test 8.2.2 : Pour chaque déclaration de type de document, le code source de la page ne doit pas utiliser d’éléments obsolètes. Cette règle est-elle respectée (hors cas particuliers) ?</li>
+                    </ul>
+                  </span>
+                  <span id="structurationsinfo1" class="m-3" style="display: none"
+                        [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Utiliser des titres, des listes, des abréviations et des citations pour structurer l’information. S’assurer que la structure du document est cohérente.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 9.1 [A] Dans chaque page Web, l’information est-elle structurée par l’utilisation appropriée de titres ?</h2>
+                    <ul>
+                      <li>Test 9.1.1 : Dans chaque page Web, y a-t-il un titre de niveau 1 (balise h1 ou balise possédant un rôle ARIA "heading" associé à une propriété aria-level="1") ?</li>
+                      <li>Test 9.1.2 : Dans chaque page Web, la hiérarchie entre les titres (balise h ou balise possédant un rôle ARIA "heading" associé à une propriété aria-level) est-elle pertinente ?</li>
+                      <li>Test 9.1.3 : Dans chaque page Web, chaque titre (balise h ou balise possédant un rôle ARIA "heading" associé à une propriété aria-level) nécessaire à la structure de l’information est-il présent ?</li>
+                      <li>Test 9.1.4 : Dans chaque page Web, chaque titre (balise h ou balise possédant un rôle ARIA "heading" associé à une propriété aria-level) est-il pertinent ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 9.2 [A] Dans chaque page Web, la structure du document est-elle cohérente ?</h2>
+                    <ul>
+                      <li>Test 9.2.1 : Dans chaque page Web, la structure du document vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La zone d’en-tête de la page est structurée via une balise header ;</li>
+                          <li>Les zones de navigation principales et secondaires sont structurées via une balise nav </li>
+                          <li>La balise nav est réservée à la structuration des zones de navigation principales et secondaires ;</li>
+                          <li>La zone de contenu principal est structurée via une balise main ;</li>
+                          <li>La structure du document utilise une balise main unique ;</li>
+                          <li>La zone de pied de page est structurée via une balise footer.</li>
+                        </ul>
+                      </li>
+                      <li>Test 9.2.2 : Dans chaque page Web, l’arborescence du document est-elle cohérente ?</li>
+                    </ul>
+                  </span>
+                  <span id="presentationinfo1" class="m-3" style="display: none"
+                         [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Utiliser des feuilles de styles pour contrôler la présentation de l’information. Vérifier l’effet de l’agrandissement des taille des caractères sur la lisibilité. S’assurer que les liens sont correctement identifiables, que la prise de focus est signalée, que l’interlignage est suffisant et donner la possibilité à l’utilisateur de contrôler la justification des textes. S’assurer que les textes cachés sont correctement restitués et que l’information n’est pas donnée uniquement par la forme ou la position d’un élément.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 10.1 [A] Dans le site Web, des feuilles de styles sont-elles utilisées pour contrôler la présentation de l’information ?</h2>
+                    <ul>
+                      <li>Test 10.1.1 : Dans chaque page Web, les balises servant à la présentation de l’information ne doivent pas être présentes dans le code source des pages. Cette règle est-elle respectée ?</li>
+                      <li>Test 10.1.2 : Dans chaque page Web, les attributs servant à la présentation de l’information ne doivent pas être présents dans le code source des pages. Cette règle est-elle respectée ?</li>
+                      <li>Test 10.1.3 : Dans chaque page Web, l’utilisation des espaces vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>Les espaces ne sont pas utilisés pour séparer les lettres d’un mot ;</li>
+                          <li>Les espaces ne sont pas utilisés pour simuler des tableaux ;</li>
+                          <li>Les espaces ne sont pas utilisés pour simuler des colonnes de texte.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 10.2 [A] Dans chaque page Web, le contenu visible reste-t-il présent lorsque les feuilles de styles sont désactivées ?</h2>
+                    <ul>
+                      <li>Test 10.2.1 : Dans chaque page Web, l’information reste-t-elle présente lorsque les feuilles de styles sont désactivées ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 10.3 [A] Dans chaque page Web, l’information reste-t-elle compréhensible lorsque les feuilles de styles sont désactivées ?</h2>
+                    <ul>
+                      <li>Test 10.3.1 : Dans chaque page Web, l’information reste-t-elle compréhensible lorsque les feuilles de styles sont désactivées ?</li>
+                    </ul>
+                  </span>
+                  <span id="formulaires1" class="m-3" style="display: none"
+                          [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Associer pour chaque formulaire chacun de ses champs à son étiquette, grouper les champs dans des blocs d’informations de même nature, structurer les listes de choix de manière pertinente, donner à chaque bouton un intitulé explicite. Vérifier la présence d’aide à la saisie, s’assurer que le contrôle de saisie est accessible et que l’utilisateur peut contrôler les données à caractère financier, juridique ou personnel.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 11.1 [A] Chaque champ de formulaire a-t-il une étiquette ?</h2>
+                    <ul>
+                      <li>Test 11.1.1 : Chaque champ de formulaire vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>Le champ de formulaire possède un attribut title ;</li>
+                          <li>Une étiquette (balise label) est associée au champ de formulaire ;</li>
+                          <li>Le champ de formulaire possède une propriété aria-label ;</li>
+                          <li>Le champ de formulaire possède une propriété aria-labelledby référençant un passage de texte identifié.</li>
+                        </ul>
+                      </li>
+                      <li>Test 11.1.2 : Chaque champ de formulaire, associé à une étiquette (balise label), vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>Le champ de formulaire possède un attribut id ;</li>
+                          <li>La valeur de l’attribut id est unique ;</li>
+                          <li>La balise label possède un attribut for ;</li>
+                          <li>La valeur de l’attribut for est égale à la valeur de l’attribut id du champ de formulaire associé.</li>
+                        </ul>
+                      </li>
+                      <li>Test 11.1.3 : Chaque champ de formulaire associé à une étiquette via la propriété ARIA aria-labelledby, vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>L’étiquette possède un attribut id ;</li>
+                          <li>La valeur de l’attribut id est unique ;</li>
+                          <li>Les valeurs de la propriété ARIA aria-labelledby sont égales à la valeur des attributs id des passages de textes utilisés pour créer l’étiquette ;</li>
+                        </ul>
+                      </li>
+                      <li>Test 11.1.4 : Chaque champ de formulaire qui utilise une propriété ARIA aria-label ou aria-labelledby est-il, si nécessaire, accompagné d'un passage de texte visible et accolé au champ permettant de comprendre la nature de la saisie attendue ?</li>
+                      <li>Test 11.1.5 : Chaque champ de formulaire qui utilise un attribut title comme étiquette, vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>L’attribut placeholder est absent ;</li>
+                          <li>L’attribut placeholder est identique à l’attribut title.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </span>
+                  <span id="navigation1" class="m-3" style="display: none"
+                         [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Faciliter la navigation dans un ensemble de pages par au moins deux systèmes de navigation différents (menu de navigation, plan du site ou moteur de recherche), un fil d’Ariane et l’indication de la page active dans le menu de navigation. Identifier les groupes de liens importants et la zone de contenu et donner la possibilité de les éviter par des liens de navigation interne. S’assurer que l’ordre de tabulation est cohérent et que la page ne comporte pas de piège au clavier.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.1 [AA] Chaque ensemble de pages dispose-t-il de deux systèmes de navigation différents, au moins (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 12.1.1 : Chaque ensemble de pages vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Un menu de navigation et un plan du site sont présents ;</li>
+                          <li>Un menu de navigation et un moteur de recherche sont présents ;</li>
+                          <li>Un moteur de recherche et un plan du site sont présents.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.2 [AA] Dans chaque ensemble de pages, le menu et les barres de navigation sont-ils toujours à la même place (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 12.2.1 : Dans chaque ensemble de pages, chaque page ayant un menu de navigation vérifie-t-elle ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le menu de navigation est toujours à la même place dans la présentation ;</li>
+                          <li>Le menu de navigation se présente toujours dans le même ordre relatif dans le code source.</li>
+                        </ul>
+                      </li>
+                      <li>Test 12.2.2 : Chaque barre de navigation répétée dans un ensemble de pages vérifie-t-elle ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>La barre de navigation est toujours à la même place dans la présentation ;</li>
+                          <li>La barre de navigation se présente toujours dans le même ordre relatif dans le code source.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.3 [AA] Dans chaque ensemble de pages, le menu et les barres de navigation ont-ils une présentation cohérente (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 12.3.1 : Dans chaque ensemble de pages, le menu de navigation principal a-t-il une présentation cohérente (hors cas particuliers) ?</li>
+                      <li>Test 12.3.2 : Dans chaque ensemble de pages, les barres de navigation répétées ont-elles une présentation cohérente (hors cas particuliers) ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.4 [AA] La page "plan du site" est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 12.4.1 : La page "plan du site" est-elle représentative de l’architecture générale du site ?</li>
+                      <li>Test 12.4.2 : Les liens du plan du site sont-ils fonctionnels ?</li>
+                      <li>Test 12.4.3 : Les liens du plan du site renvoient-ils bien vers les pages indiquées par l’intitulé ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.5 [AA] Dans chaque ensemble de pages, la page "plan du site" est-elle atteignable de manière identique ?</h2>
+                    <ul>
+                      <li>Test 12.5.1 : Dans chaque ensemble de pages, la page "plan du site" est-elle accessible à partir d’une fonctionnalité identique ?</li>
+                      <li>Test 12.5.2 : Dans chaque ensemble de pages, la fonctionnalité vers la page "plan du site" est-elle située à la même place dans la présentation ?</li>
+                      <li>Test 12.5.3 : Dans chaque ensemble de pages, la fonctionnalité vers la page "plan du site" se présente-t-elle toujours dans le même ordre relatif dans le code source ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.6 [AA] Dans chaque ensemble de pages, le moteur de recherche est-il atteignable de manière identique ?</h2>
+                    <ul>
+                      <li>Test 12.6.1 : Dans chaque ensemble de pages, le moteur de recherche est-il accessible à partir d’une fonctionnalité identique ?</li>
+                      <li>Test 12.6.2 : Dans chaque ensemble de pages, la fonctionnalité vers le moteur de recherche est-elle située à la même place dans la présentation ?</li>
+                      <li>Test 12.6.3 : Dans chaque ensemble de pages, la fonctionnalité vers le moteur de recherche se présente-t-elle toujours dans le même ordre relatif dans le code source ?</li>
+                    </ul>
+                  </span>
+                  <span id="consultation1" class="m-3" style="display: none"
+                        [ngStyle]="{'font-size':fontSizeParam+'px'}">
+                    <strong>Recommandation</strong>
+                    <p>Vérifier que l’utilisateur a le contrôle des procédés de rafraîchissement, des changements brusques de luminosité, des ouvertures de nouvelles fenêtres et des contenus en mouvement ou clignotants. Indiquer lorsqu’un contenu s’ouvre dans une nouvelle fenêtre et donner des informations relatives à la consultation des fichiers en téléchargement. Ne pas faire dépendre l’accomplissement d’une tâche d’une limite de temps sauf si elle est essentielle et s’assurer que les données saisies sont récupérées après une interruption de session authentifiée. S’assurer que les expressions inhabituelles et le jargon sont explicités. Proposer des versions accessibles ou rendre accessibles les documents en téléchargement.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 13.1 [A] Pour chaque page Web, l’utilisateur a-t-il le contrôle de chaque limite de temps modifiant le contenu (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 13.1.1 : Pour chaque page Web, chaque procédé de rafraîchissement (balise object, balise embed, balise svg, balise canvas, balise meta) vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’utilisateur peut arrêter ou relancer le rafraîchissement ;</li>
+                          <li>L’utilisateur peut augmenter la limite de temps entre deux rafraîchissements de dix fois, au moins ;</li>
+                          <li>L’utilisateur est averti de l’imminence du rafraîchissement et dispose de vingt secondes, au moins, pour augmenter la limite de temps avant le prochain rafraîchissement ;</li>
+                          <li>La limite de temps entre deux rafraîchissements est de vingt heures, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 13.1.2 : Pour chaque page Web, chaque procédé de redirection effectué via une balise meta est-il immédiat (hors cas particuliers) ?</li>
+                      <li>Test 13.1.3 : Pour chaque page Web, chaque procédé de redirection effectué via un script vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’utilisateur peut arrêter ou relancer la redirection ;</li>
+                          <li>L’utilisateur peut augmenter la limite de temps avant la redirection de dix fois, au moins ;</li>
+                          <li>L’utilisateur est averti de l’imminence de la redirection et dispose de vingt secondes, au moins, pour augmenter la limite de temps avant la prochaine redirection ;</li>
+                          <li>La limite de temps avant la redirection est de vingt heures, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 13.1.4 : Pour chaque page Web, chaque procédé limitant le temps d’une session vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’utilisateur peut supprimer la limite de temps ;</li>
+                          <li>L’utilisateur peut augmenter la limite de temps ;</li>
+                          <li>La limite de temps avant la fin de la session est de vingt heures au moins.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 13.2 [A] Dans chaque page Web, pour chaque ouverture de nouvelle fenêtre, l’utilisateur est-il averti ?</h2>
+                    <ul>
+                      <li>Test 13.2.1 : Dans chaque page Web, pour chaque ouverture d’une nouvelle fenêtre effectuée via un lien (attribut target) ou une commande JavaScript, l’utilisateur est-il averti ?</li>
+                      <li>Test 13.2.2 : Dans chaque page Web, pour chaque ouverture d’une nouvelle fenêtre effectuée via une balise object, ou embed, l’utilisateur est-il averti ?</li>
+                      <li>Test 13.2.3 : Dans chaque page Web, pour chaque ouverture d’une nouvelle fenêtre effectuée via un contrôle de formulaire, l’utilisateur est-il averti ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 13.3 [A] Dans chaque page Web, l’ouverture d’une nouvelle fenêtre ne doit pas être déclenchée sans action de l’utilisateur. Cette règle est-elle respectée ?</h2>
+                    <ul>
+                      <li>Test 13.3.1 : Dans chaque page Web, l’ouverture d’une nouvelle fenêtre ne doit pas être déclenchée sans action de l’utilisateur. Cette règle est-elle respectée ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 13.4 [AAA] Dans chaque page Web, une tâche ne doit pas requérir de limite de temps pour être réalisée, sauf si elle se déroule en temps réel ou si cette limite de temps est essentielle. Cette règle est-elle respectée ?</h2>
+                    <ul>
+                      <li>Test 13.4.1 : Dans chaque page Web, chaque tâche limitée dans le temps vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>La tâche se déroule en temps réel ;</li>
+                          <li>La tâche requiert une limite de temps essentielle à son bon déroulement.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </span>
                 </div>
               </div>
             </div>
@@ -862,7 +1066,7 @@
             <mat-list>
               <mat-list-item *ngFor="let item of listItems; let i = index;"
                              [ngClass]="selectedItem == item.element ?'selected':''">
-                <p mat-line class="pointer" (click)="swip(item.element)">{{i !== 0 ? i + '.': ''}} {{item.label}}</p>
+                <p mat-line class="pointer" (click)="swip(item.element)">{{i !== 0 ? i + '.' : ''}} {{item.label}}</p>
                 <mat-divider [inset]="true"></mat-divider>
              </mat-list-item>
             </mat-list>
@@ -931,7 +1135,7 @@
                       <li>Non Testé (NT) : le critère n’a pas été testé.</li>
                     </ul>
                     <p>Vous pouvez consulter, à ce sujet, le <a
-                      href="http://references.modernisation.gouv.fr/rgaa-accessibilite/guide-accompagnement-RGAA.html">guide d’accompagnement</a> : Comment vérifie-t-on la conformité au RGAA ?</p>
+                            href="http://references.modernisation.gouv.fr/rgaa-accessibilite/guide-accompagnement-RGAA.html">guide d’accompagnement</a> : Comment vérifie-t-on la conformité au RGAA ?</p>
                   </span>
               </ng-template>
             </ngb-tab>
@@ -946,16 +1150,16 @@
                 <ul>
                   <li>Test 1.1.1 : Chaque image (balise <span style="font-style: italic">img</span>) a-t-elle un
                     attribut <span
-                      style="font-style: italic">alt</span> ?
+                            style="font-style: italic">alt</span> ?
                   </li>
                   <li>Test 1.1.2 : Chaque zone (balise <span style="font-style: italic">area</span>) d’une image
                     réactive a-t-elle un attribut <span
-                      style="font-style: italic">alt</span> ?
+                            style="font-style: italic">alt</span> ?
                   </li>
                   <li>Test 1.1.3 : Chaque bouton de type image (balise <span
-                    style="font-style: italic">input</span> avec l’attribut <span style="font-style: italic">type="image"</span>)
+                          style="font-style: italic">input</span> avec l’attribut <span style="font-style: italic">type="image"</span>)
                     a-t-il un attribut <span
-                      style="font-style: italic">alt</span> ?
+                            style="font-style: italic">alt</span> ?
                   </li>
                   <li>Test 1.1.4 : Chaque zone cliquable d’une image réactive coté serveur est-t-elle doublée d’un lien
                     dans la page ?
@@ -1954,86 +2158,301 @@
             </ngb-tab>
             <ngb-tab title="Scripts">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                 <span>
+                    <strong>Recommandation</strong>
+                    <p>Donner si nécessaire à chaque script une alternative pertinente. Rendre possible le contrôle de chaque code script au moins par le clavier et la souris et s’assurer de leur compatibilité avec les technologies d’assistance.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 7.1 [A] Chaque script est-il, si nécessaire, compatible avec les technologies d’assistance ?</h2>
+                    <ul>
+                      <li>Test 7.1.1 : Chaque script qui génère ou contrôle un composant d’interface vérifie-t-il, si nécessaire, une de ces conditions ?
+                        <ul>
+                          <li>Le nom, le rôle, la valeur, le paramétrage et les changements d’états sont accessibles aux technologies d’assistance via une API d’accessibilité ;</li>
+                          <li>Un composant d’interface accessible permettant d’accéder aux mêmes fonctionnalités est présent dans la page ;</li>
+                          <li>Une alternative accessible permet d’accéder aux mêmes fonctionnalités.</li>
+                        </ul>
+                      </li>
+                      <li>Test 7.1.2 : Chaque fonctionnalité d’insertion de contenu contrôlée par un script utilise-t-elle des propriétés et méthodes conformes à la spécification DOM (Document Object Model) ?</li>
+                      <li>Test 7.1.3 : Chaque script qui génère, met à jour ou contrôle un composant d’interface qui comporte des rôles des états ou des propriétés correspondant à un motif de conception défini par l’API ARIA vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>Le composant d’interface est conforme au motif de conception défini par l’API ARIA ;</li>
+                          <li>Un composant d’interface présent sur la page, permettant d’accéder aux mêmes fonctionnalités, est conforme au motif de conception défini par l’API ARIA ;</li>
+                          <li>Le composant d’interface adapte un motif de conception défini par l’API ARIA ;</li>
+                          <li>Une alternative accessible permet d’accéder aux mêmes fonctionnalités.</li>
+                        </ul>
+                      </li>
+                      <li>Test 7.1.4 : Chaque modification du rôle natif d’un élément HTML respecte-t-elle les règles et préconisations indiquées dans la spécification HTML5 et les notes techniques associées ?</li>
+                      <li>Test 7.1.5 : Chaque script qui génère ou contrôle un composant d’interface respecte-t-il une de ces conditions ?
+                        <ul>
+                          <li>Le composant d’interface est correctement restitué par les technologies d’assistance ;</li>
+                          <li>Une alternative accessible permet d’accéder aux mêmes fonctionnalités.</li>
+                        </ul>
+                      </li>
+                      <li>Test 7.1.6 : Chaque composant d’interface qui utilise un rôle ARIA application respecte-t-il une de ces conditions ?
+                        <ul>
+                          <li>Le composant d’interface est correctement restitué par les technologies d’assistance ;</li>
+                          <li>Une alternative accessible permet d’accéder aux mêmes fonctionnalités.</li>
+                        </ul>
+                      </li>
+                      <li>Test 7.1.7 : Chaque script qui génère ou contrôle un composant d'interface vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>Le composant possède un nom pertinent ;</li>
+                          <li>Le composant possède un rôle pertinent.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 7.2 [A] Pour chaque script ayant une alternative, cette alternative est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 7.2.1 : Chaque script débutant par la balise script et ayant une alternative vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>L’alternative entre <noscript> et </noscript> permet d’accéder à des contenus et des fonctionnalités similaires ;</li>
+                          <li>La page affichée, lorsque JavaScript est désactivé, permet d’accéder à des contenus et des fonctionnalités similaires ;</li>
+                          <li>La page alternative permet d’accéder à des contenus et des fonctionnalités similaires ;</li>
+                          <li>Le langage de script côté serveur permet d’accéder à des contenus et des fonctionnalités similaires ;</li>
+                          <li>L’alternative présente dans la page permet d’accéder à des contenus et des fonctionnalités similaires.</li>
+                        </ul>
+                      </li>
+                      <li>Test 7.2.2 : Chaque élément non textuel mis à jour par un script (dans la page, ou un cadre en ligne) et ayant une alternative vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>L’alternative de l’élément non textuel est mise à jour ;</li>
+                          <li>L’alternative mise à jour est pertinente.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Éléments obligatoires">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                 <span>
+                    <strong>Recommandation</strong>
+                    <p>Vérifier que chaque page Web a un code source valide selon le type de document, un titre pertinent et une indication de langue par défaut. Vérifier que les balises ne sont pas utilisées uniquement à des fins de présentation, que les changements de langues et de direction de sens de lecture sont indiqués.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 8.1 [A] Chaque page Web est-elle définie par un type de document ?</h2>
+                    <ul>
+                      <li>Test 8.1.1 : Pour chaque page Web, le type de document (balise doctype) est-il présent ?</li>
+                      <li>Test 8.1.2 : Pour chaque page Web, le type de document (balise doctype) est-il valide ?</li>
+                      <li>Test 8.1.3 : Pour chaque page Web possédant une déclaration de type de document, celle-ci est-elle située avant la balise html dans le code source ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 8.2 [A] Pour chaque page Web, le code source est-il valide selon le type de document spécifié (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 8.2.1 : Pour chaque déclaration de type de document, le code source de la page vérifie-t-il ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Les balises respectent les règles d’écriture ;</li>
+                          <li>L’imbrication des balises est conforme ;</li>
+                          <li>L’ouverture et la fermeture des balises sont conformes ;</li>
+                          <li>Les attributs respectent les règles d’écriture ;</li>
+                          <li>Les valeurs des attributs respectent les règles d’écriture.</li>
+                        </ul>
+                      </li>
+                      <li>Test 8.2.2 : Pour chaque déclaration de type de document, le code source de la page ne doit pas utiliser d’éléments obsolètes. Cette règle est-elle respectée (hors cas particuliers) ?</li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Structurations de l'information">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                 <span>
+                    <strong>Recommandation</strong>
+                    <p>Utiliser des titres, des listes, des abréviations et des citations pour structurer l’information. S’assurer que la structure du document est cohérente.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 9.1 [A] Dans chaque page Web, l’information est-elle structurée par l’utilisation appropriée de titres ?</h2>
+                    <ul>
+                      <li>Test 9.1.1 : Dans chaque page Web, y a-t-il un titre de niveau 1 (balise h1 ou balise possédant un rôle ARIA "heading" associé à une propriété aria-level="1") ?</li>
+                      <li>Test 9.1.2 : Dans chaque page Web, la hiérarchie entre les titres (balise h ou balise possédant un rôle ARIA "heading" associé à une propriété aria-level) est-elle pertinente ?</li>
+                      <li>Test 9.1.3 : Dans chaque page Web, chaque titre (balise h ou balise possédant un rôle ARIA "heading" associé à une propriété aria-level) nécessaire à la structure de l’information est-il présent ?</li>
+                      <li>Test 9.1.4 : Dans chaque page Web, chaque titre (balise h ou balise possédant un rôle ARIA "heading" associé à une propriété aria-level) est-il pertinent ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 9.2 [A] Dans chaque page Web, la structure du document est-elle cohérente ?</h2>
+                    <ul>
+                      <li>Test 9.2.1 : Dans chaque page Web, la structure du document vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>La zone d’en-tête de la page est structurée via une balise header ;</li>
+                          <li>Les zones de navigation principales et secondaires sont structurées via une balise nav </li>
+                          <li>La balise nav est réservée à la structuration des zones de navigation principales et secondaires ;</li>
+                          <li>La zone de contenu principal est structurée via une balise main ;</li>
+                          <li>La structure du document utilise une balise main unique ;</li>
+                          <li>La zone de pied de page est structurée via une balise footer.</li>
+                        </ul>
+                      </li>
+                      <li>Test 9.2.2 : Dans chaque page Web, l’arborescence du document est-elle cohérente ?</li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Présentation de l'information">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              <span>
+                    <strong>Recommandation</strong>
+                    <p>Utiliser des feuilles de styles pour contrôler la présentation de l’information. Vérifier l’effet de l’agrandissement des taille des caractères sur la lisibilité. S’assurer que les liens sont correctement identifiables, que la prise de focus est signalée, que l’interlignage est suffisant et donner la possibilité à l’utilisateur de contrôler la justification des textes. S’assurer que les textes cachés sont correctement restitués et que l’information n’est pas donnée uniquement par la forme ou la position d’un élément.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 10.1 [A] Dans le site Web, des feuilles de styles sont-elles utilisées pour contrôler la présentation de l’information ?</h2>
+                    <ul>
+                      <li>Test 10.1.1 : Dans chaque page Web, les balises servant à la présentation de l’information ne doivent pas être présentes dans le code source des pages. Cette règle est-elle respectée ?</li>
+                      <li>Test 10.1.2 : Dans chaque page Web, les attributs servant à la présentation de l’information ne doivent pas être présents dans le code source des pages. Cette règle est-elle respectée ?</li>
+                      <li>Test 10.1.3 : Dans chaque page Web, l’utilisation des espaces vérifie-t-elle ces conditions ?
+                        <ul>
+                          <li>Les espaces ne sont pas utilisés pour séparer les lettres d’un mot ;</li>
+                          <li>Les espaces ne sont pas utilisés pour simuler des tableaux ;</li>
+                          <li>Les espaces ne sont pas utilisés pour simuler des colonnes de texte.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 10.2 [A] Dans chaque page Web, le contenu visible reste-t-il présent lorsque les feuilles de styles sont désactivées ?</h2>
+                    <ul>
+                      <li>Test 10.2.1 : Dans chaque page Web, l’information reste-t-elle présente lorsque les feuilles de styles sont désactivées ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 10.3 [A] Dans chaque page Web, l’information reste-t-elle compréhensible lorsque les feuilles de styles sont désactivées ?</h2>
+                    <ul>
+                      <li>Test 10.3.1 : Dans chaque page Web, l’information reste-t-elle compréhensible lorsque les feuilles de styles sont désactivées ?</li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Formulaires">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+               <span>
+                    <strong>Recommandation</strong>
+                    <p>Associer pour chaque formulaire chacun de ses champs à son étiquette, grouper les champs dans des blocs d’informations de même nature, structurer les listes de choix de manière pertinente, donner à chaque bouton un intitulé explicite. Vérifier la présence d’aide à la saisie, s’assurer que le contrôle de saisie est accessible et que l’utilisateur peut contrôler les données à caractère financier, juridique ou personnel.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 11.1 [A] Chaque champ de formulaire a-t-il une étiquette ?</h2>
+                    <ul>
+                      <li>Test 11.1.1 : Chaque champ de formulaire vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>Le champ de formulaire possède un attribut title ;</li>
+                          <li>Une étiquette (balise label) est associée au champ de formulaire ;</li>
+                          <li>Le champ de formulaire possède une propriété aria-label ;</li>
+                          <li>Le champ de formulaire possède une propriété aria-labelledby référençant un passage de texte identifié.</li>
+                        </ul>
+                      </li>
+                      <li>Test 11.1.2 : Chaque champ de formulaire, associé à une étiquette (balise label), vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>Le champ de formulaire possède un attribut id ;</li>
+                          <li>La valeur de l’attribut id est unique ;</li>
+                          <li>La balise label possède un attribut for ;</li>
+                          <li>La valeur de l’attribut for est égale à la valeur de l’attribut id du champ de formulaire associé.</li>
+                        </ul>
+                      </li>
+                      <li>Test 11.1.3 : Chaque champ de formulaire associé à une étiquette via la propriété ARIA aria-labelledby, vérifie-t-il ces conditions ?
+                        <ul>
+                          <li>L’étiquette possède un attribut id ;</li>
+                          <li>La valeur de l’attribut id est unique ;</li>
+                          <li>Les valeurs de la propriété ARIA aria-labelledby sont égales à la valeur des attributs id des passages de textes utilisés pour créer l’étiquette ;</li>
+                        </ul>
+                      </li>
+                      <li>Test 11.1.4 : Chaque champ de formulaire qui utilise une propriété ARIA aria-label ou aria-labelledby est-il, si nécessaire, accompagné d'un passage de texte visible et accolé au champ permettant de comprendre la nature de la saisie attendue ?</li>
+                      <li>Test 11.1.5 : Chaque champ de formulaire qui utilise un attribut title comme étiquette, vérifie-t-il une de ces conditions ?
+                        <ul>
+                          <li>L’attribut placeholder est absent ;</li>
+                          <li>L’attribut placeholder est identique à l’attribut title.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Navigation">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                 <span>
+                    <strong>Recommandation</strong>
+                    <p>Faciliter la navigation dans un ensemble de pages par au moins deux systèmes de navigation différents (menu de navigation, plan du site ou moteur de recherche), un fil d’Ariane et l’indication de la page active dans le menu de navigation. Identifier les groupes de liens importants et la zone de contenu et donner la possibilité de les éviter par des liens de navigation interne. S’assurer que l’ordre de tabulation est cohérent et que la page ne comporte pas de piège au clavier.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.1 [AA] Chaque ensemble de pages dispose-t-il de deux systèmes de navigation différents, au moins (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 12.1.1 : Chaque ensemble de pages vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Un menu de navigation et un plan du site sont présents ;</li>
+                          <li>Un menu de navigation et un moteur de recherche sont présents ;</li>
+                          <li>Un moteur de recherche et un plan du site sont présents.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.2 [AA] Dans chaque ensemble de pages, le menu et les barres de navigation sont-ils toujours à la même place (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 12.2.1 : Dans chaque ensemble de pages, chaque page ayant un menu de navigation vérifie-t-elle ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>Le menu de navigation est toujours à la même place dans la présentation ;</li>
+                          <li>Le menu de navigation se présente toujours dans le même ordre relatif dans le code source.</li>
+                        </ul>
+                      </li>
+                      <li>Test 12.2.2 : Chaque barre de navigation répétée dans un ensemble de pages vérifie-t-elle ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>La barre de navigation est toujours à la même place dans la présentation ;</li>
+                          <li>La barre de navigation se présente toujours dans le même ordre relatif dans le code source.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.3 [AA] Dans chaque ensemble de pages, le menu et les barres de navigation ont-ils une présentation cohérente (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 12.3.1 : Dans chaque ensemble de pages, le menu de navigation principal a-t-il une présentation cohérente (hors cas particuliers) ?</li>
+                      <li>Test 12.3.2 : Dans chaque ensemble de pages, les barres de navigation répétées ont-elles une présentation cohérente (hors cas particuliers) ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.4 [AA] La page "plan du site" est-elle pertinente ?</h2>
+                    <ul>
+                      <li>Test 12.4.1 : La page "plan du site" est-elle représentative de l’architecture générale du site ?</li>
+                      <li>Test 12.4.2 : Les liens du plan du site sont-ils fonctionnels ?</li>
+                      <li>Test 12.4.3 : Les liens du plan du site renvoient-ils bien vers les pages indiquées par l’intitulé ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.5 [AA] Dans chaque ensemble de pages, la page "plan du site" est-elle atteignable de manière identique ?</h2>
+                    <ul>
+                      <li>Test 12.5.1 : Dans chaque ensemble de pages, la page "plan du site" est-elle accessible à partir d’une fonctionnalité identique ?</li>
+                      <li>Test 12.5.2 : Dans chaque ensemble de pages, la fonctionnalité vers la page "plan du site" est-elle située à la même place dans la présentation ?</li>
+                      <li>Test 12.5.3 : Dans chaque ensemble de pages, la fonctionnalité vers la page "plan du site" se présente-t-elle toujours dans le même ordre relatif dans le code source ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 12.6 [AA] Dans chaque ensemble de pages, le moteur de recherche est-il atteignable de manière identique ?</h2>
+                    <ul>
+                      <li>Test 12.6.1 : Dans chaque ensemble de pages, le moteur de recherche est-il accessible à partir d’une fonctionnalité identique ?</li>
+                      <li>Test 12.6.2 : Dans chaque ensemble de pages, la fonctionnalité vers le moteur de recherche est-elle située à la même place dans la présentation ?</li>
+                      <li>Test 12.6.3 : Dans chaque ensemble de pages, la fonctionnalité vers le moteur de recherche se présente-t-elle toujours dans le même ordre relatif dans le code source ?</li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
             <ngb-tab title="Consulation">
               <ng-template ngbTabContent>
-                <p class="mt-4 ml-2 mr-2">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
-                  stumptown aliqua,
-                  retro synth
-                  master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
-                  retro keffiyeh
-                  dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-                  salvia cillum
-                  iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                  <span>
+                    <strong>Recommandation</strong>
+                    <p>Vérifier que l’utilisateur a le contrôle des procédés de rafraîchissement, des changements brusques de luminosité, des ouvertures de nouvelles fenêtres et des contenus en mouvement ou clignotants. Indiquer lorsqu’un contenu s’ouvre dans une nouvelle fenêtre et donner des informations relatives à la consultation des fichiers en téléchargement. Ne pas faire dépendre l’accomplissement d’une tâche d’une limite de temps sauf si elle est essentielle et s’assurer que les données saisies sont récupérées après une interruption de session authentifiée. S’assurer que les expressions inhabituelles et le jargon sont explicités. Proposer des versions accessibles ou rendre accessibles les documents en téléchargement.</p>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 13.1 [A] Pour chaque page Web, l’utilisateur a-t-il le contrôle de chaque limite de temps modifiant le contenu (hors cas particuliers) ?</h2>
+                    <ul>
+                      <li>Test 13.1.1 : Pour chaque page Web, chaque procédé de rafraîchissement (balise object, balise embed, balise svg, balise canvas, balise meta) vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’utilisateur peut arrêter ou relancer le rafraîchissement ;</li>
+                          <li>L’utilisateur peut augmenter la limite de temps entre deux rafraîchissements de dix fois, au moins ;</li>
+                          <li>L’utilisateur est averti de l’imminence du rafraîchissement et dispose de vingt secondes, au moins, pour augmenter la limite de temps avant le prochain rafraîchissement ;</li>
+                          <li>La limite de temps entre deux rafraîchissements est de vingt heures, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 13.1.2 : Pour chaque page Web, chaque procédé de redirection effectué via une balise meta est-il immédiat (hors cas particuliers) ?</li>
+                      <li>Test 13.1.3 : Pour chaque page Web, chaque procédé de redirection effectué via un script vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’utilisateur peut arrêter ou relancer la redirection ;</li>
+                          <li>L’utilisateur peut augmenter la limite de temps avant la redirection de dix fois, au moins ;</li>
+                          <li>L’utilisateur est averti de l’imminence de la redirection et dispose de vingt secondes, au moins, pour augmenter la limite de temps avant la prochaine redirection ;</li>
+                          <li>La limite de temps avant la redirection est de vingt heures, au moins.</li>
+                        </ul>
+                      </li>
+                      <li>Test 13.1.4 : Pour chaque page Web, chaque procédé limitant le temps d’une session vérifie-t-il une de ces conditions (hors cas particuliers) ?
+                        <ul>
+                          <li>L’utilisateur peut supprimer la limite de temps ;</li>
+                          <li>L’utilisateur peut augmenter la limite de temps ;</li>
+                          <li>La limite de temps avant la fin de la session est de vingt heures au moins.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 13.2 [A] Dans chaque page Web, pour chaque ouverture de nouvelle fenêtre, l’utilisateur est-il averti ?</h2>
+                    <ul>
+                      <li>Test 13.2.1 : Dans chaque page Web, pour chaque ouverture d’une nouvelle fenêtre effectuée via un lien (attribut target) ou une commande JavaScript, l’utilisateur est-il averti ?</li>
+                      <li>Test 13.2.2 : Dans chaque page Web, pour chaque ouverture d’une nouvelle fenêtre effectuée via une balise object, ou embed, l’utilisateur est-il averti ?</li>
+                      <li>Test 13.2.3 : Dans chaque page Web, pour chaque ouverture d’une nouvelle fenêtre effectuée via un contrôle de formulaire, l’utilisateur est-il averti ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 13.3 [A] Dans chaque page Web, l’ouverture d’une nouvelle fenêtre ne doit pas être déclenchée sans action de l’utilisateur. Cette règle est-elle respectée ?</h2>
+                    <ul>
+                      <li>Test 13.3.1 : Dans chaque page Web, l’ouverture d’une nouvelle fenêtre ne doit pas être déclenchée sans action de l’utilisateur. Cette règle est-elle respectée ?</li>
+                    </ul>
+                    <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 13.4 [AAA] Dans chaque page Web, une tâche ne doit pas requérir de limite de temps pour être réalisée, sauf si elle se déroule en temps réel ou si cette limite de temps est essentielle. Cette règle est-elle respectée ?</h2>
+                    <ul>
+                      <li>Test 13.4.1 : Dans chaque page Web, chaque tâche limitée dans le temps vérifie-t-elle une de ces conditions ?
+                        <ul>
+                          <li>La tâche se déroule en temps réel ;</li>
+                          <li>La tâche requiert une limite de temps essentielle à son bon déroulement.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </span>
               </ng-template>
             </ngb-tab>
           </ngb-tabset>

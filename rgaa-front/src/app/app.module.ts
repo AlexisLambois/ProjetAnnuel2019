@@ -32,6 +32,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {FooterResponsiveComponent} from './general/footer-responsive/footer-responsive.component';
 import {HomeComponent} from './admin/home/home.component';
 import {ButtonsModule, CheckboxModule, IconsModule} from 'angular-bootstrap-md';
+import {A11yModule} from '@angular/cdk/a11y';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import {ButtonsModule, CheckboxModule, IconsModule} from 'angular-bootstrap-md';
     MatPaginatorModule,
     MatTableModule,
     MatInputModule,
-    MatSortModule
+    MatSortModule,
+    A11yModule
   ],
   providers: [],
   bootstrap: [AppComponent]

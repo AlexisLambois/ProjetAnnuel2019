@@ -24,14 +24,14 @@
   <div class="container">
     <div class="row">
       <div style="margin-right: 1.5%"></div>
-      <div class="p-5 block background-bleucielUrbilog m-r" (click)="redirectTo('reforme')">
+      <a class="p-5 block background-bleucielUrbilog m-r" (click)="redirectTo('reforme')">
         <img src="assets/img/lois1.png" class="icon-nav" alt="">
         <p style="color:white;text-align: center;"
            [ngStyle]="{'font-size':fontSizeAdapted+1+'px'}"
            [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">
           La loi RGAA
         </p>
-      </div>
+      </a>
       <div class="p-5 block background-bordUrbilog m-r" (click)="redirectTo('formatage')">
         <img src="assets/img/formater.png" class="icon-nav" alt="">
         <p style="color:white;text-align: center;"

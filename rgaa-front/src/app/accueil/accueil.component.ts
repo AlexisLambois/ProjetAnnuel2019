@@ -1,6 +1,7 @@
-import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit, ViewChildren} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
 import {RoutingService} from '../general/routing.service';
+import {ListKeyManager} from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-accueil',
@@ -11,7 +12,7 @@ export class AccueilComponent implements OnInit, AfterViewInit {
 
   private isMobileResolution: boolean;
 
-  constructor(private paramService: ParameterService,private routing: RoutingService) {
+  constructor(private paramService: ParameterService, private routing: RoutingService) {
     this.checkResolution();
   }
 

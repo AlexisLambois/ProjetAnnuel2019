@@ -1,20 +1,20 @@
 <div class="container-fluid">
-
-  <div class="row py-2">
-    <div class="text-right mr-2 font-weight-bold container-fluid">
-      <span class="no-select button-start" style="font-size: large" (click)="changeSizeFont(1)">A+</span>
-      <span class="no-select" style="font-size: large"> / </span>
-      <span class="no-select button-start" style="font-size: large" (click)="changeSizeFont(-1)">A-</span>
+  <header>
+    <div class="row py-2">
+      <div class="text-right mr-2 font-weight-bold container-fluid">
+        <a class="button-start" style="font-size: large" (click)="changeSizeFont(1)">A+</a>
+        <span class="no-select" style="font-size: large"> / </span>
+        <a class="button-start" style="font-size: large" (click)="changeSizeFont(-1)">A-</a>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-12 p-0">
-      <nav style="min-height: 127px;" class="navbar navbar-expand-lg navbar-dark background-bleuUrbilog shadownavbar">
-        <a class="navbar-brand no-select brandImg" href="#" (click)="redirectTo('home')">
-          <img src="./assets/img/logoUrbilogBlanc.png" alt="" class="img-fluid" style="cursor: pointer">
-        </a>
-        <span *ngIf="notOnHome()">
+    <div class="row">
+      <div class="col-12 p-0">
+        <nav style="min-height: 127px;" class="navbar navbar-expand-lg navbar-dark background-bleuUrbilog shadownavbar">
+          <a class="navbar-brand no-select brandImg" href="#" (click)="redirectTo('home')">
+            <img src="./assets/img/logoUrbilogBlanc.png" alt="RGAA Urbilog Certification et Accessibilité - Liens vers la page d'accueil" class="img-fluid" style="cursor: pointer">
+          </a>
+          <span *ngIf="notOnHome()">
           <button class="navbar-toggler" type="button"
                   (click)="toggleNavbar()">
             <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,8 @@
             </ul>
           </div>
         </span>
-      </nav>
+        </nav>
+      </div>
     </div>
-  </div>
+  </header>
 </div>
