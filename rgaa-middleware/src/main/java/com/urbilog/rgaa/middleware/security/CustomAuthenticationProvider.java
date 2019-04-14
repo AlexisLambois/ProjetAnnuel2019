@@ -22,7 +22,6 @@ import com.urbilog.rgaa.core.service.impl.UserDetailsImpl;
 @Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
-	@Autowired
 	private IUtilisateurService userService;
 
 	public CustomAuthenticationProvider() {

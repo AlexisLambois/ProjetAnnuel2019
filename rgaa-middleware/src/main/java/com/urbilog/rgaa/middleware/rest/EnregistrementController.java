@@ -51,6 +51,16 @@ public class EnregistrementController {
 	@Autowired
 	private FileStorageService fileStorageService;
 	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@ApiOperation(value = "Returns commands correspond to filter", notes = "Returns a complete list of commands", response = Enregistrement.class, responseContainer = "List")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Successful search commands", response = Enregistrement.class) })
+	public ResponseEntity<List<Enregistrement>> getAll() {
+		List<Enregistrement> enregistrements = enregistrementService.getAll();
+
+		return ResponseEntity.status(HttpStatus.OK).body(enregistrements);
+	}
+	
 	@RequestMapping(value = "/saveEnregistrement", method = RequestMethod.POST)
 	public ResponseEntity<Integer> saveEnregistrement(@RequestBody final ToSaveDataDTO dataToSave) {
 

@@ -22,7 +22,6 @@ public class AuthorizeServiceImpl implements IAuthorizeService {
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(AuthorizeServiceImpl.class);
 
-	@Autowired
 	private List<String> tokens = new ArrayList<>();
 
 	@Override

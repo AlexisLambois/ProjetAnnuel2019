@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
   }
 
   notOnHome(): boolean {
-    return !this.router.url.includes('home');
+    return !this.router.url.includes('home') && !this.router.url.includes('admin');
   }
 
 }

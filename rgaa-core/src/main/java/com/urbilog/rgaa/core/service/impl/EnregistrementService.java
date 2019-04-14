@@ -9,6 +9,7 @@ import com.urbilog.rgaa.core.placeholder.FileStorageProperties;
 import com.urbilog.rgaa.core.service.IEnregistrementService;
 
 import java.util.Date;
+import java.util.List;
 
 @Transactional
 @Service
@@ -29,6 +30,11 @@ public class EnregistrementService implements IEnregistrementService {
 	@Override
 	public Enregistrement saveTypeDeux(String name, String email, String phonenumber, String comment) {
 		return this.contactDAO.saveAndFlush(new Enregistrement(name,email,phonenumber,comment,2,new Date()));
+	}
+
+	@Override
+	public List<Enregistrement> getAll() {
+		return this.contactDAO.findAll();
 	}
 
 }

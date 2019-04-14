@@ -19,9 +19,19 @@ import {AuditComponent} from './audit/audit.component';
 import {LinkBarComponent} from './general/link-bar/link-bar.component';
 import {WhoweareComponent} from './whoweare/whoweare.component';
 import {MapsiteComponent} from './mapsite/mapsite.component';
-import {MatExpansionModule, MatIconModule, MatListModule, MatMenuModule, MatTabsModule} from '@angular/material';
+import {
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatIconModule, MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatPaginatorModule, MatSortModule, MatTableModule,
+  MatTabsModule
+} from '@angular/material';
 import {MatDividerModule} from '@angular/material/divider';
 import {FooterResponsiveComponent} from './general/footer-responsive/footer-responsive.component';
+import {HomeComponent} from './admin/home/home.component';
+import {ButtonsModule, CheckboxModule, IconsModule} from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -38,7 +48,8 @@ import {FooterResponsiveComponent} from './general/footer-responsive/footer-resp
     LinkBarComponent,
     WhoweareComponent,
     MapsiteComponent,
-    FooterResponsiveComponent
+    FooterResponsiveComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +64,17 @@ import {FooterResponsiveComponent} from './general/footer-responsive/footer-resp
     MatIconModule,
     BrowserAnimationsModule,
     FileUploadModule,
-    HttpClientModule
+    HttpClientModule,
+    CheckboxModule,
+    IconsModule,
+    ButtonsModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatInputModule,
+    MatSortModule
   ],
-	providers: [],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

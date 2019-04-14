@@ -8,6 +8,7 @@ import {AuditComponent} from './audit/audit.component';
 import {LinkBarComponent} from './general/link-bar/link-bar.component';
 import {WhoweareComponent} from './whoweare/whoweare.component';
 import {MapsiteComponent} from './mapsite/mapsite.component';
+import {HomeComponent} from './admin/home/home.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'audit', component: AuditComponent},
   {path: 'link', component: LinkBarComponent},
   {path: 'whoweare', component: WhoweareComponent},
-  {path: 'mapsite', component: MapsiteComponent}
+  {path: 'mapsite', component: MapsiteComponent},
+  {path: 'admin', component: HomeComponent}
 ];
 
 @NgModule({
