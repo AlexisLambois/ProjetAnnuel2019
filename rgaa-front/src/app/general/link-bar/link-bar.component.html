@@ -53,6 +53,36 @@
         <button type="button" class="btn btn-primary" (click)="setDmla()">Vue DMLA</button>
       </mat-expansion-panel>
     </mat-accordion>
+    <hr>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            La rétinite pigmentaire et Le glaucome
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p [ngStyle]="{'font-size':fontSize+1+'px'}" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'">
+          La rétinite pigmentaire (RP) est une maladie génétique dégénérative due à une mutation de gènes impliqués dans
+          le fonctionnement et la régulation des cellules de la rétine, les photorécepteurs, indispensables pour la
+          vision. La RP atteint les deux yeux et débute généralement par des problèmes de vue lorsque l’intensité de la
+          lumière diminue (héméralopie). Des difficultés d’adaptation à l’obscurité sont fréquentes, par exemple lors du
+          passage d’une pièce très éclairée vers une pièce sombre. Puis progressivement, le champ visuel se rétrécit
+          donnant une impression de « vision en tunnel ». Des troubles dans la vision des couleurs sont souvent présent
+          et une sensibilité à une forte intensité lumineuse peut apparaître plus tard. La vision centrale est
+          généralement conservée jusqu’à des stades tardifs de la maladie puis, progressivement l’acuité visuelle
+          diminue et aboutit généralement à la cécité.
+        </p>
+        <p [ngStyle]="{'font-size':fontSize+1+'px'}" [ngClass]="fontFamily?'myMyriadProFont':'openDyslexicFont'">
+          Il existe deux principaux types de glaucomes, le glaucome à angle fermé (très douloureux) et celui à angle
+          ouvert (asymptomatique). Le glaucome à angle ouvert (le plus fréquent) est une maladie chronique, évolutive et
+          progressive du nerf optique souvent liée à un excès de tension dans l’œil. Cette pathologie est insidieuse
+          dans la mesure où le patient ne ressent aucun symptôme durant les premières années de la maladie. Sans douleur
+          préalable, ni baisse de vision, le glaucome conduit inéluctablement à la cécité si aucun traitement médical
+          n’est mis en place.
+        </p>
+        <button type="button" class="btn btn-primary" (click)="setCataracte()">Vue Cataracte</button>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
 
   <div class="modal-footer">
