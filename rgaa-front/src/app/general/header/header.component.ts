@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() fontSize: number;
   @Input() fontFamily: boolean;
+  @Input() contrastedMode: boolean;
   @Output() changeSize: EventEmitter<number> = new EventEmitter();
 
   navbarOpen = false;

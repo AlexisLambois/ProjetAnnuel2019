@@ -16,7 +16,7 @@
     </div>
     <div class="row pt-3 text-footer" [ngStyle]="{'font-size':fontSizeAdapted}">
       <div class="col-5 no-select center">
-      <span class="not-allowed" style="text-decoration: line-through;"
+      <span class="pointer" (click)="changeContrastedMode()"
             [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Version contrastée</span>
       </div>
       <div class="col-5 no-select center">

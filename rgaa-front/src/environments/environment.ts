@@ -8,7 +8,7 @@ export const environment = {
   production: false,
   isDebug: false,
   apis: {
-    rest: 'http://localhost:8080/rgaa/rest'
+    rest: 'http://localhost:8081/rgaa/rest'
   },
   httpHeaders : new HttpHeaders({
     'Content-Type': 'application/json',

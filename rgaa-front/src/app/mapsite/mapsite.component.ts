@@ -55,4 +55,12 @@ export class MapsiteComponent implements OnInit {
     this.routing.redirectTo(path);
   }
 
+  get contrastedMode(): boolean{
+    return this.paramService.isContrastedMode;
+  }
+
+  changeContrasted(event){
+    this.paramService.setContrastedMode();
+  }
+
 }

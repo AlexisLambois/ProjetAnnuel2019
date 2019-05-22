@@ -16,6 +16,14 @@
   color: #1271B8;
 }
 
+ .background-bleucielUrbilogContrasted {
+   background-color: #0E5890;
+ }
+
+.color-bleucielUrbilogContrasted {
+  color: #0E5890;
+}
+
 .background-bordUrbilog {
   background-color: #A2195B;
 }
@@ -32,12 +40,28 @@
   color: #09A198;
 }
 
+.background-vertUrbilogContrasted{
+  background-color: #065B55;
+}
+
+.color-vertUrbilogContrasted {
+  color: #065B55;
+}
+
 .background-orangeUrbilog {
   background-color: #F29100;
 }
 
 .color-orangeUrbilog {
   color: #F29100;
+}
+
+.background-orangeUrbilogContrasted{
+  background-color: #804D00;
+}
+
+.color-orangeUrbilogContrasted {
+  color: #804D00;
 }
 
 .background-bleuUrbilog {

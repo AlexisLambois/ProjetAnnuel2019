@@ -57,4 +57,12 @@ export class WhoweareComponent implements OnInit, AfterViewInit {
   redirectTo(path: string): void {
     window.location.href = path;
   }
+
+  get contrastedMode(): boolean{
+    return this.paramService.isContrastedMode;
+  }
+
+  changeContrasted(event){
+    this.paramService.setContrastedMode();
+  }
 }

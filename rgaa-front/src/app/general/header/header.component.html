@@ -23,7 +23,7 @@
           <div class="collapse navbar-collapse"
                [ngClass]="{ 'show': navbarOpen }">
             <ul class="navbar-nav ml-auto mr-auto">
-              <li class="nav-item pointer background-bleucielUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
+              <li class="nav-item pointer background-bleucielUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav" >
                 <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
                    [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('reforme')">La
                   loi RGAA</a>
@@ -34,13 +34,13 @@
                    [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('formatage')">Vos fichiers accessibles</a>
               </li>
 
-              <li class="nav-item pointer background-vertUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
+              <li class="nav-item pointer background-vertUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav" [ngClass]="contrastedMode?'background-vertUrbilogContrasted':'background-vertUrbilog'">
                 <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
                    [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
                    (click)="redirectTo('audit')">Avis d'expert</a>
               </li>
 
-              <li class="nav-item pointer background-orangeUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav">
+              <li class="nav-item pointer background-orangeUrbilog pr-4 pl-4 pt-2 pb-2 m-3 itemdenav" [ngClass]="contrastedMode?'background-orangeUrbilogContrasted':'background-orangeUrbilog'">
                 <a class="nav-link pointer liendenav" [ngStyle]="{'font-size':fontSizeParam+'px'}"
                    [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('whoweare')">Qui
                   sommes-nous ?</a>

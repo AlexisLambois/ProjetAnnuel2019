@@ -1,6 +1,6 @@
 <div  id="context1" class="outer">
   <div class="inner_fixed">
-    <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
+    <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)" [contrastedMode]="contrastedMode"
                 [fontSize]='fontSizeParam'></app-header>
   </div>
 
@@ -10,20 +10,20 @@
           [ngStyle]="{'font-size':fontSizeParam+20+'px'}">Plan du site</h1>
       <hr class="bar mb-5">
       <ul>
-        <li><a class="link" (click)="redirectTo('home')">Accueil</a></li>
-        <li><a class="link" (click)="redirectTo('reforme')">La loi rgaa</a></li>
-        <li><a class="link" (click)="redirectTo('formatage')">Vos fichiers accessibles</a></li>
-        <li><a class="link" (click)="redirectTo('audit')">Avis d'expert</a></li>
-        <li><a class="link" (click)="redirectTo('whoweare')">Qui sommes-nous ?</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('home')">Accueil</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('reforme')">La loi rgaa</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('formatage')">Vos fichiers accessibles</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('audit')">Avis d'expert</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('whoweare')">Qui sommes-nous ?</a></li>
       </ul>
     </div>
   </div>
 </div>
 <span *ngIf="!getIsMobileResolution; else mobileVersion">
   <app-footer class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-            [fontFamily]='fontFamilyParam'></app-footer>
+            [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
 </span>
 <ng-template #mobileVersion>
   <app-footer-responsive class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-                         [fontFamily]='fontFamilyParam'></app-footer-responsive>
+                         [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer-responsive>
 </ng-template>

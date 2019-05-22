@@ -1,6 +1,6 @@
 <div id="context1" class="outer">
   <div class="inner_fixed">
-    <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
+    <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)" [contrastedMode]="contrastedMode"
                 [fontSize]='fontSizeParam'></app-header>
   </div>
 
@@ -123,10 +123,10 @@
 <span *ngIf="!getIsMobileResolution; else mobileVersion">
   <app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
   <app-footer id="context2" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-              [fontFamily]='fontFamilyParam'></app-footer>
+              [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
 </span>
 
 <ng-template #mobileVersion>
   <app-footer-responsive [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-                       [fontFamily]='fontFamilyParam'></app-footer-responsive>
+                       [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer-responsive>
 </ng-template>

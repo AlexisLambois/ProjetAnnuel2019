@@ -1,7 +1,6 @@
 import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
 import {ParameterService} from '../general/parameter.service';
 import {FormatageService} from './formatage.service';
-import {ContactFormatage} from '../shared/contact';
 
 @Component({
   selector: 'app-formatage',
@@ -82,6 +81,14 @@ export class FormatageComponent implements OnInit, AfterViewInit {
     } else {
       this.message = '4 Les champs ne respecte pas les critères !';
     }
+  }
+
+  get contrastedMode(): boolean{
+    return this.paramService.isContrastedMode;
+  }
+
+  changeContrasted(event){
+    this.paramService.setContrastedMode();
   }
 
   isAvailable(name, email, phoneNumber): boolean {

@@ -11,6 +11,7 @@ export class FooterResponsiveComponent implements OnInit {
   @Input() fontSize: number;
   @Input() fontFamily: boolean;
   @Output() changeFamily: EventEmitter<void> = new EventEmitter();
+  @Output() changeContrasted: EventEmitter<void> = new EventEmitter();
 
   constructor(private routing: RoutingService) {
   }
@@ -30,4 +31,7 @@ export class FooterResponsiveComponent implements OnInit {
     this.routing.redirectTo(path);
   }
 
+  changeContrastedMode(): void {
+    this.changeContrasted.emit();
+  }
 }

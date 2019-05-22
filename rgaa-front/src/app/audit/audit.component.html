@@ -1,16 +1,16 @@
 <div id="context1" class="outer">
   <div class="inner_fixed">
-    <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)"
+    <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)" [contrastedMode]="contrastedMode"
                 [fontSize]='fontSizeParam'></app-header>
   </div>
 
   <div class="inner_remaining">
     <div class="container">
-      <h1 class="color-vertUrbilog mt-5" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+      <h1 class="mt-5" [ngClass]="{'myMyriadProBoldFont':fontFamilyParam,'openDyslexicBoldFont':!fontFamilyParam,'color-vertUrbilogContrasted':contrastedMode,'color-vertUrbilog':!contrastedMode}"
           [ngStyle]="{'font-size':fontSizeParam+20+'px'}">UN AVIS D'EXPERT SUR VOTRE SITE ?</h1>
-      <hr class="bar background-vertUrbilog mb-5">
+      <hr class="bar mb-5" [ngClass]="contrastedMode?'background-vertUrbilogContrasted':'background-vertUrbilog'">
       <div class="row ml-4 mr-4 mb-4">
-        <h2 class="mb-4 color-vertUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+        <h2 class="mb-4" [ngClass]="{'myMyriadProBoldFont':fontFamilyParam,'openDyslexicBoldFont':!fontFamilyParam,'color-vertUrbilogContrasted':contrastedMode,'color-vertUrbilog':!contrastedMode}"
             [ngStyle]="{'font-size':fontSizeParam+3+'px'}">Pourquoi demander un avis d'expert sur votre site ?</h2>
         <p [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
            [ngStyle]="{'font-size':fontSizeParam+'px'}">
@@ -20,7 +20,7 @@
 		   </p>
       </div>
       <div class="row ml-4 mr-4 mb-4">
-        <h2 class="mb-4 color-vertUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+        <h2 class="mb-4" [ngClass]="{'myMyriadProBoldFont':fontFamilyParam,'openDyslexicBoldFont':!fontFamilyParam,'color-vertUrbilogContrasted':contrastedMode,'color-vertUrbilog':!contrastedMode}"
             [ngStyle]="{'font-size':fontSizeParam+3+'px'}">Quels bénéfices ?</h2>
         <p [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
            [ngStyle]="{'font-size':fontSizeParam+'px'}">
@@ -33,7 +33,7 @@
         <div class="row ml-4 mr-4 mb-5" style="border: black 1px solid">
           <div class="col-6 pl-5 mt-5 mb-5">
             <div class="row mb-3">
-              <h2 class="color-vertUrbilog" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+              <h2 [ngClass]="{'myMyriadProBoldFont':fontFamilyParam,'openDyslexicBoldFont':!fontFamilyParam,'color-vertUrbilogContrasted':contrastedMode,'color-vertUrbilog':!contrastedMode}"
                   [ngStyle]="{'font-size':fontSizeParam+2+'px'}">Envoyer votre demande d'audit pour votre site :</h2>
             </div>
             <div class="row mb-4">
@@ -62,8 +62,8 @@
               <textarea class="col-10 offset-1 p-1" id="comment" rows="7" #comment></textarea>
             </div>
             <div class="row">
-              <button type="submit" class="btn sendForm pt-2 pb-2 pl-3 pr-3 background-vertUrbilog"
-                      style="width: 75%;" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+              <button type="submit" class="btn sendForm pt-2 pb-2 pl-3 pr-3"
+                      style="width: 75%;" [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam,'background-vertUrbilogContrasted':contrastedMode,'background-vertUrbilog':!contrastedMode}"
                       [ngStyle]="{'font-size':fontSizeParam-2+'px'}">ENVOYER
               </button>
             </div>
@@ -91,10 +91,10 @@
   <div id="circle"></div>
   <app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
   <app-footer id="context2" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-            [fontFamily]='fontFamilyParam'></app-footer>
+            [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
 </span>
 
 <ng-template #mobileVersion>
   <app-footer-responsive [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-                         [fontFamily]='fontFamilyParam'></app-footer-responsive>
+                         [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer-responsive>
 </ng-template>

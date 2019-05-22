@@ -11,6 +11,7 @@ export class FooterComponent implements OnInit {
   @Input() fontSize: number;
   @Input() fontFamily: boolean;
   @Output() changeFamily: EventEmitter<void> = new EventEmitter();
+  @Output() changeContrasted: EventEmitter<void> = new EventEmitter();
   private isMobileResolution: boolean;
 
   constructor(private routing: RoutingService) {
@@ -43,6 +44,10 @@ export class FooterComponent implements OnInit {
 
   changeFamilyFont(): void {
     this.changeFamily.emit();
+  }
+
+  changeContrastedMode(): void {
+    this.changeContrasted.emit();
   }
 
   redirectTo(path: string): void {

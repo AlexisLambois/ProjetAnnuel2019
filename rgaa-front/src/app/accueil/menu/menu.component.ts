@@ -10,6 +10,7 @@ export class MenuComponent implements OnInit {
 
   @Input() fontSize: number;
   @Input() fontFamily: boolean;
+  @Input() contrastedMode: boolean;
 
   constructor(private routing: RoutingService) {
   }

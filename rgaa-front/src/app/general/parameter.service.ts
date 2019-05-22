@@ -18,6 +18,10 @@ export class ParameterService {
     return (localStorage.getItem('family') === 'true');
   }
 
+  get isContrastedMode(): boolean {
+    return (localStorage.getItem('contrasted') === 'true');
+  }
+
   setFontSize(change: number): void {
     const actualSize: number = +localStorage.getItem('size') !== 0 ? +localStorage.getItem('size') + change : 15 + change;
     if (actualSize > 15 && actualSize < 20) {
@@ -27,6 +31,10 @@ export class ParameterService {
 
   setFontFamily(): void {
     localStorage.setItem('family', String(!this.fontFamily));
+  }
+
+  setContrastedMode(): void {
+    localStorage.setItem('contrasted',  String(!this.isContrastedMode));
   }
 
   refreshEffect(): void {

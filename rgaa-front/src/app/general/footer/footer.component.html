@@ -18,7 +18,7 @@
            [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Le plan du site</a>
       </div>
       <div class="col-2 no-select">
-      <a class="not-allowed" style="text-decoration: line-through;"
+      <a class="pointer" (click)="changeContrastedMode()"
             [ngClass]="fontFamily?'myMyriadProBoldFont':'openDyslexicBoldFont'">Version contrastée</a>
       </div>
       <div class="col-2 no-select">

@@ -5,7 +5,8 @@
     </div>
 
     <div class="inner_remaining">
-      <app-menu class="outer" [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-menu>
+      <app-menu class="outer" [fontSize]='fontSizeParam' [contrastedMode]="contrastedMode"
+                [fontFamily]='fontFamilyParam'></app-menu>
     </div>
   </div>
 
@@ -13,17 +14,17 @@
   <app-link-bar [param]='false' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
 
   <app-footer id="context2" class="toBottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-              [fontFamily]='fontFamilyParam'></app-footer>
+              [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
 </span>
 <ng-template #mobileVersion>
   <div class="outer">
     <div class="inner_fixed">
-      <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
+      <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam' [contrastedMode]="contrastedMode"></app-header>
     </div>
     <div class="inner_remaining">
       <div class="container-fluid m-0 p-0" style="height: 100%">
         <div class="row m-0" style="height: 50%;width: 100%;">
-          <div class="col-6 p-0 background-bleucielUrbilog pointer" (click)="redirectTo('reforme')">
+          <div class="col-6 p-0 pointer" [ngClass]="contrastedMode?'background-bleucielUrbilogContrasted':'background-bleucielUrbilog'" (click)="redirectTo('reforme')">
             <div class="child">
               <img src="assets/img/lois1.png" style="width: 100%;" alt="">
               <p style="color:white;" class="mt-4" tabindex="50"
@@ -45,7 +46,7 @@
           </div>
         </div>
         <div class="row m-0" style="height: 50%">
-          <div class="col-6 p-0 background-vertUrbilog pointer" (click)="redirectTo('audit')">
+          <div class="col-6 p-0 pointer" [ngClass]="contrastedMode?'background-vertUrbilogContrasted':'background-vertUrbilog'" (click)="redirectTo('audit')">
             <section>
               <div class="child">
                 <img src="assets/img/audit.png" style="width: 70%;" alt="">
@@ -57,7 +58,9 @@
               </div>
             </section>
           </div>
-          <div class="col-6 p-0 background-orangeUrbilog pointer" (click)="redirectTo('whoweare')">
+          <div class="col-6 p-0 pointer"
+               [ngClass]="contrastedMode?'background-orangeUrbilogContrasted':'background-orangeUrbilog'"
+               (click)="redirectTo('whoweare')">
             <div class="child">
               <img src="assets/img/group.png" style="width: 55%;" alt="">
               <p style="color:white;" class="mt-4"
@@ -72,5 +75,6 @@
     </div>
   </div>
   <app-footer-responsive [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+                         (changeContrasted)="changeContrasted($event)"
                          [fontFamily]='fontFamilyParam'></app-footer-responsive>
 </ng-template>

@@ -24,7 +24,7 @@
   <div class="container">
     <div class="row">
       <div style="margin-right: 1.5%"></div>
-      <a class="p-5 block background-bleucielUrbilog m-r" (click)="redirectTo('reforme')">
+      <a class="p-5 block m-r" [ngClass]="contrastedMode?'background-bleucielUrbilogContrasted':'background-bleucielUrbilog'" (click)="redirectTo('reforme')">
         <img src="assets/img/lois1.png" class="icon-nav" alt="">
         <p style="color:white;text-align: center;"
            [ngStyle]="{'font-size':fontSizeAdapted+1+'px'}"
@@ -40,7 +40,9 @@
           Vos fichiers accessibles
         </p>
       </div>
-      <div class="p-5 block background-vertUrbilog m-r" (click)="redirectTo('audit')">
+      <div class="p-5 block m-r"
+           [ngClass]="contrastedMode?'background-vertUrbilogContrasted':'background-vertUrbilog'"
+           (click)="redirectTo('audit')">
         <img src="assets/img/audit.png" class="icon-nav" alt="">
         <p style="color:white;text-align: center;"
            [ngStyle]="{'font-size':fontSizeAdapted+1+'px'}"
@@ -48,7 +50,8 @@
           Avis d'expert
         </p>
       </div>
-      <div class="p-5 block background-orangeUrbilog" (click)="redirectTo('whoweare')">
+      <div class="p-5 block" [ngClass]="contrastedMode?'background-orangeUrbilogContrasted':'background-orangeUrbilog'"
+           (click)="redirectTo('whoweare')">
         <img src="assets/img/group.png" class="icon-nav" alt="">
         <p style="color:white;text-align: center;"
            [ngStyle]="{'font-size':fontSizeAdapted+1+'px'}"

@@ -77,4 +77,12 @@ export class AuditComponent implements OnInit, AfterViewInit {
     return this.paramService.fontFamily;
   }
 
+  get contrastedMode(): boolean{
+    return this.paramService.isContrastedMode;
+  }
+
+  changeContrasted(event){
+    this.paramService.setContrastedMode();
+  }
+
 }
