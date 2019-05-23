@@ -16,9 +16,9 @@
   color: #1271B8;
 }
 
- .background-bleucielUrbilogContrasted {
-   background-color: #0E5890;
- }
+.background-bleucielUrbilogContrasted {
+  background-color: #0E5890;
+}
 
 .color-bleucielUrbilogContrasted {
   color: #0E5890;
@@ -40,7 +40,7 @@
   color: #09A198;
 }
 
-.background-vertUrbilogContrasted{
+.background-vertUrbilogContrasted {
   background-color: #065B55;
 }
 
@@ -56,7 +56,7 @@
   color: #F29100;
 }
 
-.background-orangeUrbilogContrasted{
+.background-orangeUrbilogContrasted {
   background-color: #804D00;
 }
 
@@ -169,4 +169,23 @@ body {
   margin-top: -20em;
   margin-left: -20em;
   display: none;
+}
+
+#circlerevert {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: fixed;
+  left: 0;
+  background: black; /* fallback */
+  background: linear-gradient(135deg, transparent 10px, black 0) bottom right,
+  linear-gradient(225deg, transparent 10px, black 0) bottom left,
+  linear-gradient(315deg, transparent 10px, black 0) top left,
+  linear-gradient(45deg, transparent 10px, black 0) top right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at 0 0, rgba(204, 0, 0, 0) 300px, black 15px),
+  radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 300px, black 15px),
+  radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 300px, black 15px),
+  radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 300px, black 15px);
 }
