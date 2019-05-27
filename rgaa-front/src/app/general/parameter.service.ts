@@ -55,12 +55,21 @@ export class ParameterService {
         }
         break;
       }
+      case 3: {
+        if (document.getElementById('circlerevert') !== null) {
+          document.getElementById('circlerevert').classList.add('show');
+        }
+        break;
+      }
     }
   }
 
   resetEffect(): void {
     if (document.getElementById('circle') !== null) {
       document.getElementById('circle').classList.remove('show');
+    }
+    if (document.getElementById('circlerevert') !== null) {
+      document.getElementById('circlerevert').classList.remove('show');
     }
     if (document.getElementById('context1') !== null) {
       document.getElementById('context1').classList.remove('blur');

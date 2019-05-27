@@ -1,6 +1,13 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {RoutingService} from '../routing.service';
 import {Router} from '@angular/router';
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ParameterService} from '../parameter.service';
+
+interface Alert {
+  type: string;
+  message: string;
+}
 
 @Component({
   selector: 'app-header',
@@ -13,10 +20,13 @@ export class HeaderComponent implements OnInit {
   @Input() fontFamily: boolean;
   @Input() contrastedMode: boolean;
   @Output() changeSize: EventEmitter<number> = new EventEmitter();
+  displayAlert = false;
+  modalRef: any;
+  nameMode = '';
 
   navbarOpen = false;
 
-  constructor(private routing: RoutingService, private router: Router) {
+  constructor(private routing: RoutingService, private router: Router, private modalService: NgbModal, private paramService: ParameterService) {
   }
 
   toggleNavbar() {
@@ -46,4 +56,49 @@ export class HeaderComponent implements OnInit {
     return !this.router.url.includes('home') && !this.router.url.includes('admin');
   }
 
+  toForm(content): void {
+    this.modalRef = this.modalService.open(content, {centered: true});
+    this.modalRef.result.then((result) => {
+      console.log(`Closed with: ${result}`);
+    }, (reason) => {
+      console.log(`Dismissed ${this.getDismissReason(reason)}`);
+    });
+  }
+
+  setCataracte(): void {
+    this.close();
+    this.displayAlert = true;
+    this.paramService.setEffects(1);
+    this.nameMode += ' Cataracte';
+  }
+
+  setDmla() {
+    this.close();
+    this.displayAlert = true;
+    this.paramService.setEffects(2);
+    this.nameMode += ' DMLA';
+  }
+
+  setRetinite() {
+    this.close();
+    this.displayAlert = true;
+    this.paramService.setEffects(3);
+    this.nameMode += ' La rétinite pigmentaire et Le glaucome';
+  }
+
+  close(): void {
+    this.displayAlert = false;
+    this.nameMode = '';
+    this.paramService.resetEffect();
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
 }
