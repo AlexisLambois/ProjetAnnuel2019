@@ -51,7 +51,7 @@ export class ParameterService {
       }
       case 2: {
         if (document.getElementById('circle') !== null) {
-          document.getElementById('circle').setAttribute('style', 'display:block');
+          document.getElementById('circle').classList.add('show');
         }
         break;
       }
@@ -60,7 +60,7 @@ export class ParameterService {
 
   resetEffect(): void {
     if (document.getElementById('circle') !== null) {
-      document.getElementById('circle').setAttribute('style', 'display:none');
+      document.getElementById('circle').classList.remove('show');
     }
     if (document.getElementById('context1') !== null) {
       document.getElementById('context1').classList.remove('blur');

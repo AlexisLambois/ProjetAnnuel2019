@@ -11,6 +11,10 @@
           <mat-form-field class="mt-4 mb-4">
             <input matInput (keyup)="applyFilter($event.target)" placeholder="Filter">
           </mat-form-field>
+<div id="context1" class="outer">
+  <div class="inner_fixed">
+    <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
+  </div>
 
           <div class="mat-elevation-z8 mt-4 mb-4">
             <table mat-table [dataSource]="dataSource" matSort
@@ -21,6 +25,11 @@
                     mat-sort-header> ID </th>
                 <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.id}} </td>
               </ng-container>
+  <div class="inner_remaining">
+    <div class="container">
+      <mat-form-field class="mt-4 mb-4">
+        <input matInput (keyup)="applyFilter($event.target)" placeholder="Filter">
+      </mat-form-field>
 
               <!-- Progress Column -->
               <ng-container matColumnDef="name">
@@ -28,6 +37,14 @@
                     mat-sort-header> Nom </th>
                 <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.name}} </td>
               </ng-container>
+      <div class="mat-elevation-z8 mt-4 mb-4">
+        <table mat-table [dataSource]="dataSource" matSort
+               [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> ID</th>
+            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.id}} </td>
+          </ng-container>
 
               <!-- Name Column -->
               <ng-container matColumnDef="email">
@@ -35,6 +52,11 @@
                     mat-sort-header> Email </th>
                 <td mat-cell *matCellDef="let row"> {{row.email}} </td>
               </ng-container>
+          <!-- Progress Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> Nom</th>
+            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
 
               <!-- Name Column -->
               <ng-container matColumnDef="phonenumber">
@@ -42,6 +64,12 @@
                 <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}"
                     *matCellDef="let row"> {{row.phonenumber}} </td>
               </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> Email
+            </th>
+            <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+          </ng-container>
 
               <!-- Color Column -->
               <ng-container matColumnDef="type">
@@ -50,6 +78,13 @@
                 <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}"
                     *matCellDef="let row"> {{row.type == 1 ? 'Fichier soumis' : 'Demande d\'audit'}} </td>
               </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="phonenumber">
+            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header>
+              Téléphone
+            </th>
+            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.phonenumber}} </td>
+          </ng-container>
 
               <!-- Name Column -->
               <ng-container matColumnDef="dateDemande">
@@ -57,21 +92,49 @@
                 <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}"
                     *matCellDef="let row"> {{row.dateDemande !== undefined ? toDate(row.dateDemande) : ''}} </td>
               </ng-container>
+          <!-- Color Column -->
+          <ng-container matColumnDef="type">
+            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> Type
+            </th>
+            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}"
+                *matCellDef="let row"> {{row.type == 1 ? 'Fichier soumis' : 'Demande d\'audit'}} </td>
+          </ng-container>
 
               <!-- Color Column -->
               <ng-container matColumnDef="comment">
                 <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> Détails </th>
                 <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.comment}} </td>
               </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="dateDemande">
+            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> Date de
+              demande
+            </th>
+            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}"
+                *matCellDef="let row"> {{row.dateDemande !== undefined ? toDate(row.dateDemande) : ''}} </td>
+          </ng-container>
 
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumns;">
               </tr>
             </table>
+          <!-- Color Column -->
+          <ng-container matColumnDef="comment">
+            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header>
+              Détails
+            </th>
+            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.comment}} </td>
+          </ng-container>
 
             <mat-paginator [pageSize]="5"></mat-paginator>
           </div>
         </div>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+          </tr>
+        </table>
+
+        <mat-paginator [pageSize]="5"></mat-paginator>
       </div>
     </main>
   </div>
@@ -86,19 +149,50 @@
           <span class="pointer" (click)="changeFamily()"
                 [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Police dyslexique</span>
         </div>
+</div>
+<span *ngIf="getIsMobileResolution; else mobileVersion">
+  <div class="container-fluid toBottom">
+    <div class="row background-grisUrbilog py-3 text-footer" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+      <div class="col-2 offset-8 no-select">
+        <span class="not-allowed" style="text-decoration: line-through;"
+              [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Version contrastée</span>
       </div>
     </div>
   </footer>
 </span>
+  </div>
+    </span>
 <ng-template #mobileVersion>
-  <div class="outer">
-    <div class="inner_fixed">
-      <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
+  <div class="container-fluid">
+    <div class="row py-3 background-grisUrbilog text-footer" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+      <div class="col-5 no-select center">
+      <span class="not-allowed" style="text-decoration: line-through;"
+            [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Le plan du site</span>
+      </div>
+      <div class="col-5 no-select center">
+      <span class="pointer" (click)="changeFamily()"
+            [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Police dyslexique</span>
+      </div>
+      <div class="col-2 no-select center">
+        <img (click)="redirectTo('https://www.facebook.com/Urbilog-1975569372471723/')"
+             alt="Logo Facebook - Liens vers le facebook d'Urbilog" class="img pointer"
+             src="./assets/img/facebook.png">
+      </div>
     </div>
-    <div class="inner_remaining">
-
+    <div class="row background-grisUrbilog py-3 text-footer" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+      <div class="col-5 no-select center">
+      <span class="not-allowed" style="text-decoration: line-through;"
+            [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Version contrastée</span>
+      </div>
+      <div class="col-5 no-select center">
+      <span class="not-allowed" style="text-decoration: line-through;"
+            [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Mentions légales</span>
+      </div>
+      <div class="col-2 no-select center">
+        <img (click)="redirectTo('https://twitter.com/Urbilog')" alt="Logo Twitter - Liens vers le twitter d'Urbilog"
+             class="img pointer"
+             src="./assets/img/twitter.png">
+      </div>
     </div>
   </div>
-  <app-footer-responsive [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-                         [fontFamily]='fontFamilyParam'></app-footer-responsive>
 </ng-template>

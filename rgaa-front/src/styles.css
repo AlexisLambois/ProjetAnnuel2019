@@ -158,17 +158,20 @@ body {
 }
 
 #circle {
-  width: 40em;
-  height: 40em;
+  width: 20em;
+  height: 20em;
   border-radius: 50%;
   position: fixed;
   background: black;
   z-index: 1049;
-  top: 50%;
-  left: 50%;
-  margin-top: -20em;
-  margin-left: -20em;
+  margin-top: -15em;
+  margin-left: -10em;
   display: none;
+  pointer-events: none;
+}
+
+.show{
+  display: block !important;
 }
 
 #circlerevert {
