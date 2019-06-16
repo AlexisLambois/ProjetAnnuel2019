@@ -1,196 +1,197 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* You can add global styles to this file, and also import other style files */
 .background-grisUrbilog {
-  background-color: #383838;
+    background-color: #383838;
 }
 
 .color-grisUrbilog {
-  color: #383838;
+    color: #383838;
 }
 
 .background-bleucielUrbilog {
-  background-color: #1271B8;
+    background-color: #1271B8;
 }
 
 .color-bleucielUrbilog {
-  color: #1271B8;
+    color: #1271B8;
 }
 
 .background-bleucielUrbilogContrasted {
-  background-color: #0E5890;
+    background-color: #0E5890;
 }
 
 .color-bleucielUrbilogContrasted {
-  color: #0E5890;
+    color: #0E5890;
 }
 
 .background-bordUrbilog {
-  background-color: #A2195B;
+    background-color: #A2195B;
 }
 
 .color-bordUrbilog {
-  color: #A2195B;
+    color: #A2195B;
 }
 
 .background-vertUrbilog {
-  background-color: #09A198;
+    background-color: #09A198;
 }
 
 .color-vertUrbilog {
-  color: #09A198;
+    color: #09A198;
 }
 
 .background-vertUrbilogContrasted {
-  background-color: #065B55;
+    background-color: #065B55;
 }
 
 .color-vertUrbilogContrasted {
-  color: #065B55;
+    color: #065B55;
 }
 
 .background-orangeUrbilog {
-  background-color: #F29100;
+    background-color: #F29100;
 }
 
 .color-orangeUrbilog {
-  color: #F29100;
+    color: #F29100;
 }
 
 .background-orangeUrbilogContrasted {
-  background-color: #804D00;
+    background-color: #804D00;
 }
 
 .color-orangeUrbilogContrasted {
-  color: #804D00;
+    color: #804D00;
 }
 
 .background-bleuUrbilog {
-  background-color: #336172;
+    background-color: #336172;
 }
 
 .color-bleuUrbilog {
-  color: #336172;
+    color: #336172;
 }
 
 .no-select {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
 }
 
 .pointer {
-  cursor: pointer !important;
+    cursor: pointer !important;
 }
 
 .not-allowed {
-  cursor: not-allowed !important;;
+    cursor: not-allowed !important;;
 }
 
 html,
 body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  min-height: 620px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    min-height: 620px;
 }
 
 /******* MyRiadPro ****/
 @font-face {
-  font-family: myMyriadPro;
-  src: url(assets/font/myriad/MYRIADPRO-REGULAR.woff);
+    font-family: myMyriadPro;
+    src: url(assets/font/myriad/MYRIADPRO-REGULAR.woff);
 }
 
 @font-face {
-  font-family: myMyriadProBold;
-  src: url(assets/font/myriad/MYRIADPRO-BOLD.woff);
+    font-family: myMyriadProBold;
+    src: url(assets/font/myriad/MYRIADPRO-BOLD.woff);
 }
 
 @font-face {
-  font-family: myMyriadProBoldCond;
-  src: url(assets/font/myriad/MYRIADPRO-BOLDCOND.woff);
+    font-family: myMyriadProBoldCond;
+    src: url(assets/font/myriad/MYRIADPRO-BOLDCOND.woff);
 }
 
 .myMyriadProFont {
-  font-family: myMyriadPro;
+    font-family: myMyriadPro;
 }
 
 .myMyriadProBoldFont {
-  font-family: myMyriadProBold;
+    font-family: myMyriadProBold;
 }
 
 .myMyriadProBoldCondFont {
-  font-family: myMyriadProBoldCond;
+    font-family: myMyriadProBoldCond;
 }
 
 /******* OpenDyslexic ****/
 @font-face {
-  font-family: openDyslexic;
-  src: url(assets/font/openDyslexic/OpenDyslexic-Regular.otf);
+    font-family: openDyslexic;
+    src: url(assets/font/openDyslexic/OpenDyslexic-Regular.otf);
 }
 
 @font-face {
-  font-family: openDyslexicBold;
-  src: url(assets/font/openDyslexic/OpenDyslexic-Bold.otf);
+    font-family: openDyslexicBold;
+    src: url(assets/font/openDyslexic/OpenDyslexic-Bold.otf);
 }
 
 @font-face {
-  font-family: openDyslexicBoldItalic;
-  src: url(assets/font/openDyslexic/OpenDyslexic-BoldItalic.otf);
+    font-family: openDyslexicBoldItalic;
+    src: url(assets/font/openDyslexic/OpenDyslexic-BoldItalic.otf);
 }
 
 .openDyslexicFont {
-  font-family: openDyslexic;
+    font-family: openDyslexic;
 }
 
 .openDyslexicBoldFont {
-  font-family: openDyslexicBold;
+    font-family: openDyslexicBold;
 }
 
 .openDyslexicBoldCondFont {
-  font-family: openDyslexicBoldItalic;
+    font-family: openDyslexicBoldItalic;
 }
 
 .blur {
-  filter: blur(4px);
+    filter: blur(4px);
 }
 
 #circle {
-  width: 20em;
-  height: 20em;
-  border-radius: 50%;
-  position: fixed;
-  background: black;
-  z-index: 1049;
-  margin-top: -15em;
-  margin-left: -10em;
-  display: none;
-  pointer-events: none;
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    position: fixed;
+    background: black;
+    z-index: 1049;
+    margin-top: -15em;
+    margin-left: -10em;
+    display: none;
+    pointer-events: none;
 }
 
-.show{
-  display: block !important;
+.show {
+    display: block !important;
 }
 
 #circlerevert {
-  width: 100%;
-  height: 100%;
-  z-index: 1049;
-  top: 0;
-  position: fixed;
-  display: none;
-  left: 0;
-  background: black; /* fallback */
-  background: linear-gradient(135deg, transparent 10px, black 0) bottom right,
-  linear-gradient(225deg, transparent 10px, black 0) bottom left,
-  linear-gradient(315deg, transparent 10px, black 0) top left,
-  linear-gradient(45deg, transparent 10px, black 0) top right;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
-  background-image: radial-gradient(circle at 0 0, rgba(204, 0, 0, 0) 300px, black 15px),
-  radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 300px, black 15px),
-  radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 300px, black 15px),
-  radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 300px, black 15px);
+    width: 100%;
+    height: 100%;
+    z-index: 1049;
+    pointer-events: none;
+    top: 0;
+    position: fixed;
+    display: none;
+    left: 0;
+    background: black; /* fallback */
+    background: linear-gradient(135deg, transparent 10px, black 0) bottom right,
+    linear-gradient(225deg, transparent 10px, black 0) bottom left,
+    linear-gradient(315deg, transparent 10px, black 0) top left,
+    linear-gradient(45deg, transparent 10px, black 0) top right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(circle at 0 0, rgba(204, 0, 0, 0) 300px, black 15px),
+    radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 300px, black 15px),
+    radial-gradient(circle at 100% 100%, rgba(204, 0, 0, 0) 300px, black 15px),
+    radial-gradient(circle at 0 100%, rgba(204, 0, 0, 0) 300px, black 15px);
 }

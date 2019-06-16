@@ -30,3 +30,11 @@
     display: none;
   }
 }
+
+.alert {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1050;
+}

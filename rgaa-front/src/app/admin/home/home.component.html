@@ -1,124 +1,700 @@
-<div id="context1" class="outer">
+<div class="outer">
   <div class="inner_fixed">
     <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
   </div>
 
-  <div class="inner_remaining">
-    <div class="container">
-      <mat-form-field class="mt-4 mb-4">
-        <input matInput (keyup)="applyFilter($event.target)" placeholder="Filter">
-      </mat-form-field>
+  <div id="context2" class="inner_remaining">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-8 reedit-col">
+          <h1 class="color-bleuUrbilog mt-5"
+              [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+              [ngStyle]="{'font-size':fontSizeParam+20+'px'}">Données</h1>
+          <hr class="bar background-bleuUrbilog mb-2">
+          <div class="container">
+            <mat-tab-group>
+              <mat-tab [label]="'Vue d\'ensemble (' + getLength(1) + ')'">
+                <table mat-table [dataSource]="dataSource" matSort>
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id</th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                  </ng-container>
 
-      <div class="mat-elevation-z8 mt-4 mb-4">
-        <table mat-table [dataSource]="dataSource" matSort
-               [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
-          <!-- ID Column -->
-          <ng-container matColumnDef="id">
-            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> ID</th>
-            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.id}} </td>
-          </ng-container>
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Type</th>
+                    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                  </ng-container>
 
-          <!-- Progress Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> Nom</th>
-            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.name}} </td>
-          </ng-container>
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date</th>
+                    <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+                  </ng-container>
 
-          <!-- Name Column -->
-          <ng-container matColumnDef="email">
-            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> Email
-            </th>
-            <td mat-cell *matCellDef="let row"> {{row.email}} </td>
-          </ng-container>
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email</th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                  </ng-container>
 
-          <!-- Name Column -->
-          <ng-container matColumnDef="phonenumber">
-            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header>
-              Téléphone
-            </th>
-            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.phonenumber}} </td>
-          </ng-container>
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="telephone">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Télephone</th>
+                    <td mat-cell *matCellDef="let element"> {{element.telephone}} </td>
+                  </ng-container>
 
-          <!-- Color Column -->
-          <ng-container matColumnDef="type">
-            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> Type
-            </th>
-            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}"
-                *matCellDef="let row"> {{row.type == 1 ? 'Fichier soumis' : 'Demande d\'audit'}} </td>
-          </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5]"></mat-paginator>
+              </mat-tab>
+              <mat-tab [label]="'Non Traités (' + getLength(2) + ')'">
+                <table mat-table [dataSource]="dataSource2" matSort>
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id</th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                  </ng-container>
 
-          <!-- Name Column -->
-          <ng-container matColumnDef="dateDemande">
-            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header> Date de
-              demande
-            </th>
-            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}"
-                *matCellDef="let row"> {{row.dateDemande !== undefined ? toDate(row.dateDemande) : ''}} </td>
-          </ng-container>
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Type</th>
+                    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                  </ng-container>
 
-          <!-- Color Column -->
-          <ng-container matColumnDef="comment">
-            <th mat-header-cell [ngStyle]="{'font-size':fontSizeParam+'px'}" *matHeaderCellDef mat-sort-header>
-              Détails
-            </th>
-            <td mat-cell [ngStyle]="{'font-size':fontSizeParam-2+'px'}" *matCellDef="let row"> {{row.comment}} </td>
-          </ng-container>
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date</th>
+                    <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+                  </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-          </tr>
-        </table>
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email</th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                  </ng-container>
 
-        <mat-paginator [pageSize]="5"></mat-paginator>
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="telephone">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Télephone</th>
+                    <td mat-cell *matCellDef="let element"> {{element.telephone}} </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+              </mat-tab>
+              <mat-tab [label]="'Traités (' + getLength(3) + ')'">
+                <table mat-table [dataSource]="dataSource3" matSort>
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id</th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                  </ng-container>
+
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Type</th>
+                    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                  </ng-container>
+
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date</th>
+                    <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+                  </ng-container>
+
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email</th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                  </ng-container>
+
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="telephone">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Télephone</th>
+                    <td mat-cell *matCellDef="let element"> {{element.telephone}} </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+              </mat-tab>
+              <mat-tab [label]="'Archivés (' + getLength(4) + ')'">
+                <table mat-table [dataSource]="dataSource4" matSort>
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id</th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                  </ng-container>
+
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Type</th>
+                    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                  </ng-container>
+
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date</th>
+                    <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+                  </ng-container>
+
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email</th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                  </ng-container>
+
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="telephone">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Télephone</th>
+                    <td mat-cell *matCellDef="let element"> {{element.telephone}} </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+        <hr class="separation"/>
+        <div class="col-4 reedit-col">
+          <h1 class="color-bleuUrbilog mt-5"
+              [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+              [ngStyle]="{'font-size':fontSizeParam+20+'px'}">Modifier</h1>
+          <hr class="bar background-bleuUrbilog mb-2">
+          <div class="container" style="height: 100%;max-height: 100%;">
+            <div class="row m-2" style="border: 1px solid black;display:flex" #element1>
+              <h2 class="pt-4 pb-4 pl-5 m-0 color-bleuUrbilog"
+                  [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+                  [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Accueil</h2>
+              <i class="material-icons color-bleuUrbilog pointer no-select" (click)="toForm(content1)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;margin-left:auto">
+                edit
+              </i>
+              <i class="material-icons pointer no-select" (click)="delete(element1)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;color: red;margin-right: 5%;">
+                delete_outline
+              </i>
+            </div>
+            <div class="row m-2" style="border: 1px solid black;display:flex" #element2>
+              <h2 class="pt-4 pb-4 pl-5 m-0 color-bleuUrbilog"
+                  [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+                  [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Loi RGAA</h2>
+              <i class="material-icons color-bleuUrbilog pointer no-select" (click)="toForm(content2)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;margin-left:auto">
+                edit
+              </i>
+              <i class="material-icons pointer no-select" (click)="delete(element2)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;color: red;margin-right: 5%;">
+                delete_outline
+              </i>
+            </div>
+            <div class="row m-2" style="border: 1px solid black;display:flex" #element3>
+              <h2 class="pt-4 pb-4 pl-5 m-0 color-bleuUrbilog"
+                  [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+                  [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Fichiers accessibles</h2>
+              <i class="material-icons color-bleuUrbilog pointer no-select" (click)="toForm(content3)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;margin-left:auto">
+                edit
+              </i>
+              <i class="material-icons pointer no-select" (click)="delete(element3)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;color: red;margin-right: 5%;">
+                delete_outline
+              </i>
+            </div>
+            <div class="row m-2" style="border: 1px solid black;display:flex" #element4>
+              <h2 class="pt-4 pb-4 pl-5 m-0 color-bleuUrbilog"
+                  [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+                  [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Avis d'expert</h2>
+              <i class="material-icons color-bleuUrbilog pointer no-select" (click)="toForm(content4)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;margin-left:auto">
+                edit
+              </i>
+              <i class="material-icons pointer no-select" (click)="delete(element4)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;color: red;margin-right: 5%;">
+                delete_outline
+              </i>
+            </div>
+            <div class="row m-2" style="border: 1px solid black;display:flex" #element5>
+              <h2 class="pt-4 pb-4 pl-5 m-0 color-bleuUrbilog"
+                  [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+                  [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Qui sommes nous ?</h2>
+              <i class="material-icons color-bleuUrbilog pointer no-select" (click)="toForm(content5)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;margin-left:auto">
+                edit
+              </i>
+              <i class="material-icons pointer no-select" (click)="delete(element5)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;color: red;margin-right: 5%;">
+                delete_outline
+              </i>
+            </div>
+            <div class="row m-2" style="border: 1px solid black;display:flex" #element6>
+              <h2 class="pt-4 pb-4 pl-5 m-0 color-bleuUrbilog"
+                  [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+                  [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Contact</h2>
+              <i class="material-icons color-bleuUrbilog pointer no-select" (click)="toForm(content6)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;margin-left:auto">
+                edit
+              </i>
+              <i class="material-icons pointer no-select" (click)="delete(element6)"
+                 style="margin-top:auto;margin-bottom:auto;font-size: 40px;color: red;margin-right: 5%;">
+                delete_outline
+              </i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<span *ngIf="getIsMobileResolution; else mobileVersion">
-  <div class="container-fluid toBottom">
-    <div class="row background-grisUrbilog py-3 text-footer" [ngStyle]="{'font-size':fontSizeParam+'px'}">
-      <div class="col-2 offset-8 no-select">
-        <span class="not-allowed" style="text-decoration: line-through;"
-              [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Version contrastée</span>
-      </div>
-      <div class="col-2 no-select">
-        <span class="pointer" (click)="changeFamily()"
-              [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Police dyslexique</span>
-      </div>
-    </div>
+<div id="circle"></div>
+<div id="circlerevert"></div>
+<app-footer class="toBottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+            [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
+
+<ng-template #content1 let-ca="close('Close click')" let-da="dismiss()">
+  <div class="modal-header">
+    <h4 class="modal-title color-proxiad-light" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Editer Accueil
+      !</h4>
+    <button type="button" class="close" aria-label="Close" (click)="da">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-    </span>
-<ng-template #mobileVersion>
-  <div class="container-fluid">
-    <div class="row py-3 background-grisUrbilog text-footer" [ngStyle]="{'font-size':fontSizeParam+'px'}">
-      <div class="col-5 no-select center">
-      <span class="not-allowed" style="text-decoration: line-through;"
-            [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Le plan du site</span>
-      </div>
-      <div class="col-5 no-select center">
-      <span class="pointer" (click)="changeFamily()"
-            [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Police dyslexique</span>
-      </div>
-      <div class="col-2 no-select center">
-        <img (click)="redirectTo('https://www.facebook.com/Urbilog-1975569372471723/')"
-             alt="Logo Facebook - Liens vers le facebook d'Urbilog" class="img pointer"
-             src="./assets/img/facebook.png">
-      </div>
-    </div>
-    <div class="row background-grisUrbilog py-3 text-footer" [ngStyle]="{'font-size':fontSizeParam+'px'}">
-      <div class="col-5 no-select center">
-      <span class="not-allowed" style="text-decoration: line-through;"
-            [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Version contrastée</span>
-      </div>
-      <div class="col-5 no-select center">
-      <span class="not-allowed" style="text-decoration: line-through;"
-            [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Mentions légales</span>
-      </div>
-      <div class="col-2 no-select center">
-        <img (click)="redirectTo('https://twitter.com/Urbilog')" alt="Logo Twitter - Liens vers le twitter d'Urbilog"
-             class="img pointer"
-             src="./assets/img/twitter.png">
-      </div>
-    </div>
+  <div class="modal-body">
+    <textarea id="text1" name="text1" rows="5" style="width: 100%">Découvrez les enjeux de la réforme  RGAA et devenez ACCESSIBLE</textarea>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="ca">Sauvegarder</button>
+  </div>
+</ng-template>
+
+<ng-template #content2 let-ca="close('Close click')" let-da="dismiss()">
+  <div class="modal-header">
+    <h4 class="modal-title color-proxiad-light" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Editer Loi
+      !</h4>
+    <button type="button" class="close" aria-label="Close" (click)="da">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <textarea id="text2" name="text2" rows="5" style="width: 100%">Ce référentiel s’applique à tout contenu HTML (HTML4, XHTML1 et HTML5). Il utilise, pour certains tests une base de référence prenant en compte un ensemble de technologies d’assistance, de navigateurs et de systèmes d’exploitation sur lesquels l’accessibilité des composants d’interface développés par JavaScript doit être vérifiée notamment. Une description détaillée de la base de référence est disponible ici : base de référence.
+
+Note importante pour tout contenu antérieur à la spécification HTML5 :
+
+Lorsque le code HTML de la page n’est pas du HTML5, les éléments HTML5 (balises et attributs) exigés par un critère ou test sont non applicables. Tous les autres critères ou tests restent applicables, y compris les dispositifs ARIA. Les critères et tests suivants sont non applicables :</textarea>
+    <textarea id="text3" name="text3" rows="5" style="width: 100%">Recommandation
+      Donner à chaque image porteuse d’information une alternative textuelle pertinente et une description détaillée si nécessaire. Lier les légendes à leurs images. Remplacer les images textes par du texte stylé lorsque c’est possible.
+      Critère 1.1 [A] Chaque image a-t-elle une alternative textuelle ?
+      Test 1.1.1 : Chaque image (balise img) a-t-elle un attribut alt ?
+      Test 1.1.2 : Chaque zone (balise area) d’une image réactive a-t-elle un attribut alt ?
+      Test 1.1.3 : Chaque bouton de type image (balise input avec l’attribut type="image") a-t-il un attribut alt ?
+      Test 1.1.4 : Chaque zone cliquable d’une image réactive coté serveur est-t-elle doublée d’un lien dans la page ?
+      Critère 1.2 [A] Pour chaque image de décoration ayant une alternative textuelle, cette alternative est-elle vide ?
+      Test 1.2.1 : Chaque image (balise img) de décoration, sans légende, et ayant un attribut alt, vérifie-t-elle ces conditions ?
+      Le contenu de l’attribut alt est vide (alt="") ;
+      L’image de décoration ne possède pas d’attribut title ;
+      La balise img est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).
+      Test 1.2.2 : Chaque zone non cliquable (balise area sans attribut href) de décoration, et ayant un attribut alt, vérifie-t-elle ces conditions ?
+      Le contenu de l’attribut alt est vide (alt="") ;
+      La zone non cliquable ne possède pas d’attribut title ;
+      La balise area est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).
+      Test 1.2.3 : Chaque image objet (balise object avec l’attribut type="image/…") de décoration, sans légende, vérifie-t-elle ces conditions ?
+      La balise object possède un attribut aria-hidden="true" ;
+      L’alternative textuelle entre et est vide ;
+      La balise object ou l'un de ses enfants est dépourvue d'attribut title
+      La balise object ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).
+      Test 1.2.4 : Chaque image vectorielle (balise svg) de décoration, sans légende, vérifie-t-elle ces conditions ?
+      La balise svg possède un attribut aria-hidden="true" ;
+      Les balises title et desc sont absentes ou vides ;
+      La balise svg ou l’un de ses enfants est dépourvue d’attribut title ;
+      La balise svg ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image vectorielle (aria-label, aria-describedby, aria-labelledby par exemple).
+      Test 1.2.5 : Chaque image bitmap (balise canvas) de décoration, sans légende, vérifie-t-elle ces conditions ?
+      La balise canvas possède un attribut aria-hidden="true" ;
+      Le contenu entre et est dépourvue de contenus textuels ;
+      La balise canvas ou l’un de ses enfants est dépourvue d’attribut title ;
+      La balise canvas ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).
+      Test 1.2.5 : Chaque image bitmap (balise canvas) de décoration, sans légende, vérifie-t-elle ces conditions ?
+      La balise canvas possède un attribut aria-hidden="true" ;
+      Le contenu entre et est dépourvue de contenus textuels ;
+      La balise canvas ou l’un de ses enfants est dépourvue d’attribut title ;
+      La balise canvas ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).
+      Test 1.2.6 : Chaque image embarquée (balise embed avec l’attribut type="image/…") de décoration, sans légende, vérifie-t-elle ces conditions ?
+      La balise embed possède un attribut aria-hidden="true" ;
+      La balise La balise embed ou l’un de ses enfants est dépourvue d’attribut title ;
+      La balise embed ou l’un de ses enfants est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (aria-label, aria-describedby, aria-labelledby par exemple).
+      Critère 1.3 [A] Pour chaque image porteuse d’information ayant une alternative textuelle, cette alternative est-elle pertinente (hors cas particuliers) ?
+      Test 1.3.1 : Chaque image (balise img) porteuse d’information, ayant un attribut alt, vérifie-t-elle ces conditions (hors cas particuliers) ?
+      Le contenu de l’attribut alt est pertinent ;
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.
+      Test 1.3.2 : Chaque zone (balise area) d’une image réactive porteuse d’information, ayant un attribut alt, vérifie-t-elle ces conditions (hors cas particuliers) ?
+      Le contenu de l’attribut alt est pertinent ;
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.
+      Test 1.3.3 : Chaque bouton de type image (balise input avec l’attribut type="image"), ayant un attribut alt, vérifie-t-il ces conditions (hors cas particuliers) ?
+      Le contenu de l’attribut alt est pertinent ;
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.
+      Test 1.3.4 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse d’information vérifie-t-elle une de ces conditions (hors cas particuliers) ?
+      L’image objet est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative pertinente. ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image objet par un texte alternatif pertinent ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image objet par une image possédant une alternative pertinente.
+      Test 1.3.5 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse d’information, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions (hors cas particuliers) ?
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label
+      S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.
+      Test 1.3.6 : Chaque image embarquée (balise embed avec l’attribut type="image/…") porteuse d’information vérifie-t-elle une de ces conditions (hors cas particuliers) ?
+      L’image embarquée est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative pertinente ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par un texte alternatif pertinent ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par une image possédant une alternative pertinente.
+      Test 1.3.7 : Chaque image embarquée (balise embed avec l’attribut type="image/…") porteuse d’information, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions (hors cas particuliers) ?
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label ;
+      S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.
+      Test 1.3.8 : Chaque image vectorielle (balise svg) porteuse d’information, en l’absence d’alternative, vérifie-t-elle ces conditions (hors cas particuliers) ?
+      La balise svg possède un role="img" ;
+      La balise svg possède une propriété aria-label dont le contenu est pertinent et identique à l’attribut title s’il est présent ;
+      La balise svg possède une balise desc dont le contenu est pertinent et contient un passage de texte identique à la propriété aria-label.
+      Test 1.3.9 : Pour chaque image vectorielle (balise svg) porteuse d’information et possédant une alternative, cette alternative est-elle correctement restituée par les technologies d’assistance ?
+      Test 1.3.10 : Chaque image bitmap (balise canvas) porteuse d’information vérifie-t-elle une de ces conditions (hors cas particuliers) ?
+      Le contenu de l’alternative (contenu entre <canvas> et </canvas>) est pertinent ;
+      L’image bitmap est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative pertinente ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par un texte alternatif pertinent ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par une image possédant une alternative pertinente.
+      Test 1.3.11 : Chaque image bitmap (balise canvas) porteuse d’information, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions (hors cas particuliers) ?
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label ;
+      S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.
+      Test 1.3.12 : Pour chaque image bitmap (balise canvas) porteuse d’information et possédant une alternative (contenu entre <canvas> et </canvas>), cette alternative est-elle correctement restituée par les technologies d’assistance ?
+      Test 1.3.13 : Pour chaque image porteuse d’information et ayant une alternative textuelle, l’alternative textuelle est-elle courte et concise (hors cas particuliers) ?
+      Critère 1.4 [A] Pour chaque image utilisée comme CAPTCHA ou comme image-test, ayant une alternative textuelle, cette alternative permet-elle d’identifier la nature et la fonction de l’image ?
+      Test 1.4.1 : Chaque image (balise img) utilisée comme CAPTCHA ou comme image-test, ayant un attribut alt, vérifie-t-elle ces conditions ?
+      Le contenu de l’attribut alt permet de comprendre la nature et la fonction de l’image ;
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.
+      Test 1.4.2 : Chaque zone (balise area) d’une image réactive utilisée comme CAPTCHA ou comme image-test, ayant un attribut alt, vérifie-t-elle ces conditions ?
+      Le contenu de l’attribut alt permet de comprendre la nature et la fonction de la zone ;
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.
+      Test 1.4.3 : Chaque bouton associé à une image (balise input avec l’attribut type="image") utilisée comme CAPTCHA ou comme image-test, ayant un attribut alt, vérifie-t-il ces conditions ?
+      Le contenu de l’attribut alt permet de comprendre la nature et la fonction du bouton ;
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu de la propriété aria-label est identique au contenu de l’attribut alt ;
+      S’il est présent, le contenu du passage de texte lié via la propriété aria-labelledby est identique au contenu de l’attribut alt.
+      Test 1.4.4 : Chaque image objet (balise object avec l’attribut type="image/…") utilisée comme CAPTCHA ou comme image-test vérifie-t-elle une de ces conditions ?
+      L’image objet est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative permettant de comprendre la nature et la fonction de l’image ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image objet par un texte alternatif permettant de comprendre la nature et la fonction de l’image ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image objet par une image possédant une alternative permettant de comprendre la nature et la fonction de l’image.
+      Test 1.4.5 : Chaque image objet (balise object avec l’attribut type="image/…") utilisée comme CAPTCHA ou comme image-test, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions ?
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label ;
+      S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.
+      Test 1.4.6 : Chaque image embarquée (balise embed avec l’attribut type="image/…") utilisée comme CAPTCHA ou comme image-test vérifie-t-elle une de ces conditions ?
+      L’image embarquée est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative permettant de comprendre la nature et la fonction de l’image ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par un texte alternatif permettant de comprendre la nature et la fonction de l’image ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image embarquée par une image possédant une alternative permettant de comprendre la nature et la fonction de l’image.
+      Test 1.4.7 : Chaque image embarquée (balise embed avec l’attribut type="image/…") utilisée comme CAPTCHA ou comme image-test, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions ?
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label ;
+      S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.
+      Test 1.4.8 : Chaque image vectorielle (balise svg) utilisée comme CAPTCHA ou comme image-test, en l’absence d’alternative, vérifie-t-elle ces conditions ?
+      La balise svg possède un role="img" ;
+      La balise svg possède une propriété aria-label dont le contenu permet de comprendre la nature et la fonction de l’image et identique à l’attribut title s’il est présent ;
+      La balise svg possède une balise desc dont le contenu permet de comprendre la nature et la fonction de l’image et identique à la propriété aria-label
+      Un lien adjacent permet d’accéder à une alternative dont le contenu permet de comprendre la nature et la fonction de l’image et identique à la propriété aria-label.
+      Test 1.4.9 : Pour chaque image vectorielle (balise svg) utilisée comme CAPTCHA ou comme image-test, possédant une alternative, cette alternative est-elle correctement restituée par les technologies d’assistance ?
+      Test 1.4.10 Chaque image bitmap (balise canvas) utilisée comme CAPTCHA ou comme image-test vérifie-t-elle une de ces conditions ?
+      Le contenu de l’alternative (contenu entre <canvas> et </canvas>) permet de comprendre la nature et la fonction de l’image ;
+      L’image bitmap est immédiatement suivie d’un lien adjacent permettant d’afficher une page ou un passage de texte contenant une alternative permettant de comprendre la nature et la fonction de l’image ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par un texte alternatif permettant de comprendre la nature et la fonction de l’image ;
+      Un mécanisme permet à l’utilisateur de remplacer l’image bitmap par une image possédant une alternative permettant de comprendre la nature et la fonction de l’image.
+      Test 1.4.11 : Chaque image bitmap (balise canvas) utilisée comme CAPTCHA ou comme image-test, qui utilise une propriété aria-label, aria-labelledby ou un attribut title, vérifie-t-elle ces conditions ?
+      S’il est présent, le contenu de l’attribut title est identique au contenu de l’attribut aria-label ;
+      S’il est présent, le contenu de l’attribut title est identique au passage de texte lié par la propriété aria-labelledby.
+      Test 1.4.12 : Pour chaque image bitmap (balise canvas) utilisée comme CAPTCHA ou comme image-test, ayant une alternative (contenu entre <canvas> et </canvas>), cette, l’alternative textuelle est-elle correctement restituée par les technologies d’assistance ?
+      Critère 1.5 [A] Pour chaque image utilisée comme CAPTCHA, une solution d’accès alternatif au contenu ou à la fonction du CAPTCHA est-elle présente ?
+      Test 1.5.1 : Chaque image (balises img, area, object, embed, svg, canvas) utilisée comme CAPTCHA vérifie-t-elle une de ces conditions ?
+      Il existe une autre forme de CAPTCHA non graphique, au moins ;
+      Il existe une autre solution d’accès à la fonctionnalité sécurisée par le CAPTCHA.
+      Test 1.5.2 : Chaque bouton associé à une image (balise input avec l’attribut type="image") utilisée comme CAPTCHA vérifie-t-il une de ces conditions ?
+      Il existe une autre forme de CAPTCHA non graphique, au moins ;
+      Il existe une autre solution d’accès à la fonctionnalité sécurisée par le CAPTCHA.
+      Critère 1.6 [A] Chaque image porteuse d’information a-t-elle, si nécessaire, une description détaillée ?
+      Test 1.6.1 : Chaque image (balise img) porteuse d’information, qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+      Il existe un attribut longdesc qui donne l’adresse (url) d’une page contenant la description détaillée ;
+      Il existe un attribut alt contenant la référence à une description détaillée adjacente à l’image ;
+      Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée.
+      Test 1.6.2 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse d’information, qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+      Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée ;
+      Il existe une description détaillée clairement identifiable adjacente à l’image objet.
+      Test 1.6.3 : Chaque image embarquée (balise embed) porteuse d’information, qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+      Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée ;
+      Il existe une description détaillée clairement identifiable adjacente à l’image embarquée.
+      Test 1.6.4 : Chaque bouton de type image (balise input avec l’attribut type="image") porteur d’information, qui nécessite une description détaillée, vérifie-t-il une de ces conditions ?
+      Il existe un attribut alt contenant la référence à une description détaillée adjacente à l’image ;
+      Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée ;
+      Il existe une propriété aria-describedby référençant un passage de texte faisant office de description détaillée.
+      Test 1.6.5 : Chaque bouton de type image (balise input avec l’attribut type="image") porteur d’information, qui implémente une référence à une description détaillée via une propriété aria-describedby, vérifie-t-il ces conditions ?
+      Le passage de texte est identifié via un attribut id ;
+      La valeur de l’attribut id est unique ;
+      La valeur de la propriété ARIA aria-describedby est égale à la valeur de l’attribut id.
+      Test 1.6.6 : Chaque image vectorielle (balise svg) porteuse d’information, qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+      Il existe une propriété aria-label contenant une référence à une description détaillée adjacente à l’image vectorielle ;
+      La balise title contient la description détaillée ;
+      Il existe une balise desc contenant la description détaillée ;
+      Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée.
+      Test 1.6.7 : Pour chaque image vectorielle (balise svg) porteuse d’information, qui implémente une référence à une description détaillée adjacente via une propriété aria-label ou une balise desc, cette référence est-elle correctement restituée par les technologies d’assistance ?
+      Test 1.6.8 : Chaque image bitmap (balise canvas), qui nécessite une description détaillée, vérifie-t-elle une de ces conditions ?
+      Il existe un passage de texte entre <canvas> et </canvas> contenant une référence à une description détaillée adjacente à l’image bitmap ;
+      Il existe un contenu textuel entre <canvas> et </canvas> faisant office de description détaillée ;
+      Il existe un lien adjacent (via une url ou une ancre) permettant d’accéder au contenu de la description détaillée.
+      Test 1.6.9 : Pour chaque image bitmap (balise canvas) porteuse d’information, qui implémente une référence à une description détaillée adjacente, cette référence est-elle correctement restituée par les technologies d’assistance ?
+      Test 1.6.10 : Pour chaque image (balise img, area, object, embed, svg, canvas) porteuse d’information, qui implémente une description détaillée et qui utilise une propriété aria-describedby, la propriété aria-describedby référence-t-elle la description détaillée ?
+      Critère 1.7 [A] Pour chaque image porteuse d’information ayant une description détaillée, cette description est-elle pertinente ?
+      Test 1.7.1 : Chaque image (balise img) porteuse d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+      La description détaillée via l’adresse référencée dans l’attribut longdesc est pertinente ;
+      La description détaillée dans la page et signalée dans l’attribut alt est pertinente ;
+      La description détaillée via un lien adjacent est pertinente.
+      Test 1.7.2 : Chaque bouton de type image (balise input avec l’attribut type="image") porteur d’information, ayant une description détaillée, vérifie-t-il ces conditions ?
+      La description détaillée dans la page et signalée dans l’attribut alt est pertinente ;
+      La description détaillée via un lien adjacent est pertinente ;
+      Le passage de texte référencé via la propriété aria-describedby est pertinent.
+      Test 1.7.3 : Chaque image objet (balise object avec l’attribut type="image/…") porteuse d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+      La description détaillée adjacente à l’image objet est pertinente ;
+      La description détaillée via un lien adjacent est pertinente.
+      Test 1.7.4 : Chaque image embarquée (balise embed avec l’attribut type="image/…") porteuse d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+      La description détaillée adjacente à l’image embarquée est pertinente
+      La description détaillée via un lien adjacent est pertinente.
+      Test 1.7.5 : Chaque image vectorielle (balise svg) porteuse d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+      La description détaillée adjacente à l'image vectorielle et signalée dans la propriété aria-label ou la balise desc est pertinente.
+      La description détaillée contenue dans la balise desc est pertinente ;
+      La description détaillée via un lien adjacent est pertinente.
+      Test 1.7.6 : Pour chaque image vectorielle (balise svg) porteuse d’information, ayant une description détaillée implémentée via la balise desc, cette description détaillée est-elle correctement restituée par les technologies d’assistance ?
+      Test 1.7.7 : Chaque image bitmap (balise canvas) porteuse d’information, ayant une description détaillée, vérifie-t-elle ces conditions ?
+      La description détaillée adjacente à l’image bitmap est pertinente ;
+      La description détaillée contenue entre <canvas> et </canvas> est pertinente ;
+      La description détaillée via un lien adjacent est pertinente.
+      Test 1.7.8 : Pour chaque image bitmap (balise canvas) porteuse d’information, ayant une description détaillée entre <canvas> et </canvas>, cette description détaillée est-elle correctement restituée par les technologies d’assistance ?
+    </textarea>
+    <textarea rows="5" style="width: 100%">Recommandation
+Donner si nécessaire à chaque média temporel une transcription textuelle, des sous-titres synchronisés et une audio-description synchronisée pertinents. Donner à chaque média non temporel une alternative textuelle pertinente. Rendre possible le contrôle de la consultation de chaque média temporel et non-temporel au clavier et s’assurer de leur compatibilité avec les technologies d’assistance.
+
+Critère 4.1 [A] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une transcription textuelle ou une audio-description (hors cas particuliers) ?
+Test 4.1.1 : Chaque média temporel pré-enregistré seulement audio, vérifie-t-il, si nécessaire, l’une de ces conditions (hors cas particuliers) ?
+Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;
+Il existe une transcription textuelle adjacente clairement identifiable.
+Test 4.1.2 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il, si nécessaire, l’une de ces conditions (hors cas particuliers) ?
+Il existe une version alternative « audio seulement » accessible via un lien adjacent (une url ou une ancre) ;
+Il existe une version version alternative « audio seulement » adjacente clairement identifiable ;
+Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;
+Il existe une transcription textuelle adjacente clairement identifiable ;
+Il existe une audiodescription synchronisée ;
+Il existe une version alternative avec une audiodescription synchronisée accessible via un lien adjacent (une url ou une ancre).
+Test 4.1.3 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;
+Il existe une transcription textuelle adjacente clairement identifiable ;
+Il existe une audio-description synchronisée ;
+Il existe une version alternative avec une audio-description synchronisée accessible via un lien adjacent (une url ou une ancre).
+Critère 4.2 [A] Pour chaque média temporel pré-enregistré ayant une transcription textuelle ou une audio-description synchronisée, celles-ci sont-elles pertinentes (hors cas particuliers) ?
+Test 4.2.1 : Pour chaque média temporel pré-enregistré seulement audio, ayant une transcription textuelle, celle-ci est-elle pertinente (hors cas particuliers) ?
+Test 4.2.2 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il une de ces conditions (hors cas particuliers) ?
+La transcription textuelle est pertinente ;
+L’audio-description synchronisée est pertinente ;
+L’audio-description synchronisée de la version alternative est pertinente ;
+La version alternative audio seulement est pertinente.
+Test 4.2.3 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il une de ces conditions (hors cas particuliers) ?
+La transcription textuelle est pertinente ;
+L’audio-description synchronisée est pertinente ;
+L’audio-description synchronisée de la version alternative est pertinente.
+Critère 4.3 [A] Chaque média temporel synchronisé pré-enregistré a-t-il, si nécessaire, des sous-titres synchronisés (hors cas particuliers) ?
+Test 4.3.1 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, l’une de ces conditions (hors cas particuliers) ?
+Le média temporel synchronisé possède des sous-titres synchronisés ;
+Il existe une version alternative possédant des sous-titres synchronisés accessible via un lien adjacent (une url ou une ancre)
+Test 4.3.2 : Pour chaque média temporel synchronisé pré-enregistré possédant des sous-titres synchronisés diffusés via une balise track, la balise track possède-t-elle un attribut kind="captions"
+Critère 4.4 [A] Pour chaque média temporel synchronisé pré-enregistré ayant des sous-titres synchronisés, ces sous-titres sont-ils pertinents ?
+Test 4.4.1 : Pour chaque média temporel synchronisé pré-enregistré ayant des sous-titres synchronisés, ces sous-titres sont-ils pertinents ?
+Critère 4.5 [AA] Chaque média temporel en direct a-t-il, si nécessaire, des sous-titres synchronisés ou une transcription textuelle (hors cas particuliers) ?
+Test 4.5.1 : Chaque média temporel seulement audio en direct vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+Il existe des sous-titres synchronisés ;
+Il existe une version ayant des sous-titres synchronisés accessible via un lien adjacent (une url ou une ancre) ;
+Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;
+Il existe une transcription textuelle adjacente clairement identifiable.
+Test 4.5.2 : Chaque média temporel synchronisé en direct vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+Il existe des sous-titres synchronisés ;
+Il existe une version ayant des sous-titres synchronisés accessible via un lien adjacent (une url ou une ancre) ;
+Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;
+Il existe une transcription textuelle adjacente clairement identifiable.
+Critère 4.6 [AA] Pour chaque média temporel en direct ayant des sous-titres synchronisés ou une transcription textuelle, ceux-ci sont-ils pertinents ?
+Test 4.6.1 : Chaque média temporel seulement audio en direct vérifie-t-il une de ces conditions ?
+Les sous-titres synchronisés sont pertinents ;
+Les sous-titres synchronisés de la version alternative sont pertinents ;
+La transcription textuelle est pertinente.
+Test 4.6.2 : Chaque média temporel synchronisé en direct vérifie-t-il une de ces conditions ?
+Les sous-titres synchronisés sont pertinents ;
+Les sous-titres synchronisés de la version alternative sont pertinents ;
+La transcription textuelle est pertinente.
+Critère 4.7 [AA] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une audio-description synchronisée (hors cas particuliers) ?
+Test 4.7.1 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+Il existe une audio-description synchronisée ;
+Il existe une version alternative avec une audio-description synchronisée.
+Test 4.7.2 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+Il existe une audio-description synchronisée ;
+Il existe une version alternative avec une audio-description synchronisée.
+Critère 4.8 [AA] Pour chaque média temporel pré-enregistré ayant une audio-description synchronisée, celle-ci est-elle pertinente ?
+Test 4.8.1 : Pour chaque média temporel pré-enregistré seulement vidéo ayant une audio-description synchronisée, celle-ci est-elle pertinente ?
+Test 4.8.2 : Pour chaque média temporel synchronisé ayant une audio-description synchronisée, celle-ci est-elle pertinente ?
+Critère 4.9 [AAA] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une interprétation en langue des signes (hors cas particuliers) ?
+Test 4.9.1 : Chaque média temporel pré-enregistré seulement audio a-t-il, si nécessaire, une interprétation en langue des signes adaptée à la langue du média (hors cas particuliers) ?
+Test 4.9.2 : Chaque média temporel synchronisé pré-enregistré a-t-il, si nécessaire, une interprétation en langue des signes adaptée à la langue du média (hors cas particuliers) ?
+Critère 4.10 [AAA] Pour chaque média temporel pré-enregistré ayant une interprétation en langue des signes, celle-ci est-elle pertinente ?
+Test 4.10.1 : Pour chaque média temporel pré-enregistré seulement audio ayant une interprétation en langue des signes, celle-ci est-elle pertinente ?
+Test 4.10.2 : Pour chaque média temporel synchronisé pré-enregistré ayant une interprétation en langue des signes, celle-ci est-elle pertinente ?
+Critère 4.11 [AAA] Chaque média temporel pré-enregistré a-t-il, si nécessaire, une audio-description étendue synchronisée (hors cas particuliers) ?
+Test 4.11.1 : Chaque média temporel synchronisé pré-enregistré vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+Il existe une audio-description étendue synchronisée ;
+Il existe une version alternative avec une audio-description étendue synchronisée.
+Test 4.11.2 : Chaque média temporel pré-enregistré seulement vidéo vérifie-t-il, si nécessaire, une de ces conditions (hors cas particuliers) ?
+Il existe une audio-description étendue synchronisée ;
+Il existe une version alternative avec une audio-description étendue synchronisée.
+Critère 4.12 [AAA] Pour chaque média temporel pré-enregistré ayant une audio-description étendue synchronisée, celle-ci est-elle pertinente ?
+Test 4.12.1 : Pour chaque média temporel synchronisé pré-enregistré ayant une audio-description étendue synchronisée, celle-ci est-elle pertinente ?
+Test 4.12.2 : Pour chaque média temporel pré-enregistré seulement vidéo ayant une audio-description étendue synchronisée, celle-ci est-elle pertinente ?
+Critère 4.13 [AAA] Chaque média temporel synchronisé ou seulement vidéo a-t-il, si nécessaire, une transcription textuelle (hors cas particuliers) ?
+Test 4.13.1 : Chaque média temporel synchronisé vérifie-t-il si nécessaire une de ces conditions (hors cas particuliers) ?
+Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;
+Il existe une transcription textuelle adjacente clairement identifiable.
+Test 4.13.2 : Chaque média temporel seulement vidéo vérifie-t-il si nécessaire une de ces conditions (hors cas particuliers) ?
+Il existe une transcription textuelle accessible via un lien adjacent (une url ou une ancre) ;
+Il existe une transcription textuelle adjacente clairement identifiable.
+Critère 4.14 [AAA] Pour chaque média temporel synchronisé ou seulement vidéo, ayant une transcription textuelle, celle-ci est-elle pertinente ?
+Test 4.14.1 : Pour chaque média temporel seulement vidéo ayant une transcription textuelle, celle-ci est-elle pertinente ?
+Test 4.14.2 : Pour chaque média temporel synchronisé ayant une transcription textuelle, celle-ci est-elle pertinente ?
+Critère 4.15 [A] Chaque média temporel est-il clairement identifiable (hors cas particuliers) ?
+Test 4.15.1 : Pour chaque média temporel seulement son, seulement vidéo ou synchronisé, le contenu textuel adjacent permet-il d’identifier clairement le média temporel (hors cas particuliers) ?
+Test 4.15.2 : Pour chaque média temporel seulement son en direct, seulement vidéo en direct ou synchronisé en direct, le contenu textuel adjacent permet-il d’identifier clairement le média temporel (hors cas particuliers) ?</textarea>
+  <textarea rows="5" style="width: 100%">Recommandation
+Donner des intitulés de lien explicites, grâce à des informations de contexte notamment, et utiliser le titre de lien le moins possible.
+
+Critère 6.1 [A] Chaque lien est-il explicite (hors cas particuliers) ?
+Test 6.1.1 : Chaque lien texte vérifie-t-il une de ces conditions (hors cas particuliers) ?
+L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;
+Le contexte du lien permet d’en comprendre la fonction et la destination.
+Test 6.1.2 : Chaque lien image vérifie-t-il une de ces conditions (hors cas particuliers) ?
+L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;
+Le contexte du lien permet d’en comprendre la fonction et la destination.
+Test 6.1.3 : Chaque lien composite vérifie-t-il une de ces conditions (hors cas particuliers) ?
+L’intitulé de lien seul permet d’en comprendre la fonction et la destination ;
+Le contexte du lien permet d’en comprendre la fonction et la destination.
+Critère 6.2 [A] Pour chaque lien ayant un titre de lien, celui-ci est-il pertinent ?
+Test 6.2.1 : Pour chaque lien texte ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?
+Test 6.2.2 : Pour chaque lien image ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?
+Test 6.2.3 : Pour chaque lien composite ayant un titre de lien (attribut title), le contenu de cet attribut est-il pertinent ?
+Critère 6.3 [AAA] Chaque intitulé de lien seul est-il explicite hors contexte (hors cas particuliers) ?
+Test 6.3.1 : Chaque lien texte vérifie-t-il une de ces conditions (hors cas particuliers) ?
+L’intitulé du lien est explicite hors contexte ;
+Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;
+Le contenu du titre de lien (attribut title) est explicite hors contexte.
+Test 6.3.2 : Chaque intitulé de lien image vérifie-t-il une de ces conditions (hors cas particuliers) ?
+L’intitulé du lien est explicite hors contexte ;
+Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;
+Le contenu du titre de lien (attribut title) est explicite hors contexte.
+Test 6.3.3 : Chaque lien composite (contenu texte et de l’attribut alt) est-il explicite hors contexte (hors cas particuliers) ?
+L’intitulé du lien est explicite hors contexte ;
+Un mécanisme permet à l’utilisateur d’obtenir un intitulé de lien explicite hors contexte ;
+Le contenu du titre de lien (attribut title) est explicite hors contexte.
+Critère 6.4 [A] Pour chaque page Web, chaque lien identique a-t-il les mêmes fonction et destination ?
+Test 6.4.1 : Pour chaque page Web, chaque lien identique de type texte a-t-il les mêmes fonction et destination ?
+Test 6.4.2 : Pour chaque page Web, chaque lien identique de type image a-t-il les mêmes fonction et destination ?
+Test 6.4.3 : Pour chaque page Web, chaque lien identique de type composite a-t-il les mêmes fonction et destination ?
+Critère 6.5 [A] Dans chaque page Web, chaque lien, à l’exception des ancres, a-t-il un intitulé ?
+Test 6.5.1 : Dans chaque page Web, chaque lien (balise a avec un attribut href), à l’exception des ancres, a-t-il un intitulé entre <a> et </a> ?</textarea>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="ca">Sauvegarder</button>
+  </div>
+</ng-template>
+
+<ng-template #content3 let-ca="close('Close click')" let-da="dismiss()">
+  <div class="modal-header">
+    <h4 class="modal-title color-proxiad-light" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Editer Formatage
+      !</h4>
+    <button type="button" class="close" aria-label="Close" (click)="da">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <textarea rows="5" style="width: 100%">Vous avez besoin de rendre des fichiers accessibles, qu’ils soient à un usage interne ou externe ? Nous avons la solution idéal et rapide, pour vous satisfaire.
+
+Vos documents doivent être lisibles et compréhensibles par tous. Par vos collaborateurs, afin de pouvoir s’épanouir pleinement et sans difficultés dans leurs tâches quotidiennes. Par vos clients, afin de ne pas perdre de parts de marché.
+
+Envoyez nous via cet outils votre fichier, en format word, powerpoint, ou pdf. Nous analysons votre demande afin de vous apporter un devis qui correspond à votre besoin.
+
+Nous restons également à votre disposition via notre page de contact si vous avez des interrogations supplémentaires !</textarea>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="ca">Sauvegarder</button>
+  </div>
+</ng-template>
+
+<ng-template #content4 let-ca="close('Close click')" let-da="dismiss()">
+  <div class="modal-header">
+    <h4 class="modal-title color-proxiad-light" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Editer Audit
+      !</h4>
+    <button type="button" class="close" aria-label="Close" (click)="da">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <textarea rows="5" style="width: 100%">Pourquoi demander un avis d'expert sur votre site ?
+Votre site internet est votre vitrine, visible par tous et de partout dans le monde. Il est important que votre site internet vous représente. Au delà de l’aspect esthétique, l’aspect pratique de l’utilisation de votre site internet compte aussi.
+
+Nos experts, formés à l’accessibilité numérique depuis de nombreuses années, sauront déceler efficacement toutes les problématiques de votre site internet, ciblant ainsi leurs résolutions autant sur le plan pratique qu’esthétique. Leur savoir faire est incommensurable et leur expertise, un réel atout pour votre entreprise.
+
+De plus, nos experts travaillants sur le projet de loi RGAA en lien direct avec le ministère, votre mise en conformité à l'accessibilité numérique de votre site internet sera sans faille</textarea>
+    <textarea rows="5" style="width: 100%">Quels bénéfices ?
+Faire confiance à nos experts pour n’en tirer que des bénéfices !
+
+Premièrement, votre site internet sera accessible par tous, ce qui facilitera sa visibilitée et donc sa notoriété. N’oublions pas qu’un site internet lisible par des personnes en situation de handicap ne sera que plus facile à utiliser et comprendre par tous !
+
+Deuxièmement, vous respecterez la loi. En effet, la loi RGAA entrant en vigueur en 2019 demande à toutes les entreprises ayant plus de 250 000€ de CA annuel de se mettre en conformité. Votre entreprise n’est pas concernée ? L’accessibilité numérique de votre site internet est tout de même important, puisqu’au delà de l’aspect légal, vous vous positionnez en force moral pour votre entreprise, permettant à votre visibilitée d’être plus importante.</textarea>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="ca">Sauvegarder</button>
+  </div>
+</ng-template>
+
+<ng-template #content5 let-ca="close('Close click')" let-da="dismiss()">
+  <div class="modal-header">
+    <h4 class="modal-title color-proxiad-light" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Editer : Qui sommes nous ?</h4>
+    <button type="button" class="close" aria-label="Close" (click)="da">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <textarea rows="5" style="width: 100%">Depuis 1995, Urbilog développe des activités innovantes autour du numérique. Nous mettons en oeuvre des prestations de conseil et de développement innovant autour de l'accessibilité numérique pour tous. Nos valeurs ? Qualité, accessibilité, innovation, simplicité et disponibilité ! Urbilog prouve l'enrichissement par la diversité au sein de nos équipes : mal voyants, non voyants sourds, malentendants, déficits moteurs et multi culturalisme... Nous faisons du handicap une opportunité.</textarea>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="ca">Sauvegarder</button>
+  </div>
+</ng-template>
+
+<ng-template #content6 let-ca="close('Close click')" let-da="dismiss()">
+  <div class="modal-header">
+    <h4 class="modal-title color-proxiad-light" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Editer : Contact</h4>
+    <button type="button" class="close" aria-label="Close" (click)="da">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <textarea rows="5" style="width: 100%">URBILOG
+31, RUE PAPIN
+59650
+VILLENEUVE D'ASCQ
+03 28 55 21 30
+secretariat@rgaa-urbilog.fr</textarea>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="ca">Sauvegarder</button>
   </div>
 </ng-template>

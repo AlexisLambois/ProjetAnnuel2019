@@ -1,10 +1,10 @@
-<div id="context1" class="outer">
+<div class="outer">
   <div class="inner_fixed">
     <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)" [contrastedMode]="contrastedMode"
                 [fontSize]='fontSizeParam'></app-header>
   </div>
 
-  <div class="inner_remaining">
+  <div id="context2" class="inner_remaining">
     <div class="container">
       <h1 class="color-bordUrbilog mt-5" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
           [ngStyle]="{'font-size':fontSizeParam+20+'px'}">RENDRE ACCESSIBLE VOS FICHIERS ?</h1>
@@ -14,11 +14,16 @@
         <div class="col-12 p-0">
           <p [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
              [ngStyle]="{'font-size':fontSizeParam+'px'}">
-			Vous avez besoin de rendre des fichiers accessibles, qu’ils soient à un usage interne ou externe ? Nous avons la solution idéal et rapide, pour vous satisfaire.<br><br>
-			Vos documents doivent être lisibles et compréhensibles par tous. Par vos collaborateurs, afin de pouvoir s’épanouir pleinement et sans difficultés dans leurs tâches quotidiennes. Par vos clients, afin de ne pas perdre de parts de marché.<br><br>
-			Envoyez nous via cet outils votre fichier, en format word, powerpoint, ou pdf. Nous analysons votre demande afin de vous apporter un devis qui correspond à votre besoin.<br><br>
-			Nous restons également à votre disposition via notre page de contact si vous avez des interrogations supplémentaires !
-			 </p>
+            Vous avez besoin de rendre des fichiers accessibles, qu’ils soient à un usage interne ou externe ? Nous
+            avons la solution idéal et rapide, pour vous satisfaire.<br><br>
+            Vos documents doivent être lisibles et compréhensibles par tous. Par vos collaborateurs, afin de pouvoir
+            s’épanouir pleinement et sans difficultés dans leurs tâches quotidiennes. Par vos clients, afin de ne pas
+            perdre de parts de marché.<br><br>
+            Envoyez nous via cet outils votre fichier, en format word, powerpoint, ou pdf. Nous analysons votre demande
+            afin de vous apporter un devis qui correspond à votre besoin.<br><br>
+            Nous restons également à votre disposition via notre page de contact si vous avez des interrogations
+            supplémentaires !
+          </p>
         </div>
       </div>
       <div *ngIf="!getIsMobileResolution; else mobileVersion3">
@@ -31,7 +36,8 @@
               </div>
               <div class="row mb-4">
                 <label class="col-12 mb-4" for="name"
-                       [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Nom et Prénom de contact :</label>
+                       [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Nom et Prénom de contact
+                  :</label>
                 <input class="col-10 offset-1 p-1" type="text" id="name" #name required>
               </div>
               <div class="row mb-4">
@@ -65,7 +71,8 @@
                 </div>
                 <div class="row">
                   <button type="submit" class="btn sendForm pt-2 pb-2 pl-3 pr-3 background-bordUrbilog"
-                          style="width: 75%;" [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam,'not-allowed':this.currentFileUpload == undefined,'pointer':this.currentFileUpload != undefined}"
+                          style="width: 75%;"
+                          [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam,'not-allowed':this.currentFileUpload == undefined,'pointer':this.currentFileUpload != undefined}"
                           [ngStyle]="{'font-size':fontSizeParam-2+'px'}">UPLOAD
                   </button>
                 </div>
@@ -90,8 +97,10 @@
                       </div>
                     </div>
                     <div class="row mt-4 mb-4">
-                      <button type="submit" class="btn sendForm pt-2 pb-2 pl-3 pr-3 background-bordUrbilog" (click)="display()"
-                              style="width: 75%;" [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam,'not-allowed':this.currentFileUpload == undefined,'pointer':this.currentFileUpload != undefined}"
+                      <button type="submit" class="btn sendForm pt-2 pb-2 pl-3 pr-3 background-bordUrbilog"
+                              (click)="display()"
+                              style="width: 75%;"
+                              [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam,'not-allowed':this.currentFileUpload == undefined,'pointer':this.currentFileUpload != undefined}"
                               [ngStyle]="{'font-size':fontSizeParam-2+'px'}">UPLOAD
                       </button>
                     </div>
@@ -116,18 +125,22 @@
           </div>
         </form>
       </div>
-      <ng-template #mobileVersion3><ngb-alert>Indisponible sur mobile pour le moment</ngb-alert></ng-template>
+      <ng-template #mobileVersion3>
+        <ngb-alert>Indisponible sur mobile pour le moment</ngb-alert>
+      </ng-template>
     </div>
   </div>
 </div>
 <div id="circle"></div>
+<div id="circlerevert"></div>
 <span *ngIf="!getIsMobileResolution; else mobileVersion">
   <app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
-  <app-footer id="context2" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+  <app-footer [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
               [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
 </span>
 
 <ng-template #mobileVersion>
   <app-footer-responsive [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-                       [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer-responsive>
+                         [fontFamily]='fontFamilyParam'
+                         (changeContrasted)="changeContrasted($event)"></app-footer-responsive>
 </ng-template>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
 import {RoutingService} from '../routing.service';
 import {Router} from '@angular/router';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
@@ -25,8 +25,27 @@ export class HeaderComponent implements OnInit {
   nameMode = '';
 
   navbarOpen = false;
+  private isMobileResolution: boolean;
 
   constructor(private routing: RoutingService, private router: Router, private modalService: NgbModal, private paramService: ParameterService) {
+    this.checkResolution();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.checkResolution();
+  }
+
+  checkResolution(): void {
+    if (window.innerWidth <= 800) {
+      this.isMobileResolution = false;
+    } else {
+      this.isMobileResolution = true;
+    }
+  }
+
+  get IsMobileResolution(): boolean {
+    return this.isMobileResolution;
   }
 
   toggleNavbar() {

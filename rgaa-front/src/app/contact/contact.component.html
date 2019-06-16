@@ -1,0 +1,58 @@
+<div class="outer">
+  <div class="inner_fixed">
+    <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)" [contrastedMode]="contrastedMode"
+                [fontSize]='fontSizeParam'></app-header>
+  </div>
+
+  <div id="context2" class="inner_remaining">
+    <div class="container">
+      <h1 class="mt-5" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
+          [ngStyle]="{'font-size':fontSizeParam+20+'px'}">Contact</h1>
+      <hr class="bar mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <form (ngSubmit)="onSubmit(name,email,message)">
+              <div class="form-group">
+                <input class="col-10 offset-1" type="text" id="name" #name placeholder="Nom" required>
+              </div>
+              <div class="form-group">
+                <input class="col-10 offset-1" type="text" id="email" #email placeholder="Email" required>
+              </div>
+              <div class="form-group">
+                <textarea class="col-10 offset-1" rows="5" id="message" #message placeholder="Message" required></textarea>
+              </div>
+              <button type="submit" class="btn sendForm col-2 offset-8 background-grisUrbilog" style="color:white"
+                      [ngClass]="{'myMyriadProFont':fontFamilyParam,'openDyslexicFont':!fontFamilyParam}"
+                      [ngStyle]="{'font-size':fontSizeParam+'px'}">Envoyer
+              </button>
+            </form>
+          </div>
+          <div class="col-6">
+            <br>
+            <b [ngClass]="fontFamilyParam?'myMyriadProdBoldFont':'openDyslexicBoldFont'" [ngStyle]="{'font-size':fontSizeParam+'px'}">URBILOG</b>
+            <p [ngClass]="fontFamilyParam?'myMyriadProdFont':'openDyslexicFont'" [ngStyle]="{'font-size':fontSizeParam+'px'}">
+              31, RUE PAPIN<br>
+              59650<br>
+              VILLENEUVE D'ASCQ<br>
+              03 28 55 21 30<br>
+              secretariat@rgaa-urbilog.fr<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img class="mt-4" src="../../assets/img/maquette.jpg" style="width: 100%;height: auto"/>
+  </div>
+</div>
+<span *ngIf="!getIsMobileResolution; else mobileVersion">
+  <div id="circle"></div>
+  <div id="circlerevert"></div>
+  <app-footer class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+              [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
+</span>
+<ng-template #mobileVersion>
+  <app-footer-responsive class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+                         [fontFamily]='fontFamilyParam'
+                         (changeContrasted)="changeContrasted($event)"></app-footer-responsive>
+</ng-template>

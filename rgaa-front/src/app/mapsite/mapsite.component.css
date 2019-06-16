@@ -1,20 +1,26 @@
 .bar {
-  height: 0.15em;
-  background-color: black;
+    height: 0.15em;
+    background-color: black;
 }
 
 .link {
-  color: blue !important;
-  cursor: pointer;
-  text-decoration: underline !important;
+    color: blue !important;
+    cursor: pointer;
+    text-decoration: underline !important;
+}
+
+.not-allowed-link {
+    color: blue !important;
+    cursor: pointer;
+    text-decoration: line-through !important;
 }
 
 /*Small size*/
 @media only screen and (min-height: 640px) {
-  .toBottom {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
+    .toBottom {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
 }

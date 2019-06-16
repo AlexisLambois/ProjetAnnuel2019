@@ -1,10 +1,10 @@
 <span *ngIf="getIsMobileResolution; else mobileVersion">
-  <div id="context1" class="outer">
+  <div class="outer">
     <div class="inner_fixed">
       <app-header (changeSize)="changeSize($event)" [fontSize]='fontSizeParam'></app-header>
     </div>
 
-    <div class="inner_remaining">
+    <div id="context2"  class="inner_remaining">
       <app-menu class="outer" [fontSize]='fontSizeParam' [contrastedMode]="contrastedMode"
                 [fontFamily]='fontFamilyParam'></app-menu>
     </div>
@@ -14,7 +14,7 @@
   <div id="circlerevert"></div>
   <app-link-bar [param]='false' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
 
-  <app-footer id="context2" class="toBottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+  <app-footer class="toBottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
               [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
 </span>
 <ng-template #mobileVersion>

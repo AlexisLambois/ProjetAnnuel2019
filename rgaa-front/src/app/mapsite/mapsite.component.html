@@ -1,29 +1,40 @@
-<div  id="context1" class="outer">
+<div class="outer">
   <div class="inner_fixed">
     <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)" [contrastedMode]="contrastedMode"
                 [fontSize]='fontSizeParam'></app-header>
   </div>
 
-  <div class="inner_remaining">
+  <div id="context2" class="inner_remaining">
     <div class="container">
       <h1 class="mt-5" [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'"
           [ngStyle]="{'font-size':fontSizeParam+20+'px'}">Plan du site</h1>
       <hr class="bar mb-5">
       <ul>
-        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('home')">Accueil</a></li>
-        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('reforme')">La loi rgaa</a></li>
-        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('formatage')">Vos fichiers accessibles</a></li>
-        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('audit')">Avis d'expert</a></li>
-        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'" (click)="redirectTo('whoweare')">Qui sommes-nous ?</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+               (click)="redirectTo('home')">Accueil</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+               (click)="redirectTo('reforme')">La loi rgaa</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+               (click)="redirectTo('formatage')">Vos fichiers accessibles</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+               (click)="redirectTo('audit')">Avis d'expert</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+               (click)="redirectTo('whoweare')">Qui sommes-nous ?</a></li>
+        <li><a class="link" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'"
+               (click)="redirectTo('contact')">Contact</a></li>
+        <li><a class="not-allowed-link not-allowed" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">Mentions légales</a></li>
       </ul>
     </div>
   </div>
 </div>
 <span *ngIf="!getIsMobileResolution; else mobileVersion">
+  <div id="circle"></div>
+  <div id="circlerevert"></div>
   <app-footer class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-            [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
+              [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
 </span>
 <ng-template #mobileVersion>
   <app-footer-responsive class="fixed-bottom" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
-                         [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer-responsive>
+                         [fontFamily]='fontFamilyParam'
+                         (changeContrasted)="changeContrasted($event)"></app-footer-responsive>
 </ng-template>

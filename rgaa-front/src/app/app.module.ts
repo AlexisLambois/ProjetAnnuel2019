@@ -33,6 +33,7 @@ import {FooterResponsiveComponent} from './general/footer-responsive/footer-resp
 import {HomeComponent} from './admin/home/home.component';
 import {ButtonsModule, CheckboxModule, IconsModule} from 'angular-bootstrap-md';
 import {A11yModule} from '@angular/cdk/a11y';
+import {ContactComponent} from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {A11yModule} from '@angular/cdk/a11y';
     WhoweareComponent,
     MapsiteComponent,
     FooterResponsiveComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

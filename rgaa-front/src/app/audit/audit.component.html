@@ -1,10 +1,10 @@
-<div id="context1" class="outer">
+<div class="outer">
   <div class="inner_fixed">
     <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)" [contrastedMode]="contrastedMode"
                 [fontSize]='fontSizeParam'></app-header>
   </div>
 
-  <div class="inner_remaining">
+  <div id="context2" class="inner_remaining">
     <div class="container">
       <h1 class="mt-5" [ngClass]="{'myMyriadProBoldFont':fontFamilyParam,'openDyslexicBoldFont':!fontFamilyParam,'color-vertUrbilogContrasted':contrastedMode,'color-vertUrbilog':!contrastedMode}"
           [ngStyle]="{'font-size':fontSizeParam+20+'px'}">UN AVIS D'EXPERT SUR VOTRE SITE ?</h1>
@@ -89,8 +89,9 @@
 </div>
 <span *ngIf="!getIsMobileResolution; else mobileVersion">
   <div id="circle"></div>
+  <div id="circlerevert"></div>
   <app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
-  <app-footer id="context2" [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
+  <app-footer [fontSize]='fontSizeParam' (changeFamily)="changeFamily($event)"
             [fontFamily]='fontFamilyParam' (changeContrasted)="changeContrasted($event)"></app-footer>
 </span>
 

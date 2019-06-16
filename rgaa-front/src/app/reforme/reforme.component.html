@@ -1,11 +1,11 @@
 <span *ngIf="!getIsMobileResolution; else mobileVersion">
-  <div id="context1" class="outer">
+  <div class="outer">
     <div class="inner_fixed">
       <app-header [fontFamily]='fontFamilyParam' (changeSize)="changeSize($event)" [contrastedMode]="contrastedMode"
                   [fontSize]='fontSizeParam'></app-header>
     </div>
 
-    <div class="inner_remaining">
+    <div id="context2" class="inner_remaining">
       <div class="container">
         <h1 class="mt-5"
             [ngClass]="{'myMyriadProBoldFont': fontFamilyParam,'openDyslexicBoldFont':!fontFamilyParam,'color-bleucielUrbilogContrasted':contrastedMode,'color-bleucielUrbilog':!contrastedMode}"
@@ -40,7 +40,7 @@
                       <li>Non Testé (NT) : le critère n’a pas été testé.</li>
                     </ul>
                     <p>Vous pouvez consulter, à ce sujet, le <a
-                      href="http://references.modernisation.gouv.fr/rgaa-accessibilite/guide-accompagnement-RGAA.html">guide d’accompagnement</a> : Comment vérifie-t-on la conformité au RGAA ?</p>
+                            href="http://references.modernisation.gouv.fr/rgaa-accessibilite/guide-accompagnement-RGAA.html">guide d’accompagnement</a> : Comment vérifie-t-on la conformité au RGAA ?</p>
                   </span>
                   <span id="image1" class="m-3" style="display: none" [ngStyle]="{'font-size':fontSizeParam+'px'}">
                     <strong>Recommandation</strong>
@@ -48,12 +48,12 @@
                     <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.1 [A] Chaque image a-t-elle une alternative textuelle ?</h2>
                      <ul>
                        <li>Test 1.1.1 : Chaque image (balise <span style="font-style: italic">img</span>) a-t-elle un attribut <span
-                         style="font-style: italic">alt</span> ?</li>
+                               style="font-style: italic">alt</span> ?</li>
                        <li>Test 1.1.2 : Chaque zone (balise <span style="font-style: italic">area</span>) d’une image réactive a-t-elle un attribut <span
-                         style="font-style: italic">alt</span> ?</li>
+                               style="font-style: italic">alt</span> ?</li>
                        <li>Test 1.1.3 : Chaque bouton de type image (balise <span
-                         style="font-style: italic">input</span> avec l’attribut <span style="font-style: italic">type="image"</span>) a-t-il un attribut <span
-                         style="font-style: italic">alt</span> ?</li>
+                               style="font-style: italic">input</span> avec l’attribut <span style="font-style: italic">type="image"</span>) a-t-il un attribut <span
+                               style="font-style: italic">alt</span> ?</li>
                        <li>Test 1.1.4 : Chaque zone cliquable d’une image réactive coté serveur est-t-elle doublée d’un lien dans la page ?</li>
                     </ul>
                     <h2 class="mb-4" style="font-weight: bolder" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Critère 1.2 [A] Pour chaque image de décoration ayant une alternative textuelle, cette alternative est-elle vide ?</h2>
@@ -1089,8 +1089,9 @@
     </div>
   </div>
   <div id="circle"></div>
+  <div id="circlerevert"></div>
   <app-link-bar [param]='true' [fontSize]='fontSizeParam' [fontFamily]='fontFamilyParam'></app-link-bar>
-  <app-footer id="context2" style="position: absolute;width: 100%;" [fontSize]='fontSizeParam'
+  <app-footer style="position: absolute;width: 100%;" [fontSize]='fontSizeParam'
               (changeFamily)="changeFamily($event)" (changeContrasted)="changeContrasted($event)"
               [fontFamily]='fontFamilyParam'></app-footer>
 </span>
@@ -1108,7 +1109,8 @@
         <h1 class="mt-5"
             [ngClass]="{'myMyriadProBoldFont': fontFamilyParam,'openDyslexicBoldFont':!fontFamilyParam,'background-bleucielUrbilogContrasted':contrastedMode,'background-bleucielUrbilog':!contrastedMode}"
             [ngStyle]="{'font-size':fontSizeParam+20+'px'}">LA LOI RGAA</h1>
-        <hr class="bar mb-4" [ngClass]="contrastedMode?'background-bleucielUrbilogContrasted':'background-bleucielUrbilog'">
+        <hr class="bar mb-4"
+            [ngClass]="contrastedMode?'background-bleucielUrbilogContrasted':'background-bleucielUrbilog'">
 
         <div class="row m-0" [ngClass]="fontFamilyParam?'myMyriadProdFont':'openDyslexicFont'"
              [ngStyle]="{'font-size':fontSizeParam+'px'}">
@@ -1138,7 +1140,7 @@
                       <li>Non Testé (NT) : le critère n’a pas été testé.</li>
                     </ul>
                     <p>Vous pouvez consulter, à ce sujet, le <a
-                      href="http://references.modernisation.gouv.fr/rgaa-accessibilite/guide-accompagnement-RGAA.html">guide d’accompagnement</a> : Comment vérifie-t-on la conformité au RGAA ?</p>
+                            href="http://references.modernisation.gouv.fr/rgaa-accessibilite/guide-accompagnement-RGAA.html">guide d’accompagnement</a> : Comment vérifie-t-on la conformité au RGAA ?</p>
                   </span>
               </ng-template>
             </ngb-tab>
@@ -1153,16 +1155,16 @@
                 <ul>
                   <li>Test 1.1.1 : Chaque image (balise <span style="font-style: italic">img</span>) a-t-elle un
                     attribut <span
-                      style="font-style: italic">alt</span> ?
+                            style="font-style: italic">alt</span> ?
                   </li>
                   <li>Test 1.1.2 : Chaque zone (balise <span style="font-style: italic">area</span>) d’une image
                     réactive a-t-elle un attribut <span
-                      style="font-style: italic">alt</span> ?
+                            style="font-style: italic">alt</span> ?
                   </li>
                   <li>Test 1.1.3 : Chaque bouton de type image (balise <span
-                    style="font-style: italic">input</span> avec l’attribut <span style="font-style: italic">type="image"</span>)
+                          style="font-style: italic">input</span> avec l’attribut <span style="font-style: italic">type="image"</span>)
                     a-t-il un attribut <span
-                      style="font-style: italic">alt</span> ?
+                            style="font-style: italic">alt</span> ?
                   </li>
                   <li>Test 1.1.4 : Chaque zone cliquable d’une image réactive coté serveur est-t-elle doublée d’un lien
                     dans la page ?

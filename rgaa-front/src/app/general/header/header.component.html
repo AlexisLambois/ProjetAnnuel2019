@@ -1,3 +1,7 @@
+<ngb-alert *ngIf="displayAlert" class="alert" (close)="close()">
+  <strong>Warning!</strong> Vous êtes en mode :{{nameMode}}. Fermer ce message pour revenir en mode normal
+</ngb-alert>
+
 <div class="container-fluid">
   <header>
     <div class="row py-2">
@@ -5,11 +9,11 @@
         <a class="button-start" style="font-size: large" (click)="changeSizeFont(1)">A+</a>
         <span class="no-select" style="font-size: large"> / </span>
         <a class="button-start" style="font-size: large" (click)="changeSizeFont(-1)">A-</a>
-        <img src="assets/img/handddd.png" (click)="toForm(content)" class="mr-2 ml-2 pointer" alt="" style="height: 40px;width: auto">
+        <img src="assets/img/handddd.png" *ngIf="IsMobileResolution" (click)="toForm(content)" class="mr-2 ml-3 pointer" alt="" style="height: 30px;width: auto">
       </div>
     </div>
 
-    <div class="row">
+    <div id="context1" class="row">
       <div class="col-12 p-0">
         <nav style="min-height: 127px;" class="navbar navbar-expand-lg navbar-dark background-bleuUrbilog shadownavbar">
           <a class="navbar-brand no-select brandImg" href="#" (click)="redirectTo('home')">
@@ -55,16 +59,10 @@
   </header>
 </div>
 
-
-<ngb-alert *ngIf="displayAlert" class="alert" (close)="close()">
-  <strong>Warning!</strong> Vous êtes en mode :{{nameMode}}. Fermer ce message pour revenir en mode normal
-</ngb-alert>
-
 <ng-template #content let-ca="close('Close click')" let-da="dismiss()">
 
   <div class="modal-header">
-    <h4 class="modal-title color-proxiad-light" [ngStyle]="{'font-size':fontSizeParam+10+'px'}"
-        [ngClass]="fontFamilyParam?'myMyriadProBoldFont':'openDyslexicBoldFont'">Essayer les options !</h4>
+    <h4 class="modal-title color-proxiad-light" [ngStyle]="{'font-size':fontSizeParam+10+'px'}">Essayer les options !</h4>
     <button type="button" class="close" aria-label="Close" (click)="da">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -78,7 +76,7 @@
             La Cataracte
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <p [ngStyle]="{'font-size':fontSizeParam+1+'px'}" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+        <p [ngStyle]="{'font-size':fontSizeParam+1+'px'}">
           C’est l’opacification partielle ou totale du cristallin, lentille
           convergente située à l’intérieur de l’œil.
           Cette opacification est responsable d’une baisse progressive de la vue, au début accompagnée de gêne à la
@@ -95,7 +93,7 @@
             La DMLA
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <p [ngStyle]="{'font-size':fontSizeParam+1+'px'}" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+        <p [ngStyle]="{'font-size':fontSizeParam+1+'px'}">
           La Dégénérescence Maculaire Liée à l’Age est la maladie ophtalmologique la plus répandue dans les pays
           industrialisés. Elle atteint la rétine centrale, ce qui se traduit par une déformation des lignes puis par
           l’apparition d’une tache centrale permanente.
@@ -111,7 +109,7 @@
             La rétinite pigmentaire et Le glaucome
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <p [ngStyle]="{'font-size':fontSizeParam+1+'px'}" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+        <p [ngStyle]="{'font-size':fontSizeParam+1+'px'}">
           La rétinite pigmentaire (RP) est une maladie génétique dégénérative due à une mutation de gènes impliqués dans
           le fonctionnement et la régulation des cellules de la rétine, les photorécepteurs, indispensables pour la
           vision. La RP atteint les deux yeux et débute généralement par des problèmes de vue lorsque l’intensité de la
@@ -122,7 +120,7 @@
           généralement conservée jusqu’à des stades tardifs de la maladie puis, progressivement l’acuité visuelle
           diminue et aboutit généralement à la cécité.
         </p>
-        <p [ngStyle]="{'font-size':fontSizeParam+1+'px'}" [ngClass]="fontFamilyParam?'myMyriadProFont':'openDyslexicFont'">
+        <p [ngStyle]="{'font-size':fontSizeParam+1+'px'}">
           Il existe deux principaux types de glaucomes, le glaucome à angle fermé (très douloureux) et celui à angle
           ouvert (asymptomatique). Le glaucome à angle ouvert (le plus fréquent) est une maladie chronique, évolutive et
           progressive du nerf optique souvent liée à un excès de tension dans l’œil. Cette pathologie est insidieuse
